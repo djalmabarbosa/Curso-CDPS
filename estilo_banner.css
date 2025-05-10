@@ -1,0 +1,48 @@
+.quarto-title {
+    margin-top: 40px;
+}
+
+
+
+/* Fundo preto e texto branco */
+body {
+  background-color: #495057;
+  color: #ffffff;
+}
+
+/* Links em branco */
+a, a:visited {
+  color: #ffffff;
+}
+
+/* Links ao passar o mouse (opcional: pode usar outra cor se preferir) */
+a:hover {
+  color: #dddddd;
+}
+
+/* Cor cinza claro para assinatura (mantendo o ajuste anterior) */
+.assinatura {
+  color: #aaaaaa;  /* cinza claro para destacar menos que o título */
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+/* Opcional: ajuste dos headings para ficarem bem visíveis */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Opcional: deixar a tabela de conteúdos invisível (caso ativado por engano) */
+nav#TOC {
+  display: none;
+}
+
+/* Para fixar a imagem no canto inferior esquerdo, com espaçamento para cima */
+.logo-inferior-esquerda {
+  position: fixed;
+  left: 550px;         /* distância da borda esquerda */
+  bottom: 60px;       /* distância da borda inferior → ajuste aqui para “subir” */
+  width: 100px;        /* ajuste opcional do tamanho da imagem */
+  z-index: 9999;      /* garante que fique acima de outros elementos */
+}
+
