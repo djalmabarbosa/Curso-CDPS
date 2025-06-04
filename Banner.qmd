@@ -9,30 +9,30 @@ format:
     css: estilo_banner.css 
 ---
 
-### 🎯 Objetivos do curso
+### 🎯 Objetivo do curso
 
-Capacitar estudantes de pós-graduação, pesquisadores e profissionais de saúde a utilizar o **R** e técnicas de ciência de dados para análise, visualização e interpretação de dados em saúde.\
-Este é o primeiro Módulo de um curso mais amplo.\
-Ao longo do ano de 2025 ocorrerão outros dois módulos:\
+Introduzir estudantes de iniciação científica, pós-graduação e pesquisadores ao uso da ciência de dados na pesquisa em saúde  
+
+O curso é dividido em quatro módulos:\
+- Módulo 1: Ferramentas, linguagens e possibilidades (12h)  
 - Módulo 2: Manipulação de dados, visualização e bioestatística com o R (12h)\
 - Módulo 3: Machine learning na saúde (12h)\
-- Módulo 4: Projeto de aplicação (4h)\
-Os três primeiros módulos terão um certificado à parte (12h).\
-Quem concluir os três módulos receberá um certificado completo (40h). ---
+- Módulo 4: Projeto de aplicação (4h)\  
 
-### 📅 Informações
+Cada um dos três primeiros módulos tem um certificado à parte (12h).\
+A conclusão dos quatro módulos dá direito a um certificado completo (40h).
 
--   **Encontros para o Módulo I:** 07/06, 14/06 e 21/06 (Sábados, de 14 às 18h)\
+### 📅 Informações deste Módulo (Módulo 1)
 
--   **Local:** Universidade Federal de Rondonópolis (Sala: a ver)\
+-   **Encontros:** 07/06, 14/06 e 21/06 (Sábados, de 14 às 18h)\
 
--   **Carga Horária deste módulo:** 12 horas (teórico e prático)
+-   **Local:** Universidade Federal de Rondonópolis: Laboratório 3E - Bloco E\
+
+-   **Carga Horária:** 12 horas (teórico e prático)
 
 -   **Investimento:** Gratuito (Ação do Projeto de Extensão Saúde Data Science - Nº 696/2025)\
 
--   **Público-alvo:** Estudantes de pós-graduação, servidores, profissionais e pesquisadores da área da saúde.
-
-### 💻 Conteúdo Programático
+### 💻 Conteúdo Programático deste Módulo (Módulo 1)
 
 1.  Introdução à Ciência de Dados (Teoria)
 
@@ -40,16 +40,21 @@ Quem concluir os três módulos receberá um certificado completo (40h). ---
 
 3.  Fundamentos da linguagem R (Teoria)
 
-4.  Trabalhando com controle de versões Git/GitHub (Prática)
+4.  Controle de versões Git/GitHub (Prática)
 
-5.  Criação de relatórios, web-sites, artigos, teses, dashboards e aplicativos web com o R (Prática)
+5.  Criação de apresentações, relatórios, web-sites, artigos, teses, dashboards e aplicativos web (Prática)
 
-#### 📥 Inscrições pelo link: https://forms.gle/AUboBDTY617r69ge9
+#### 📥 **Inscrições pelo link**: https://forms.gle/7Z62uRgZi99znee78
 
-#### 📧 **Mais informações:**  *djalma.barbosa\@ufr.edu.br*
+#### 📧 **Mais informações:**  *djalma.barbosa@ufr.edu.br*
 
-#### Facilitador: Prof. Djalma Barbosa (UFR)
+#### **Facilitador**: Prof. Djalma Barbosa (UFR)
 
 ::: text-center
-![](logoUFR.png){.logo-inferior-esquerda}
+![](qr-code.png){.logo-inferior-esquerda1}
+:::
+
+
+::: text-center
+![](logoUFR.png){.logo-inferior-esquerda2}
 :::
