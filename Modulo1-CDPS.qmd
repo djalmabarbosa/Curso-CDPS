@@ -21,18 +21,13 @@ editor: visual
 
 <br>
 
-
-
-
-<div style="text-align: justify;">
-
-<p>
-Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).
-</p>
-
-</div>
+::: {style="text-align: justify;"}
+<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).</p>
+:::
 
 <!-- -->
+
+<br>
 
 Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
@@ -40,32 +35,78 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 <br>
 
+::: {style="text-align: justify;"}
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
+:::
 
 ## Mineração de Dados (*Data Mining*) {.smaller}
 
--   Mineração de dados pode ser vista como um subconjunto da ciência de dados
-
 -   Consiste em descobrir padrões e extrair padrões do dados
 
--   Envolve o uso de algoritmos e métodos estatísticos
-
--   Tem como principais tarefas:
-
-    1.  Descoberta de padrões (associações, correlações)
-    2.  Predição
-    3.  Classificação
-    4.  Agrupamento
+-   Teve maior desenvolvimento na década de 90, no ramo empresarial
 
 ## Aprendizagem de Máquina (Machine Learning)
 
--   Outro conceito que faz faz parte da ciência de dados
+- Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados  
+- Surgiu na década de 1950  
+- > **Arthur Samuel (1959)** definiu *machine learning* como:  
+  > "o campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados."
 
--   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados
+---
+
+| Aspecto                  | Mineração de Dados                                      | Aprendizagem de Máquina                                 |
+|--------------------------|----------------------------------------------------------|----------------------------------------------------------|
+| **Objetivo principal**   | Extrair padrões úteis e conhecimento de dados            | Fazer previsões ou tomar decisões com base em dados      |
+| **Enfoque**              | Exploração e descoberta de padrões em grandes conjuntos de dados | Generalização para novos dados a partir de exemplos passados |
+| **Tarefa típica**        | Agrupamento, associação, descoberta de regras            | Classificação, regressão, clustering supervisionado       |
+| **Motivação original**   | Análise de grandes volumes de dados corporativos         | Construção de algoritmos que aprendem automaticamente     |
+| **Uso comum em**         | Negócios, marketing, banco de dados                      | Inteligência artificial, robótica, sistemas autônomos     |
+| **Base técnica**         | Estatística + banco de dados + ML                        | Estatística + algoritmos + computação                     |
+
 
 ## Por que Ciência de Dados na Pesquisa em Saúde?
 
-## A linguagem R (Pq?) {.smaller}
+--- 
+
+- Dados administrativos se tornaram dados secundários de pesquisa (Coeli, 2024)
+    - **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
+- Registros eletrônicos, exames e sensores tornam os dados mais complexos e diversos
+    - Dados estruturados e não estruturados
+- Tecnologias da informação permitem o processamento de dados em tempo real
+- Tencologias da informação, mineração de dados, aprendizagem de máquina e modelos de linguagem ampla (large language models – LLM) permite hoje:
+1. Análise dos dados em tempo real.
+2. "Ciência de Dados Populacionais" (*Populational Data Science) (McGrail et al, 2018)
+
+## Extração de Conhecimento para Tomada de Decisão
+
+- É preciso ir além da descrição de dados
+- **Modelagem estatística**, **machine learning** e **visualização** revelam padrões ocultos e antecipam riscos
+- Apoiam **decisões clínicas, políticas e de gestão** baseadas em evidências
+
+## Aprimoramento da Prática Científica
+
+- Uso de ferramentas como **R**, **Python**, **Quarto**, **Shiny**, **dashboards**:
+  - Aumenta a **reprodutibilidade** e **transparência**
+  - Melhora a **comunicação dos resultados**
+- Fortalece a **ciência aberta** e a **confiança pública**
+
+## Interdisciplinaridade e Inovação
+
+- Permite diálogo com:
+  - **Computação** (IA, sistemas de apoio à decisão)
+  - **Engenharia** (IoT, sensores)
+  - **Ciências sociais** (equidade, avaliação de políticas)
+- Favorece **pesquisa interdisciplinar e inovação aplicada**
+
+## Empregabilidade e Protagonismo
+
+- Domínio em Ciência de Dados é cada vez mais valorizado
+- Abre oportunidades em:
+  - **Academia, governos, ONGs, setor privado**
+  - **Liderança em análise de dados e saúde digital**
+- Garante maior **autonomia e relevância profissional**
+
+## Por que a linguagem R {.smaller}
 
 -   O R é uma linguagem de programação *funcional*
 
@@ -207,4 +248,3 @@ getwd()
 -   Facilita a importação e exportação de bases de dados
 
 -   Facilita o compartilhamento de código
-
