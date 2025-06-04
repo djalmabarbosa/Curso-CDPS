@@ -1,0 +1,210 @@
+---
+title: "Ciência de Dados para Pesquisadores da Saúde"
+subtitle: |
+  Módulo 1: Ferramentas, linguagens e possibilidades<br><br><br>  
+  *Projeto Saúde Data Science*
+format: 
+    revealjs:
+      slide-number: true
+      slide-level: 3
+      logo: logoUFR.png
+      incremental: true
+      scrollable: true
+      theme: simple
+      code-fold: false
+      self-contained: true
+      css: estilo_modulo1_slides.css
+editor: visual
+---
+
+## O que é ciência de dados (*Data Science*)
+
+<br>
+
+
+
+
+<div style="text-align: justify;">
+
+<p>
+Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).
+</p>
+
+</div>
+
+<!-- -->
+
+Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
+
+## Mineração de Dados (*Data Mining*)
+
+<br>
+
+“É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
+
+## Mineração de Dados (*Data Mining*) {.smaller}
+
+-   Mineração de dados pode ser vista como um subconjunto da ciência de dados
+
+-   Consiste em descobrir padrões e extrair padrões do dados
+
+-   Envolve o uso de algoritmos e métodos estatísticos
+
+-   Tem como principais tarefas:
+
+    1.  Descoberta de padrões (associações, correlações)
+    2.  Predição
+    3.  Classificação
+    4.  Agrupamento
+
+## Aprendizagem de Máquina (Machine Learning)
+
+-   Outro conceito que faz faz parte da ciência de dados
+
+-   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados
+
+## Por que Ciência de Dados na Pesquisa em Saúde?
+
+## A linguagem R (Pq?) {.smaller}
+
+-   O R é uma linguagem de programação *funcional*
+
+-   As funções são armazenadas em pacotes
+
+    -   Pacotes básicos + pacotes instaláveis
+    -   Mais de 16.000 pacotes (2020)
+
+-   O software e a linguagem *gratuitos*
+
+-   Pode ser utilizado em diversos sistemas operacioanais
+
+-   Possui uma comunidade de colaboração ativa
+
+-   Possui um sistema de 'controle de qualidade'
+
+-   É a linguagem preferida dos estatísticos
+
+-   É uma das linguagens de análise estatísticas mais utilizadas no mundo.
+
+-   Viabiliza o trabalho com co-piloto (IA)
+
+## Como baixar e instalar o R
+
+<https://cran.r-project.org/bin/windows/base/>
+
+![](R_download.png)
+
+![](R_mirror.png)
+
+![](R_install.png)
+
+## Console do R
+
+![Console do R](R_console.png)
+
+## Baixando e instalando o RStudio
+
+![RStudio](RStudio2.png)
+
+## Escrevendo no painel *console* do RStudio
+
+![Console do RStudio](RStudio_console.png)
+
+## Escrevendo um *Script*
+
+-   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
+
+-   É um roteiro de execução
+
+-   No RStudio, criamos um *script* clicando em *Menu*, *File, New File, R Script*.
+
+-   Para salvar: *File, Save*
+
+## 
+
+-   Em geral os *scripts* possuem os seguintes elementos:
+
+## 
+
+| Termos | Sinônimos | Descrição |
+|-------------------|-------------------|----------------------------------|
+| Base de dados | banco de dados, *dataframes*, tabelas | Estrutura de armazenamento dos dados |
+| Variável | Coluna, *column*,Cabeçalho | Onde os dados (valores, registos ou observações) são armazenados e que é utilizado durante a análise |
+| Linha | *row*, Observação, Registro, Valor | São dados de diferentes tipos (números, datas, textos, etc |
+| **Função** | Verbo, Comando, Ação | São ordens dadas ao software R, para que ele execute uma ação necessária para sua análise |
+| Argumento | Parâmetros | Criar uma personalização de características para executar um comando (cores, tamanhos, caracteres, etc) |
+| Output | Resultado | São as saídas oriundas de uma ação solicitada, ou seja, tudo que queremos que nosso código no R retorne para nós, em qualquer formato |
+
+## Funções
+
+-   O R é uma linguagem funcional
+
+-   Funções vêm associadas a parênteses '( )', onde colocamos os *argumentos da função*.
+
+-   Exemplos da matemática: $y = f(x)$, $z = f(x,y)$ ...
+
+-   A função mais simples no R é a criação de um conjunto de valores (*vetor*)
+
+    ```{r, echo=TRUE}
+
+    x <- c(1,1,2,3,5,8)
+
+    mean(x)
+    ```
+
+## 
+
+## Utilizando pacotes (*packages*)
+
+-   Podemos acessar os pacotes em *Tools, Install Packages*.
+
+-   Utilizando o comando:
+
+    ``` r
+    install.packages("tidyr")
+    ```
+
+-   Carregando o pacote instalado
+
+    ``` r
+    library(tidyr)
+    ```
+
+    -   Você sempre precisará recarregar os novos pacotes após encerrar uma seção
+
+-   Verificando os pacotes instalados
+
+    ``` r
+    sessionInfo()
+    ```
+
+-   Atualizando pacotes
+
+## Dicas de organização do *script*
+
+-   Uso do \#
+
+-   Identação
+
+-   IA pode ajudar!
+
+::: notes
+Crie um chunk de código, e no chatgpt, escreva:\
+\
+"Abra o código abaixo no canvas, para edição."
+:::
+
+## Verificando o diretório de trabalho
+
+``` r
+getwd()
+```
+
+## Utilizando a ferramenta de "Projetos"
+
+-   Organiza seus diretórios
+
+-   Facilita a importação e exportação de bases de dados
+
+-   Facilita o compartilhamento de código
+
