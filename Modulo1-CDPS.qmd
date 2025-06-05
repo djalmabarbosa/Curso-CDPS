@@ -17,6 +17,8 @@ format:
 editor: visual
 ---
 
+# 1. Introdução
+
 ## O que é ciência de dados (*Data Science*)
 
 <br>
@@ -31,7 +33,7 @@ editor: visual
 
 Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
-## Mineração de Dados (*Data Mining*)
+## Mineração de Dados <br> (*Data Mining*)
 
 <br>
 
@@ -39,13 +41,13 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
 :::
 
-## Mineração de Dados (*Data Mining*) {.smaller}
+## Mineração de Dados {.smaller}
 
 -   Consiste em descobrir padrões e extrair padrões do dados
 
 -   Teve maior desenvolvimento na década de 90, no ramo empresarial
 
-## Aprendizagem de Máquina (Machine Learning)
+## Aprendizagem de Máquina <br> (Machine Learning)
 
 - Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados  
 - Surgiu na década de 1950  
@@ -76,30 +78,29 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 --- 
 
-## Novas possibilidades de pesquisa
+## Repensar do fazer científico
 
 ---
 
-### Big Data e IA 
+### Big Data e a revolução dos dados 
 
-- Dados administrativos usuais se tornaram dados secundários de pesquisa 
+- Dados administrativos se tornaram dados secundários de pesquisa 
   - Ex: Registros eletrônicos do **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
 
 - Dados não usuais tornaram-se mais acessíveis
-  - Ex, análise de dados não estruturados, como áudios consultas, imagens de exames, etc.  
+  - Ex: prescrições médicas, áudios de consultas, imagens de exames, etc.  
 
 - Novas possibilidades de coleta de dados
-  - Ex: Análise em tempo real de dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
+  - Ex: Dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
 
 ---
 
-### Machine Learning e Data Mining
+### Machine Learning, Data Mining e Inteligência Artificial
 
-- Novas possibilidades de análise
-  - Mineração
+- Novas e melhores ferramentas de análise
   - Análise de dados não estruturados
-    - p.e, textos, imagens, vídeos
-- Ampliação da 'caixa de ferramentas' do pesquisador
+    - Ex: textos, imagens, vídeos
+  - Mineração 
   - Predição
     - Ex: predição mais correta de desfechos de saúde
   - Classificação
@@ -107,26 +108,18 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
   - Agrupamento
     - Ex:
 
---- 
-
-### Machine Learning e Data Mining
-
-- Pesquisas com maior aplicação prática (link com extensão)
-  - Análise de dados em tempo real
-  - Criação de produtos tecnológicos (produtos de dados) 
-- Fortalecimento dos pilares da universidade
-    
 ---
 
-## Maior empregabilidade e protagonismo do estudante
+### Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 
 ---
 
-- Domínio em Ciência de Dados é cada vez mais valorizado
-- Abre oportunidades em:
-  - **Academia, governos, ONGs, setor privado**
-  - **Liderança em análise de dados e saúde digital**
-- Garante maior **autonomia e relevância profissional**
+- Novas possibilidade de pesquisas com aplicações práticas 
+- Análise de dados em tempo real
+- Criação de produtos tecnológicos (produtos de dados)
+- Maior protagonismo do estudante
+- Oportunidade de formação interprofissional
+- Maior empregabilidade
 
 ---
 
@@ -140,12 +133,12 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
   - Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
   - Melhora o fluxo de orientação/mentoria
   - Fortalece a **ciência aberta** e a **confiança pública**
-  - Interdisciplinariedade (áreas aplicadas com Sistemas de Informação, Computação...)
+  - Viabiliza formação interdisciplinar
   - Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
 
 --- 
 
-## Novo mundo: a pesquisa com seu co-piloto
+## Usando seu assistente de pesquisa
 
 ---
 
@@ -208,28 +201,43 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Viabiliza o trabalho com co-piloto (IA)
 
+# 2. Usando o R!
 
-## Como baixar e instalar o R
+## Prática: Baixar e instalar o R
+
+---
 
 <https://cran.r-project.org/bin/windows/base/>
 
 ![](R_download.png)
+---
 
 ![](R_mirror.png)
+---
 
 ![](R_install.png)
 
-
-## Console do R
+### Inserindo código diretamente no console do R
 
 ![Console do R](R_console.png)
 
 
-## Baixando e instalando o RStudio
+## Prática: baixar e instar o RStudio
 
 ![RStudio](RStudio2.png)
-
 ---
+
+## Como usar o RStudio
+
+1. Escrevendo no console
+2. Utilizando seus tipos de arquivo
+- R Sript (simples e útil)
+- RMarkdown
+- Quarto
+3. Utilizando projetos
+4. Utilizando o GitHub
+5 Utilizando IA
+
 
 ## Escrevendo no painel *console* do RStudio
 
@@ -244,12 +252,43 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ---
 
-- R Sript (simples e útil)
-- RMarkdown
-- Quarto
+
 
 
 ---
+
+## Buscando ajuda (help!) {.smaller}
+
+Algumas das principais formas de buscar ajuda são:
+
+1.  O *Help* ou documentação do R
+
+    ```{r, echo=TRUE, eval = F}
+
+    help(sqrt)
+    ```
+
+2.  Google
+
+3.  Foruns
+
+    1.  *Stackoferflow* (<https://pt.stackoverflow.com>)
+
+    2.  Posit Community (<https://forum.posit.co/>)
+
+    3.  GitHub (<https://github.com/>)
+
+4.  IA
+
+    1.  Microssoft co-pilot
+
+    2.  Chat GPT
+
+    3.  Gemini
+
+
+# 2. Trabalhando com o R 
+
 
 ## Escrevendo um *Script*
 
@@ -326,6 +365,42 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 ---
 
 ## Dicas de organização do *script*
+
+---
+
+### ❌ Bagunçado
+
+```r
+library(dplyr)
+dados=data.frame(nome=c("Ana","Bruno","Carlos","Daniela"),idade=c(23,35,31,28),salario=c(2500,4200,3900,3100))
+dados_filtrados=dados%>%filter(salario>3000)
+media_idade=mean(dados_filtrados$idade)
+print(dados_filtrados)
+```
+
+### ✅  Organizado
+
+```r
+# Carrega pacotes necessários
+library(dplyr)
+
+# Cria um dataframe de exemplo
+dados <- data.frame(
+  nome = c("Ana", "Bruno", "Carlos", "Daniela"),
+  idade = c(23, 35, 31, 28),
+  salario = c(2500, 4200, 3900, 3100)
+)
+
+# Filtra pessoas com salário acima de 3000
+dados_filtrados <- dados %>%
+  filter(salario > 3000)
+
+# Calcula a média de idade das pessoas filtradas
+media_idade <- mean(dados_filtrados$idade)
+
+# Exibe os dados filtrados e a média de idade
+print(dados_filtrados)
+```
 
 ---
 
