@@ -68,35 +68,52 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 --- 
 
+## Novas possibilidades de pesquisa
+
+---
+
+### Big Data e IA 
+
 - Dados administrativos se tornaram dados secundários de pesquisa (Coeli, 2024)
-    - **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
+    - Por exemplo: **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
 - Registros eletrônicos, exames e sensores tornam os dados mais complexos e diversos
     - Dados estruturados e não estruturados
-- Tecnologias da informação permitem o processamento de dados em tempo real
-- Tencologias da informação, mineração de dados, aprendizagem de máquina e modelos de linguagem ampla (large language models – LLM) permite hoje:
-1. Análise dos dados em tempo real.
-2. "Ciência de Dados Populacionais" (*Populational Data Science) (McGrail et al, 2018)
+- "Ciência de Dados Populacionais" (*Populational Data Science*) (McGrail et al, 2018)
+- Novas possibilidade de coleta de dados
 
-## Extração de Conhecimento para Tomada de Decisão
+---
 
-- É preciso ir além da descrição de dados
-- **Modelagem estatística**, **machine learning** e **visualização** revelam padrões ocultos e antecipam riscos
-- Apoiam **decisões clínicas, políticas e de gestão** baseadas em evidências
+### Machine Learning e Data Mining
 
-## Aprimoramento da Prática Científica
+- Novas possibilidades de análise
+  - Mineração
+  - Análise de dados não estruturados
+    - p.e, textos, imagens, vídeos
+- Ampliação da 'caixa de ferramentas' do pesquisador
+  - Predição
+  - Classificação 
+  - Agrupamento
 
-- Uso de ferramentas como **R**, **Python**, **Quarto**, **Shiny**, **dashboards**:
+--- 
+
+### Machine Learning e Data Mining
+
+- Pesquisas com maior aplicação prática (link com extensão)
+  - Análise de dados em tempo real
+  - Criação de produtos tecnológicos (produtos de dados) 
+- Fortalecimento dos pilares da universidade
+    
+
+## Aprimoramento da Prática Científica {.smaller}
+
+- Uso de uma linguagem de programação:
   - Aumenta a **reprodutibilidade** e **transparência**
   - Melhora a **comunicação dos resultados**
-- Fortalece a **ciência aberta** e a **confiança pública**
-
-## Interdisciplinaridade e Inovação
-
-- Permite diálogo com:
-  - **Computação** (IA, sistemas de apoio à decisão)
-  - **Engenharia** (IoT, sensores)
-  - **Ciências sociais** (equidade, avaliação de políticas)
-- Favorece **pesquisa interdisciplinar e inovação aplicada**
+  - Melhora o diálogo entre grupos de pesquisa
+  - Melhora o fluxo de orientação/mentoria
+  - Fortalece a **ciência aberta** e a **confiança pública**
+  - Permite interação mais natural com ferramentas de IA
+  - Interdisciplinariedade (áreas aplicadas com Sistemas de Informação, Computação...)
 
 ## Empregabilidade e Protagonismo
 
@@ -106,7 +123,7 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
   - **Liderança em análise de dados e saúde digital**
 - Garante maior **autonomia e relevância profissional**
 
-## Por que a linguagem R {.smaller}
+## Por que a linguagem R 
 
 -   O R é uma linguagem de programação *funcional*
 
@@ -118,6 +135,8 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 -   O software e a linguagem *gratuitos*
 
 -   Pode ser utilizado em diversos sistemas operacioanais
+
+## Por que a linguagem R 
 
 -   Possui uma comunidade de colaboração ativa
 
@@ -153,28 +172,23 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ## Escrevendo um *Script*
 
--   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
+- Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
+- É um roteiro de execução
+- No RStudio, criamos um *script* clicando em *Menu*, *File, New File, R Script*.
+- Para salvar: *File, Save*
+- Em geral os *scripts* possuem os seguintes elementos:
 
--   É um roteiro de execução
+---
 
--   No RStudio, criamos um *script* clicando em *Menu*, *File, New File, R Script*.
+| Termo       | Sinônimos                        | Descrição                                        |
+|-------------|----------------------------------|--------------------------------------------------|
+| Base de dados | *dataframe*, Banco de dados    | Estrutura que armazena dados                     |
+| Variável    | *Column*, Coluna                 | Campo que armazena valores para análise          |
+| Linha       | *Row*, Observação, Registro      | Cada entrada ou conjunto de valores              |
+| **Função**  | Verbo, Comando                   | Ação que o R executa                             |
+| Argumento   | Parâmetro                        | Define opções dentro de uma função               |
+| Output      | Resultado                        | Retorno gerado pelo código                       |
 
--   Para salvar: *File, Save*
-
-## 
-
--   Em geral os *scripts* possuem os seguintes elementos:
-
-## 
-
-| Termos | Sinônimos | Descrição |
-|-------------------|-------------------|----------------------------------|
-| Base de dados | banco de dados, *dataframes*, tabelas | Estrutura de armazenamento dos dados |
-| Variável | Coluna, *column*,Cabeçalho | Onde os dados (valores, registos ou observações) são armazenados e que é utilizado durante a análise |
-| Linha | *row*, Observação, Registro, Valor | São dados de diferentes tipos (números, datas, textos, etc |
-| **Função** | Verbo, Comando, Ação | São ordens dadas ao software R, para que ele execute uma ação necessária para sua análise |
-| Argumento | Parâmetros | Criar uma personalização de características para executar um comando (cores, tamanhos, caracteres, etc) |
-| Output | Resultado | São as saídas oriundas de uma ação solicitada, ou seja, tudo que queremos que nosso código no R retorne para nós, em qualquer formato |
 
 ## Funções
 
