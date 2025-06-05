@@ -68,18 +68,28 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 --- 
 
+- Em geral, o uso da ciência de dados na pesquisa:
+  - amplia o alcance 
+  - aumenta o rigor
+  - eleva o impacto real
+
+
+--- 
+
 ## Novas possibilidades de pesquisa
 
 ---
 
 ### Big Data e IA 
 
-- Dados administrativos se tornaram dados secundários de pesquisa (Coeli, 2024)
-    - Por exemplo: **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
-- Registros eletrônicos, exames e sensores tornam os dados mais complexos e diversos
-    - Dados estruturados e não estruturados
-- "Ciência de Dados Populacionais" (*Populational Data Science*) (McGrail et al, 2018)
-- Novas possibilidade de coleta de dados
+- Dados administrativos usuais se tornaram dados secundários de pesquisa 
+  - Ex: Registros eletrônicos do **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
+
+- Dados não usuais tornaram-se mais acessíveis
+  - Ex, análise de dados não estruturados, como áudios consultas, imagens de exames, etc.  
+
+- Novas possibilidades de coleta de dados
+  - Ex: Análise em tempo real de dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
 
 ---
 
@@ -91,8 +101,11 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     - p.e, textos, imagens, vídeos
 - Ampliação da 'caixa de ferramentas' do pesquisador
   - Predição
-  - Classificação 
+    - Ex: predição mais correta de desfechos de saúde
+  - Classificação
+    - Ex: 
   - Agrupamento
+    - Ex:
 
 --- 
 
@@ -103,19 +116,11 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
   - Criação de produtos tecnológicos (produtos de dados) 
 - Fortalecimento dos pilares da universidade
     
+---
 
-## Aprimoramento da Prática Científica {.smaller}
+## Maior empregabilidade e protagonismo do estudante
 
-- Uso de uma linguagem de programação:
-  - Aumenta a **reprodutibilidade** e **transparência**
-  - Melhora a **comunicação dos resultados**
-  - Melhora o diálogo entre grupos de pesquisa
-  - Melhora o fluxo de orientação/mentoria
-  - Fortalece a **ciência aberta** e a **confiança pública**
-  - Permite interação mais natural com ferramentas de IA
-  - Interdisciplinariedade (áreas aplicadas com Sistemas de Informação, Computação...)
-
-## Empregabilidade e Protagonismo
+---
 
 - Domínio em Ciência de Dados é cada vez mais valorizado
 - Abre oportunidades em:
@@ -123,7 +128,62 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
   - **Liderança em análise de dados e saúde digital**
 - Garante maior **autonomia e relevância profissional**
 
-## Por que a linguagem R 
+---
+
+## Mudanças no fazer científico
+
+---
+
+- Uso de uma linguagem de programação:
+  - Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
+  - Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
+  - Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
+  - Melhora o fluxo de orientação/mentoria
+  - Fortalece a **ciência aberta** e a **confiança pública**
+  - Interdisciplinariedade (áreas aplicadas com Sistemas de Informação, Computação...)
+  - Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
+
+--- 
+
+## Novo mundo: a pesquisa com seu co-piloto
+
+---
+
+- Aceleração da codificação
+  - Geração rápida de funções e scripts com base em linguagem natural
+  - Sugestões otimizadas de código para evitar erros
+
+- Melhora na organização do fluxo de análise de dados
+  - Visualizações exploratórias automatizadas
+  - Criação de pipelines de pré-processamento
+
+---
+
+- Auxilia na documentação e reprodutibilidade
+  - Comentários automáticos e claros no código
+  - Templates para RMarkdown, Quarto, Jupyter etc.
+
+- Auxílio em análises estatísticas e modelagem
+  - Sugestões e explicações de testes estatísticos
+  - Comparação de modelos
+  - Auxilia na construção de simulações
+
+---
+
+- Auxilia na divulgação dos resultados
+  - Criação de templates para formatação de monografias, dissertações e teses
+  - Eloboração de produtos de dados
+
+- Pode acelerar o aprendizado
+  - Explicações sob demanda de sintaxe e conceitos estatísticos
+  - Referência a pacotes, funções e boas práticas
+  - Respostas a perguntas avançadas de modelagem e dados
+
+---
+
+## Por que a linguagem/software R 
+
+---
 
 -   O R é uma linguagem de programação *funcional*
 
@@ -136,7 +196,7 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Pode ser utilizado em diversos sistemas operacioanais
 
-## Por que a linguagem R 
+--- 
 
 -   Possui uma comunidade de colaboração ativa
 
@@ -148,6 +208,7 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Viabiliza o trabalho com co-piloto (IA)
 
+
 ## Como baixar e instalar o R
 
 <https://cran.r-project.org/bin/windows/base/>
@@ -158,19 +219,41 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ![](R_install.png)
 
+
 ## Console do R
 
 ![Console do R](R_console.png)
+
 
 ## Baixando e instalando o RStudio
 
 ![RStudio](RStudio2.png)
 
+---
+
 ## Escrevendo no painel *console* do RStudio
+
+---
 
 ![Console do RStudio](RStudio_console.png)
 
+
+--- 
+
+## Tipos de arquivo
+
+---
+
+- R Sript (simples e útil)
+- RMarkdown
+- Quarto
+
+
+---
+
 ## Escrevendo um *Script*
+
+---
 
 - Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
 - É um roteiro de execução
@@ -189,8 +272,11 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 | Argumento   | Parâmetro                        | Define opções dentro de uma função               |
 | Output      | Resultado                        | Retorno gerado pelo código                       |
 
+---
 
 ## Funções
+
+---
 
 -   O R é uma linguagem funcional
 
@@ -207,9 +293,11 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     mean(x)
     ```
 
-## 
+---
 
 ## Utilizando pacotes (*packages*)
+
+---
 
 -   Podemos acessar os pacotes em *Tools, Install Packages*.
 
@@ -235,9 +323,13 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Atualizando pacotes
 
+---
+
 ## Dicas de organização do *script*
 
--   Uso do \#
+---
+
+-   Uso do \# para comentários dentro do código
 
 -   Identação
 
@@ -249,13 +341,13 @@ Crie um chunk de código, e no chatgpt, escreva:\
 "Abra o código abaixo no canvas, para edição."
 :::
 
-## Verificando o diretório de trabalho
+### Verificando o diretório de trabalho
 
 ``` r
 getwd()
 ```
 
-## Utilizando a ferramenta de "Projetos"
+### Utilizando a ferramenta de "Projetos"
 
 -   Organiza seus diretórios
 
