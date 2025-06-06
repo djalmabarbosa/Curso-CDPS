@@ -38,7 +38,7 @@ nav#TOC {
 }
 
 /* Para fixar a imagem no canto inferior esquerdo, com espaçamento para cima */
-.logo-inferior-esquerda {
+.logo-inferior-esquerda1 {
   position: fixed;
   left: 500px;         /* distância da borda esquerda */
   bottom: 220px;       /* distância da borda inferior → ajuste aqui para “subir” */
@@ -46,3 +46,11 @@ nav#TOC {
   z-index: 9999;      /* garante que fique acima de outros elementos */
 }
 
+/* Para fixar a imagem no canto inferior esquerdo, com espaçamento para cima */
+.logo-inferior-esquerda2 {
+  position: fixed;
+  left: 420px;         /* distância da borda esquerda */
+  bottom: 55px;       /* distância da borda inferior → ajuste aqui para “subir” */
+  width: 120px;        /* ajuste opcional do tamanho da imagem */
+  z-index: 9999;      /* garante que fique acima de outros elementos */
+}

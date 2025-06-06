@@ -13,59 +13,202 @@ format:
       theme: simple
       code-fold: false
       self-contained: true
+      number-sections: false
       css: estilo_modulo1_slides.css
 editor: visual
 ---
+
+# 1. Sobre o Curso e Projeto
+
+## 🎯 Objetivo
+
+<br><br> Introduzir estudantes de iniciação científica, pós-graduação e pesquisadores ao uso da ciência de dados na pesquisa em saúde
+
+## Módulos
+
+-   Módulo 1: Ferramentas, linguagens e possibilidades (12h)\
+-   Módulo 2: Manipulação de dados, visualização e bioestatística com o R (12h) (Set)
+-   Módulo 3: Machine learning na saúde (12h) (Nov)
+-   Módulo 4: Projeto de aplicação (4h)\
+
+### 💻 Conteúdo Programático do Módulo 1
+
+1.  Introdução à Ciência de Dados (Teoria)
+
+2.  Introdução ao uso do R <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" width="30"/> e RStudio <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" alt="RStudio" width="30"/> (Prática)
+
+3.  Fundamentos da linguagem R (Teoria)
+
+4.  Controle de versões Git/GitHub <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" width="30"/> (Prática)
+
+5.  Criação de apresentações, relatórios, web-sites, artigos, teses, dashboards e aplicativos web (Prática)
+
+## Organização
+
+<br> Equipe do Projeto *Saúde Data Science*\
+Projeto de Extensão UFR Nº 696/2025
+
+------------------------------------------------------------------------
+
+<img src="EquipeSDS.png" alt="Equipe Saúde Data Science" class="img-centro"/>
+
+# 2. Introdução
 
 ## O que é ciência de dados (*Data Science*)
 
 <br>
 
-
-
-
-<div style="text-align: justify;">
-
-<p>
-Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).
-</p>
-
-</div>
+::: {style="text-align: justify;"}
+<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).</p>
+:::
 
 <!-- -->
 
+<br>
+
 Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
-## Mineração de Dados (*Data Mining*)
+## Mineração de Dados <br> (*Data Mining*)
 
 <br>
 
+::: {style="text-align: justify;"}
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
+:::
 
-## Mineração de Dados (*Data Mining*) {.smaller}
-
--   Mineração de dados pode ser vista como um subconjunto da ciência de dados
+## Mineração de Dados {.smaller}
 
 -   Consiste em descobrir padrões e extrair padrões do dados
 
--   Envolve o uso de algoritmos e métodos estatísticos
+-   Teve maior desenvolvimento na década de 90, no ramo empresarial
 
--   Tem como principais tarefas:
+## Aprendizagem de Máquina <br> (Machine Learning)
 
-    1.  Descoberta de padrões (associações, correlações)
-    2.  Predição
-    3.  Classificação
-    4.  Agrupamento
+-   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados\
 
-## Aprendizagem de Máquina (Machine Learning)
+-   Surgiu na década de 1950\
 
--   Outro conceito que faz faz parte da ciência de dados
+-   
 
--   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados
+    > **Arthur Samuel (1959)** definiu *machine learning* como:\
+    > "o campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados."
+
+------------------------------------------------------------------------
+
+| Aspecto | Mineração de Dados | Aprendizagem de Máquina |
+|------------------|---------------------------|---------------------------|
+| **Objetivo principal** | Extrair padrões úteis e conhecimento de dados | Fazer previsões ou tomar decisões com base em dados |
+| **Enfoque** | Exploração e descoberta de padrões em grandes conjuntos de dados | Generalização para novos dados a partir de exemplos passados |
+| **Tarefa típica** | Agrupamento, associação, descoberta de regras | Classificação, regressão, clustering supervisionado |
+| **Motivação original** | Análise de grandes volumes de dados corporativos | Construção de algoritmos que aprendem automaticamente |
+| **Uso comum em** | Negócios, marketing, banco de dados | Inteligência artificial, robótica, sistemas autônomos |
+| **Base técnica** | Estatística + banco de dados + ML | Estatística + algoritmos + computação |
 
 ## Por que Ciência de Dados na Pesquisa em Saúde?
 
-## A linguagem R (Pq?) {.smaller}
+------------------------------------------------------------------------
+
+-   Em geral, o uso da ciência de dados na pesquisa:
+    -   amplia o alcance
+    -   aumenta o rigor
+    -   eleva o impacto real
+
+------------------------------------------------------------------------
+
+## Repensar do fazer científico
+
+------------------------------------------------------------------------
+
+### Big Data e a revolução dos dados
+
+-   Dados administrativos se tornaram dados secundários de pesquisa
+    -   Ex: Registros eletrônicos do **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
+-   Dados não usuais tornaram-se mais acessíveis
+    -   Ex: prescrições médicas, áudios de consultas, imagens de exames, etc.
+-   Novas possibilidades de coleta de dados
+    -   Ex: Dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
+
+------------------------------------------------------------------------
+
+### Machine Learning, Data Mining e Inteligência Artificial
+
+-   Novas e melhores ferramentas de análise
+    -   Análise de dados não estruturados
+        -   Ex: textos, imagens, vídeos
+    -   Mineração
+    -   Predição
+        -   Ex: predição mais correta de desfechos de saúde
+    -   Classificação
+        -   Ex:
+    -   Agrupamento
+        -   Ex:
+
+------------------------------------------------------------------------
+
+### Fortalecimento da relação entre Pesquisa, Extensão e Inovação
+
+------------------------------------------------------------------------
+
+-   Novas possibilidade de pesquisas com aplicações práticas
+-   Análise de dados em tempo real
+-   Criação de produtos tecnológicos (produtos de dados)
+-   Maior protagonismo do estudante
+-   Oportunidade de formação interprofissional
+-   Maior empregabilidade
+
+------------------------------------------------------------------------
+
+## Mudanças no fazer científico
+
+------------------------------------------------------------------------
+
+-   Uso de uma linguagem de programação:
+    -   Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
+    -   Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
+    -   Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
+    -   Melhora o fluxo de orientação/mentoria
+    -   Fortalece a **ciência aberta** e a **confiança pública**
+    -   Viabiliza formação interdisciplinar
+    -   Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
+
+------------------------------------------------------------------------
+
+## Usando seu assistente de pesquisa
+
+------------------------------------------------------------------------
+
+-   Aceleração da codificação
+    -   Geração rápida de funções e scripts com base em linguagem natural
+    -   Sugestões otimizadas de código para evitar erros
+-   Melhora na organização do fluxo de análise de dados
+    -   Visualizações exploratórias automatizadas
+    -   Criação de pipelines de pré-processamento
+
+------------------------------------------------------------------------
+
+-   Auxilia na documentação e reprodutibilidade
+    -   Comentários automáticos e claros no código
+    -   Templates para RMarkdown, Quarto, Jupyter etc.
+-   Auxílio em análises estatísticas e modelagem
+    -   Sugestões e explicações de testes estatísticos
+    -   Comparação de modelos
+    -   Auxilia na construção de simulações
+
+------------------------------------------------------------------------
+
+-   Auxilia na divulgação dos resultados
+    -   Criação de templates para formatação de monografias, dissertações e teses
+    -   Eloboração de produtos de dados
+-   Pode acelerar o aprendizado
+    -   Explicações sob demanda de sintaxe e conceitos estatísticos
+    -   Referência a pacotes, funções e boas práticas
+    -   Respostas a perguntas avançadas de modelagem e dados
+
+------------------------------------------------------------------------
+
+## Por que a linguagem/software R
+
+------------------------------------------------------------------------
 
 -   O R é uma linguagem de programação *funcional*
 
@@ -78,6 +221,8 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Pode ser utilizado em diversos sistemas operacioanais
 
+------------------------------------------------------------------------
+
 -   Possui uma comunidade de colaboração ativa
 
 -   Possui um sistema de 'controle de qualidade'
@@ -88,77 +233,117 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Viabiliza o trabalho com co-piloto (IA)
 
-## Como baixar e instalar o R
+# 3. Usando o R!
+
+## Prática: Baixar e instalar o R
+
+------------------------------------------------------------------------
 
 <https://cran.r-project.org/bin/windows/base/>
 
-![](R_download.png)
+## ![](R_download.png)
 
-![](R_mirror.png)
+## ![](R_mirror.png)
 
 ![](R_install.png)
 
-## Console do R
+### Inserindo código diretamente no console do R
+
+---
 
 ![Console do R](R_console.png)
 
-## Baixando e instalando o RStudio
+### Prática: baixar e instar o RStudio
 
-![RStudio](RStudio2.png)
+### ![RStudio](RStudio2.png)
+
+### Como usar o RStudio
+
+1.  Escrevendo no console
+2.  Utilizando seus tipos de arquivo
+    -   R Sript (simples e útil)
+    -   RMarkdown
+    -   Quarto\
+3.  Utilizando projetos
+4.  Integrando o GitHub
+5.  Com um co-piloto (IA)
 
 ## Escrevendo no painel *console* do RStudio
 
+------------------------------------------------------------------------
+
 ![Console do RStudio](RStudio_console.png)
 
-## Escrevendo um *Script*
+## Escrevendo um *Script* <br> [*Prática*]{.azul}
+
+------------------------------------------------------------------------
+
+::: {.callout-note style="background-color:#dceeff;"}
+
+Escreva no seu R Script: 2+2
+
+Coloque o cursor do mouse na linha com o código e clique em 'Run'.
+
+:::
+
+------------------------------------------------------------------------
 
 -   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
-
 -   É um roteiro de execução
-
 -   No RStudio, criamos um *script* clicando em *Menu*, *File, New File, R Script*.
-
 -   Para salvar: *File, Save*
-
-## 
-
 -   Em geral os *scripts* possuem os seguintes elementos:
 
-## 
+------------------------------------------------------------------------
 
-| Termos | Sinônimos | Descrição |
-|-------------------|-------------------|----------------------------------|
-| Base de dados | banco de dados, *dataframes*, tabelas | Estrutura de armazenamento dos dados |
-| Variável | Coluna, *column*,Cabeçalho | Onde os dados (valores, registos ou observações) são armazenados e que é utilizado durante a análise |
-| Linha | *row*, Observação, Registro, Valor | São dados de diferentes tipos (números, datas, textos, etc |
-| **Função** | Verbo, Comando, Ação | São ordens dadas ao software R, para que ele execute uma ação necessária para sua análise |
-| Argumento | Parâmetros | Criar uma personalização de características para executar um comando (cores, tamanhos, caracteres, etc) |
-| Output | Resultado | São as saídas oriundas de uma ação solicitada, ou seja, tudo que queremos que nosso código no R retorne para nós, em qualquer formato |
+| Termo | Sinônimos | Descrição |
+|------------------|----------------------|--------------------------------|
+| Base de dados | *dataframe*, Banco de dados | Estrutura que armazena dados |
+| Variável | *Column*, Coluna | Campo que armazena valores para análise |
+| Linha | *Row*, Observação, Registro | Cada entrada ou conjunto de valores |
+| **Função** | Verbo, Comando | Ação que o R executa |
+| Argumento | Parâmetro | Define opções dentro de uma função |
+| Output | Resultado | Retorno gerado pelo código |
 
-## Funções
+------------------------------------------------------------------------
 
+### Funções
+
+------------------------------------------------------------------------
+
+::: {.callout-note style="background-color:#dceeff;"}
 -   O R é uma linguagem funcional
-
--   Funções vêm associadas a parênteses '( )', onde colocamos os *argumentos da função*.
-
--   Exemplos da matemática: $y = f(x)$, $z = f(x,y)$ ...
-
+-   Funções vêm associadas a parênteses `( )`, onde colocamos os *argumentos da função*.
+-   Exemplos da matemática: $y = f(x)$, $z = f(x, y)$ ... [Latex]{.verde}
 -   A função mais simples no R é a criação de um conjunto de valores (*vetor*)
+:::
 
-    ```{r, echo=TRUE}
+------------------------------------------------------------------------
 
-    x <- c(1,1,2,3,5,8)
+### [*Prática*]{.azul}
 
-    mean(x)
-    ```
+``` r
+# Soma 2 com 2
+2+2
 
-## 
+# Cria o vetor x
+x <- c(1,1,2,3,5,8)
 
-## Utilizando pacotes (*packages*)
+mean(x) # Calcula a media de x
 
--   Podemos acessar os pacotes em *Tools, Install Packages*.
+# Verificando o diretório de trabalho
+getwd()
+```
 
--   Utilizando o comando:
+------------------------------------------------------------------------
+
+### Utilizando pacotes (*packages*) <br> [*Prática*]{.azul}
+
+------------------------------------------------------------------------
+
+-   Instalando com 'click' *Tools, Install Packages*.
+
+-   Com comando:
 
     ``` r
     install.packages("tidyr")
@@ -178,29 +363,85 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     sessionInfo()
     ```
 
--   Atualizando pacotes
+-   Atualizando pacotes 
 
-## Dicas de organização do *script*
+---
 
--   Uso do \#
+#### Tidyverse
 
--   Identação
+--- 
 
--   IA pode ajudar!
+::: panel-tabset
+#### Filosofia
 
-::: notes
-Crie um chunk de código, e no chatgpt, escreva:\
-\
-"Abra o código abaixo no canvas, para edição."
-:::
-
-## Verificando o diretório de trabalho
-
-``` r
-getwd()
+```{r Tidyverse}
+knitr::include_graphics("tidyverse.png")
 ```
 
-## Utilizando a ferramenta de "Projetos"
+#### Pacotes do Tidyverse
+
+```{r Pacotes do Tidyverse}
+knitr::include_graphics("pacotes_tidyverse.png")
+```
+:::
+
+---
+
+O *tidyverse* é um metapacote que segue uma filosofia de design, gramática e estruturas de dados em comum para que diversos pacotes úteis para a ciência de dados possam ser utilizados em cojunto
+
+---
+
+#### [*Prática*]{.azul}
+
+Vamos instalar e carregar os pacotes do *tidyverse*
+
+``` r
+if(!require(tidyverse)) install.packages("tidyverse") 
+
+library(tidyverse)  
+```
+
+------------------------------------------------------------------------
+
+### Dicas de organização do *script*
+
+------------------------------------------------------------------------
+
+### ❌ Bagunçado
+
+``` r
+library(dplyr)
+dados=data.frame(nome=c("Ana","Bruno","Carlos","Daniela"),idade=c(23,35,31,28),salario=c(2500,4200,3900,3100))
+dados_filtrados=dados%>%filter(salario>3000)
+media_idade=mean(dados_filtrados$idade)
+print(dados_filtrados)
+```
+
+### ✅ Organizado
+
+``` r
+# Carrega pacotes necessários
+library(dplyr)
+
+# Cria um dataframe de exemplo
+dados <- data.frame(
+  nome = c("Ana", "Bruno", "Carlos", "Daniela"),
+  idade = c(23, 35, 31, 28),
+  salario = c(2500, 4200, 3900, 3100)
+)
+
+# Filtra pessoas com salário acima de 3000
+dados_filtrados <- dados %>%
+  filter(salario > 3000)
+
+# Calcula a média de idade das pessoas filtradas
+media_idade <- mean(dados_filtrados$idade)
+
+# Exibe os dados filtrados e a média de idade
+print(dados_filtrados)
+```
+
+## Utilizando a ferramenta "Projetos"
 
 -   Organiza seus diretórios
 
@@ -208,3 +449,103 @@ getwd()
 
 -   Facilita o compartilhamento de código
 
+### [*Prática*]{.azul}
+
+::: {.callout style="border-left: 4px solid #198754; background-color: #e6f4ea;"}
+1.  No canto superior direito, clique em:
+
+    -   **New Project**
+    -   **New Directory**
+    -   **New Project** novamente
+
+2.  Escolha o nome que desejar para o projeto e o local onde será salvo.
+
+3.  Clique em **Create Project** ✅
+:::
+
+## Utilizando o Git/GitHub
+
+### Git 
+
+- **Git** é um sistema de **controle de versões distribuído** criado por Linus Torvalds em 2005
+- Permite o *versionamento do código*
+  - Registro histórico de alterações em arquivos de código e projetos
+  - Facilita o trabalho colaborativo, a recuperação de versões anteriores e o rastreamento de quem fez o quê
+- Usado localmente no seu computador, e também com serviços como o GitHub
+
+### GitHub 
+
+- Plataforma de hospedagem de código e projetos que usam Git
+- Não é exclusivo da linguagem R
+- Facilita a **colaboração**, **rastreamento de mudanças** e **distribuição de projetos**
+- Permite maior **Transparência científica** e **reprodutibilidade**
+- Permite **publicação de repositórios**: sites, documentos e dashboards
+
+### Fluxo básico de uso do GitHub 🚦
+
+1. Criar conta no [github.com](https://github.com)
+2. Criar novo repositório
+3. Fazer *clone* no RStudio ou usar GitHub Desktop
+4. Trabalhar localmente: editar scripts, salvar, testar
+5. Realizar *commit* e *push* das alterações
+
+---
+
+::: {.callout-tip}
+
+Você também pode:
+
+1. Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
+2. Fazer um 'fork' (permite sugerir mudanças)
+
+:::
+
+
+### Exemplo de estrutura de repositório 
+
+```text
+projeto-chikungunya/
+├── dados/
+│   └── base_limpa.xlsx
+├── scripts/
+│   └── analise_chikungunya.R
+├── output/
+│   └── grafico_incidentes.png
+├── README.md
+└── LICENSE
+```
+
+::: notes
+Crie um chunk de código, e no chatgpt, escreva:\
+\
+"Abra o código abaixo no canvas, para edição."
+:::
+
+## Buscando ajuda (help!) {.smaller}
+
+Algumas das principais formas de buscar ajuda são:
+
+1.  O *Help* ou documentação do R
+
+    ```{r, echo=TRUE, eval = F}
+
+    help(sqrt)
+    ```
+
+2.  Google
+
+3.  Foruns
+
+    1.  *Stackoferflow* (<https://pt.stackoverflow.com>)
+
+    2.  Posit Community (<https://forum.posit.co/>)
+
+    3.  GitHub (<https://github.com/>)
+
+4.  IA
+
+    1.  Microssoft co-pilot
+
+    2.  Chat GPT
+
+    3.  Gemini
