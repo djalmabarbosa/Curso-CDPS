@@ -18,7 +18,7 @@ Ao longo do ano de 2025 ocorrerão outros dois módulos:\
 - Módulo 3: Machine learning na saúde (12h)\
 - Módulo 4: Projeto de aplicação (4h)\
 Os três primeiros módulos terão um certificado à parte (12h).\
-Quem concluir os três módulos receberá um certificado completo (40h). ---
+Quem concluir os três módulos receberá um certificado completo (40h). 
 
 ### 📅 Informações
 
@@ -31,6 +31,8 @@ Quem concluir os três módulos receberá um certificado completo (40h). ---
 -   **Investimento:** Gratuito (Ação do Projeto de Extensão Saúde Data Science - Nº 696/2025)\
 
 -   **Público-alvo:** Estudantes de pós-graduação, servidores, profissionais e pesquisadores da área da saúde.
+
+-  **Vagas:** Público Interno (25); Público Externo (10) (por ordem de inscrição)
 
 ### 💻 Conteúdo Programático
 
@@ -46,9 +48,8 @@ Quem concluir os três módulos receberá um certificado completo (40h). ---
 
 #### 📥 Inscrições pelo link: https://forms.gle/AUboBDTY617r69ge9
 
-#### 📧 **Mais informações:**  *djalma.barbosa\@ufr.edu.br*
+#### 📧 **Mais informações:** Prof. Djalma Barbosa (Facilitador)  *djalma.barbosa@ufr.edu.br*
 
-#### Facilitador: Prof. Djalma Barbosa (UFR)
 
 ::: text-center
 ![](logoUFR.png){.logo-inferior-esquerda}
