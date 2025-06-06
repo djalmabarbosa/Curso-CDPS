@@ -82,6 +82,15 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
 :::
 
+## Histórico do *Data Mining*
+
+- **Década de 1960-70**: Surgimento dos primeiros bancos de dados e linguagens de consulta (ex: SQL).
+- **Década de 1980**: Avanços em armazenamento e recuperação de dados; algoritmos de aprendizado simbólico.
+- **Década de 1990**: Popularização do termo *data mining*; surgimento de ferramentas comerciais (ex: IBM Intelligent Miner, SAS Enterprise Miner).
+- **2000s**: Integração com *big data*, algoritmos escaláveis, mineração de dados em tempo real.
+- **2010s em diante**: Consolidação como parte da ciência de dados; uso intensivo de aprendizado de máquina e redes neurais.
+
+
 ## Aprendizagem de Máquina <br> (Machine Learning)
 
 -   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados\
