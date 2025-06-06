@@ -365,6 +365,42 @@ getwd()
 
 -   Atualizando pacotes 
 
+---
+
+#### Tidyverse
+
+--- 
+
+::: panel-tabset
+#### Filosofia
+
+```{r Tidyverse}
+knitr::include_graphics("tidyverse.png")
+```
+
+#### Pacotes do Tidyverse
+
+```{r Pacotes do Tidyverse}
+knitr::include_graphics("pacotes_tidyverse.png")
+```
+:::
+
+---
+
+O *tidyverse* é um metapacote que segue uma filosofia de design, gramática e estruturas de dados em comum para que diversos pacotes úteis para a ciência de dados possam ser utilizados em cojunto
+
+---
+
+#### [*Prática*]{.azul}
+
+Vamos instalar e carregar os pacotes do *tidyverse*
+
+``` r
+if(!require(tidyverse)) install.packages("tidyverse") 
+
+library(tidyverse)  
+```
+
 ------------------------------------------------------------------------
 
 ### Dicas de organização do *script*
@@ -427,11 +463,57 @@ print(dados_filtrados)
 3.  Clique em **Create Project** ✅
 :::
 
+## Utilizando o Git/GitHub
+
+### Git 
+
+- **Git** é um sistema de **controle de versões distribuído** criado por Linus Torvalds em 2005
+- Permite o *versionamento do código*
+  - Registro histórico de alterações em arquivos de código e projetos
+  - Facilita o trabalho colaborativo, a recuperação de versões anteriores e o rastreamento de quem fez o quê
+- Usado localmente no seu computador, e também com serviços como o GitHub
+
+### GitHub 
+
+- Plataforma de hospedagem de código e projetos que usam Git
+- Não é exclusivo da linguagem R
+- Facilita a **colaboração**, **rastreamento de mudanças** e **distribuição de projetos**
+- Permite maior **Transparência científica** e **reprodutibilidade**
+- Permite **publicação de repositórios**: sites, documentos e dashboards
+
+### Fluxo básico de uso do GitHub 🚦
+
+1. Criar conta no [github.com](https://github.com)
+2. Criar novo repositório
+3. Fazer *clone* no RStudio ou usar GitHub Desktop
+4. Trabalhar localmente: editar scripts, salvar, testar
+5. Realizar *commit* e *push* das alterações
+
+---
+
+::: {.callout-tip}
+
+Você também pode:
+
+1. Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
+2. Fazer um 'fork' (permite sugerir mudanças)
+
+:::
 
 
+### Exemplo de estrutura de repositório 
 
-
-
+```text
+projeto-chikungunya/
+├── dados/
+│   └── base_limpa.xlsx
+├── scripts/
+│   └── analise_chikungunya.R
+├── output/
+│   └── grafico_incidentes.png
+├── README.md
+└── LICENSE
+```
 
 ::: notes
 Crie um chunk de código, e no chatgpt, escreva:\
