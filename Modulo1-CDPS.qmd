@@ -18,7 +18,7 @@ format:
 editor: visual
 ---
 
-# 1. Sobre o Curso e Projeto
+# Sobre o Curso
 
 ## 🎯 Objetivo
 
@@ -43,12 +43,18 @@ editor: visual
 
 5.  Criação de apresentações, relatórios, web-sites, artigos, teses, dashboards e aplicativos web (Prática)
 
-## Organização
+# Projeto Saúde Data Science
 
-<br> Equipe do Projeto *Saúde Data Science*\
-Projeto de Extensão UFR Nº 696/2025
+## Objetivo
+
+<br>
+
+Criar oportunidades de interação dialógica com a sociedade por meio da elaboração de produtos de dados associados à ciência de dados.
 
 ------------------------------------------------------------------------
+
+Equipe do Projeto *Saúde Data Science*\
+Projeto de Extensão UFR Nº 696/2025
 
 <img src="EquipeSDS.png" alt="Equipe Saúde Data Science" class="img-centro"/>
 
@@ -59,7 +65,7 @@ Projeto de Extensão UFR Nº 696/2025
 <br>
 
 ::: {style="text-align: justify;"}
-<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados. Dhar, V. (2013).</p>
+<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados (Dhar, 2013).</p>
 :::
 
 <!-- -->
@@ -72,15 +78,9 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 <br>
 
-::: {style="text-align: justify;"}
+::: {style="text-align: justify; font-style: italic; border-left: 4px solid #ccc; padding-left: 3em; margin-top: 1em;"}
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
 :::
-
-## Mineração de Dados {.smaller}
-
--   Consiste em descobrir padrões e extrair padrões do dados
-
--   Teve maior desenvolvimento na década de 90, no ramo empresarial
 
 ## Aprendizagem de Máquina <br> (Machine Learning)
 
@@ -108,6 +108,27 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ------------------------------------------------------------------------
 
+::: {style="text-align: justify;"}
+As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
+:::
+
+------------------------------------------------------------------------
+
+![](artigos.png){fig-align="center"}
+
+---
+
+### Uso da ciência de dados na pesquisa em saúde
+<br><br>
+
+| Termos de busca (google scholar)                    | Resultados  |
+|-----------------------------------|-------------------------|
+| "machine learning" e "health"   | 4.800.000               |
+| "data science" e "health"       | 7.270.000               |
+| "data mining" e "health"        | 5.440.000               |
+
+------------------------------------------------------------------------
+
 -   Em geral, o uso da ciência de dados na pesquisa:
     -   amplia o alcance
     -   aumenta o rigor
@@ -115,7 +136,18 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ------------------------------------------------------------------------
 
-## Repensar do fazer científico
+## Ciência de Dados na Pesquisa: repensar o fazer científico
+
+------------------------------------------------------------------------
+
+1.  Implicações da era do Big Data
+2.  Implicações dos desenvolvimentos em ML, DM e IA
+3.  Implicações do uso de linguagem de programação
+4.  Efeitos potenciais na pesquisa universitária
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Ciência de Dados na Pesquisa: repensar o fazer científico
+:::
 
 ------------------------------------------------------------------------
 
@@ -145,35 +177,19 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ------------------------------------------------------------------------
 
-### Fortalecimento da relação entre Pesquisa, Extensão e Inovação
+### Uso de uma linguagem de programação
+
+-   Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
+-   Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
+-   Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
+-   Melhora o fluxo de orientação/mentoria
+-   Fortalece a **ciência aberta** e a **confiança pública**
+-   Viabiliza formação interdisciplinar
+-   Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
 
 ------------------------------------------------------------------------
 
--   Novas possibilidade de pesquisas com aplicações práticas
--   Análise de dados em tempo real
--   Criação de produtos tecnológicos (produtos de dados)
--   Maior protagonismo do estudante
--   Oportunidade de formação interprofissional
--   Maior empregabilidade
-
-------------------------------------------------------------------------
-
-## Mudanças no fazer científico
-
-------------------------------------------------------------------------
-
--   Uso de uma linguagem de programação:
-    -   Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
-    -   Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
-    -   Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
-    -   Melhora o fluxo de orientação/mentoria
-    -   Fortalece a **ciência aberta** e a **confiança pública**
-    -   Viabiliza formação interdisciplinar
-    -   Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
-
-------------------------------------------------------------------------
-
-## Usando seu assistente de pesquisa
+## Uso da IA como assistente de pesquisa
 
 ------------------------------------------------------------------------
 
@@ -184,6 +200,10 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     -   Visualizações exploratórias automatizadas
     -   Criação de pipelines de pré-processamento
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Uso da IA como assistente de pesquisa
+:::
+
 ------------------------------------------------------------------------
 
 -   Auxilia na documentação e reprodutibilidade
@@ -193,6 +213,11 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     -   Sugestões e explicações de testes estatísticos
     -   Comparação de modelos
     -   Auxilia na construção de simulações
+    -   Ajuda a encontrar erros no código (debug)
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Uso da IA como assistente de pesquisa
+:::
 
 ------------------------------------------------------------------------
 
@@ -203,6 +228,27 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
     -   Explicações sob demanda de sintaxe e conceitos estatísticos
     -   Referência a pacotes, funções e boas práticas
     -   Respostas a perguntas avançadas de modelagem e dados
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Uso da IA como assistente de pesquisa
+:::
+
+------------------------------------------------------------------------
+
+## Fortalecimento da relação entre Pesquisa, Extensão e Inovação
+
+------------------------------------------------------------------------
+
+-   Novas possibilidade de pesquisas com aplicações práticas
+-   Análise de dados em tempo real
+-   Criação de produtos tecnológicos (produtos de dados)
+-   Maior protagonismo do estudante
+-   Oportunidade de formação interprofissional
+-   Maior empregabilidade
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Fortalecimento da relação entre Pesquisa, Extensão e Inovação
+:::
 
 ------------------------------------------------------------------------
 
@@ -221,6 +267,10 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 -   Pode ser utilizado em diversos sistemas operacioanais
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Por que a linguagem/software R
+:::
+
 ------------------------------------------------------------------------
 
 -   Possui uma comunidade de colaboração ativa
@@ -232,6 +282,10 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 -   É uma das linguagens de análise estatísticas mais utilizadas no mundo.
 
 -   Viabiliza o trabalho com co-piloto (IA)
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Por que a linguagem/software R
+:::
 
 # 3. Usando o R!
 
@@ -304,101 +358,6 @@ Coloque o cursor do mouse na linha com o código e clique em 'Run'.
 | Output | Resultado | Retorno gerado pelo código |
 
 ------------------------------------------------------------------------
-
-## Usando o R Markdown <br> [*Prática*]{.azul}
-
-------------------------------------------------------------------------
-
-::: {.callout-note style="background-color:#dceeff;"}
-Crie um novo arquivo clicando em: **File > New File > R Markdown...**
-
-Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
-:::
-
-------------------------------------------------------------------------
-
--   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
--   Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
--   Usa o formato `.Rmd`.
--   Para compilar, clique em `Knit`.
-
-------------------------------------------------------------------------
-
-## Estrutura básica de um arquivo R Markdown
-
-```text
----
-title: "Meu primeiro R Markdown"
-author: "Seu Nome"
-date: "`r Sys.Date()`"
-output: html_document
----
-
-## Introdução
-
-Texto explicativo aqui.
-
-```
-
-------------------------------------------------------------------------
-
-## Componentes principais
-
-| Elemento | Exemplo | Descrição |
-|---------|---------|-----------|
-| **Texto** | Markdown | Escrita formatada (títulos, listas, negrito, etc.) |
-| **Código R** | ```{r} plot(x) ``` | Código que será executado |
-| **Chunks** | ```{r nome}``` | Blocos de código identificáveis |
-| **YAML Header** | `--- ... ---` | Metadados sobre o documento |
-
-------------------------------------------------------------------------
-
-## Dicas úteis
-
-::: {.callout-tip style="background-color:#e6ffe6;"}
-
-Use `echo = FALSE` para ocultar o código e mostrar apenas o resultado:
-
-\```{r echo=FALSE}  
-  
-  
-mean(c(1, 2, 3, 4, 5))  
-  
-  
-\```
-
-Use `eval = FALSE` para evitar a execução do código e mostrá-lo como exemplo:
-
-\```{r, echo=FALSE, eval=FALSE}  
-  
-  
-\# Você pode colocar textos, sem # para comentários:  
-  
-  
-Verificar outras funções para calcular a média...  
-  
-  
-
-Ou pode colocar códigos de análise, que você não quer usar no momento...  
-  
-  
-\```
-:::
-
-
-
----
-
-::: {.callout-tip style="background-color:#fffbe6;"}
-Use `message = FALSE, warning = FALSE` para esconder mensagens e avisos.
-:::
-
-------------------------------------------------------------------------
-
-
-
-
-
 
 ### Funções
 
@@ -534,6 +493,114 @@ media_idade <- mean(dados_filtrados$idade)
 print(dados_filtrados)
 ```
 
+
+
+## Usando o R Markdown <br> [*Prática*]{.azul}
+
+------------------------------------------------------------------------
+
+::: {.callout-note style="background-color:#dceeff;"}
+Crie um novo arquivo clicando em: **File \> New File \> R Markdown...**
+
+Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
+:::
+
+------------------------------------------------------------------------
+
+-   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
+-   Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
+-   Usa o formato `.Rmd`.
+-   Para compilar, clique em `Knit`.
+
+------------------------------------------------------------------------
+
+## Estrutura básica de um arquivo R Markdown
+
+``` text
+---
+title: "Meu primeiro R Markdown"
+author: "Seu Nome"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introdução
+
+Texto explicativo aqui.
+```
+
+------------------------------------------------------------------------
+
+## Componentes principais
+
+| Elemento | Exemplo | Descrição |
+|-----------------------|-----------------------|---------------------------|
+| **Texto** | Markdown | Escrita formatada (títulos, listas, negrito, etc.) |
+| **Código R** | `{r plot(x)`} | Código que será executado |
+| **Chunks** | `{r nome}` | Blocos de código identificáveis |
+| **YAML Header** | `--- ... ---` | Metadados sobre o documento |
+
+------------------------------------------------------------------------
+
+## Dicas 
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Use `echo = FALSE` para ocultar o código e mostrar apenas o resultado:
+
+\`\`\`{r echo=FALSE}
+
+mean(c(1, 2, 3, 4, 5))
+
+\`\`\`
+
+Use `eval = FALSE` para evitar a execução do código e mostrá-lo como exemplo:
+
+\`\`\`{r, echo=FALSE, eval=FALSE}
+
+Você pode colocar textos, sem \# para comentários:
+
+Verificar outras funções para calcular a média...
+
+Ou pode colocar códigos de análise, que você não quer usar no momento...
+
+\`\`\`
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Use `message = FALSE, warning = FALSE` para esconder mensagens e avisos. <br><br>
+
+Confira os 'Cheat Sheets' para ver o que é possível fazer!
+
+<https://posit.co/resources/cheatsheets/> (Diversos!)  
+
+  
+[📄 RMarkdown Cheatsheet (abrir PDF)](https://github.com/rstudio/cheatsheets/raw/main/rmarkdown.pdf){target="_blank"}
+:::
+
+------------------------------------------------------------------------
+
+## Quarto vs R Markdown
+
+| Característica               | R Markdown (.Rmd)                           | Quarto (.qmd)                                             |
+|------------------------------|---------------------------------------------|------------------------------------------------------------|
+| Engine                      | R (com suporte parcial a Python)            | R, Python, Julia e Observable integrados                   |
+| YAML                        | `output: html_document`                     | `format: html`                                            |
+| Execução de código          | Integrada via knitr                         | Integrada via Jupyter ou knitr                            |
+| Formatos de saída           | HTML, PDF, Word, slides                     | HTML, PDF, Word, Reveal.js, livros, sites                 |
+| Flexibilidade de linguagem  | Limitada                                    | Multilíngue e orientada a ciência de dados                |
+| Instalação necessária       | R + RStudio                                 | Pode usar com ou sem RStudio, CLI disponível              |
+| Renderização                | `Knit` botão no RStudio                     | `Render` botão ou terminal com `quarto render`            |
+| Templates                   | Limitados, muitos voltados ao R             | Amplo suporte a templates para blogs, sites, livros, etc. |
+| Suporte para apresentações  | Sim (com xaringan, ioslides, slidy, beamer) | Sim (nativamente com Reveal.js e Beamer)                 |
+| Controle de layout          | Limitado                                    | Avançado com markdown, divs e CSS                         |
+| Comunidade e futuro         | Estável, porém sem grandes atualizações     | Plataforma em crescimento e com maior integração          |
+
+
+------------------------------------------------------------------------
+
+
 ## Utilizando a ferramenta "Projetos"
 
 -   Organiza seus diretórios
@@ -610,6 +677,10 @@ Crie um chunk de código, e no chatgpt, escreva:\
 \
 "Abra o código abaixo no canvas, para edição."
 :::
+
+## Utilizando IA como assistente de pesquisa
+
+
 
 ## Buscando ajuda (help!) {.smaller}
 
