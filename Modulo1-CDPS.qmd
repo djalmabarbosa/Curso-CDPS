@@ -249,7 +249,7 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ### Inserindo código diretamente no console do R
 
----
+------------------------------------------------------------------------
 
 ![Console do R](R_console.png)
 
@@ -279,11 +279,9 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 ------------------------------------------------------------------------
 
 ::: {.callout-note style="background-color:#dceeff;"}
-
 Escreva no seu R Script: 2+2
 
 Coloque o cursor do mouse na linha com o código e clique em 'Run'.
-
 :::
 
 ------------------------------------------------------------------------
@@ -306,6 +304,101 @@ Coloque o cursor do mouse na linha com o código e clique em 'Run'.
 | Output | Resultado | Retorno gerado pelo código |
 
 ------------------------------------------------------------------------
+
+## Usando o R Markdown <br> [*Prática*]{.azul}
+
+------------------------------------------------------------------------
+
+::: {.callout-note style="background-color:#dceeff;"}
+Crie um novo arquivo clicando em: **File > New File > R Markdown...**
+
+Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
+:::
+
+------------------------------------------------------------------------
+
+-   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
+-   Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
+-   Usa o formato `.Rmd`.
+-   Para compilar, clique em `Knit`.
+
+------------------------------------------------------------------------
+
+## Estrutura básica de um arquivo R Markdown
+
+```text
+---
+title: "Meu primeiro R Markdown"
+author: "Seu Nome"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introdução
+
+Texto explicativo aqui.
+
+```
+
+------------------------------------------------------------------------
+
+## Componentes principais
+
+| Elemento | Exemplo | Descrição |
+|---------|---------|-----------|
+| **Texto** | Markdown | Escrita formatada (títulos, listas, negrito, etc.) |
+| **Código R** | ```{r} plot(x) ``` | Código que será executado |
+| **Chunks** | ```{r nome}``` | Blocos de código identificáveis |
+| **YAML Header** | `--- ... ---` | Metadados sobre o documento |
+
+------------------------------------------------------------------------
+
+## Dicas úteis
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+
+Use `echo = FALSE` para ocultar o código e mostrar apenas o resultado:
+
+\```{r echo=FALSE}  
+  
+  
+mean(c(1, 2, 3, 4, 5))  
+  
+  
+\```
+
+Use `eval = FALSE` para evitar a execução do código e mostrá-lo como exemplo:
+
+\```{r, echo=FALSE, eval=FALSE}  
+  
+  
+\# Você pode colocar textos, sem # para comentários:  
+  
+  
+Verificar outras funções para calcular a média...  
+  
+  
+
+Ou pode colocar códigos de análise, que você não quer usar no momento...  
+  
+  
+\```
+:::
+
+
+
+---
+
+::: {.callout-tip style="background-color:#fffbe6;"}
+Use `message = FALSE, warning = FALSE` para esconder mensagens e avisos.
+:::
+
+------------------------------------------------------------------------
+
+
+
+
+
 
 ### Funções
 
@@ -363,13 +456,13 @@ getwd()
     sessionInfo()
     ```
 
--   Atualizando pacotes 
+-   Atualizando pacotes
 
----
+------------------------------------------------------------------------
 
 #### Tidyverse
 
---- 
+------------------------------------------------------------------------
 
 ::: panel-tabset
 #### Filosofia
@@ -385,11 +478,11 @@ knitr::include_graphics("pacotes_tidyverse.png")
 ```
 :::
 
----
+------------------------------------------------------------------------
 
 O *tidyverse* é um metapacote que segue uma filosofia de design, gramática e estruturas de dados em comum para que diversos pacotes úteis para a ciência de dados possam ser utilizados em cojunto
 
----
+------------------------------------------------------------------------
 
 #### [*Prática*]{.azul}
 
@@ -465,45 +558,42 @@ print(dados_filtrados)
 
 ## Utilizando o Git/GitHub
 
-### Git 
+### Git
 
-- **Git** é um sistema de **controle de versões distribuído** criado por Linus Torvalds em 2005
-- Permite o *versionamento do código*
-  - Registro histórico de alterações em arquivos de código e projetos
-  - Facilita o trabalho colaborativo, a recuperação de versões anteriores e o rastreamento de quem fez o quê
-- Usado localmente no seu computador, e também com serviços como o GitHub
+-   **Git** é um sistema de **controle de versões distribuído** criado por Linus Torvalds em 2005
+-   Permite o *versionamento do código*
+    -   Registro histórico de alterações em arquivos de código e projetos
+    -   Facilita o trabalho colaborativo, a recuperação de versões anteriores e o rastreamento de quem fez o quê
+-   Usado localmente no seu computador, e também com serviços como o GitHub
 
-### GitHub 
+### GitHub
 
-- Plataforma de hospedagem de código e projetos que usam Git
-- Não é exclusivo da linguagem R
-- Facilita a **colaboração**, **rastreamento de mudanças** e **distribuição de projetos**
-- Permite maior **Transparência científica** e **reprodutibilidade**
-- Permite **publicação de repositórios**: sites, documentos e dashboards
+-   Plataforma de hospedagem de código e projetos que usam Git
+-   Não é exclusivo da linguagem R
+-   Facilita a **colaboração**, **rastreamento de mudanças** e **distribuição de projetos**
+-   Permite maior **Transparência científica** e **reprodutibilidade**
+-   Permite **publicação de repositórios**: sites, documentos e dashboards
 
 ### Fluxo básico de uso do GitHub 🚦
 
-1. Criar conta no [github.com](https://github.com)
-2. Criar novo repositório
-3. Fazer *clone* no RStudio ou usar GitHub Desktop
-4. Trabalhar localmente: editar scripts, salvar, testar
-5. Realizar *commit* e *push* das alterações
+1.  Criar conta no [github.com](https://github.com)
+2.  Criar novo repositório
+3.  Fazer *clone* no RStudio ou usar GitHub Desktop
+4.  Trabalhar localmente: editar scripts, salvar, testar
+5.  Realizar *commit* e *push* das alterações
 
----
+------------------------------------------------------------------------
 
-::: {.callout-tip}
-
+::: callout-tip
 Você também pode:
 
-1. Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
-2. Fazer um 'fork' (permite sugerir mudanças)
-
+1.  Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
+2.  Fazer um 'fork' (permite sugerir mudanças)
 :::
 
+### Exemplo de estrutura de repositório
 
-### Exemplo de estrutura de repositório 
-
-```text
+``` text
 projeto-chikungunya/
 ├── dados/
 │   └── base_limpa.xlsx
