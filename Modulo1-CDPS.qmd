@@ -328,25 +328,41 @@ Por que a linguagem/software R
 
 ![Console do RStudio](RStudio_console.png)
 
-## Escrevendo um *Script* <br> [*Prática*]{.azul}
+## Utilizando *R scripts* 
 
-------------------------------------------------------------------------
+---
 
-::: {.callout-note style="background-color:#dceeff;"}
-Escreva no seu R Script: 2+2
+- Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
+- É um roteiro de execução
+- Executa código sequencialmente
+- É o arquivo utilizado pelo R, quando não se usa o RStudio
 
-Coloque o cursor do mouse na linha com o código e clique em 'Run'.
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Escrevendo um *R script*
 :::
 
 ------------------------------------------------------------------------
 
--   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
--   É um roteiro de execução
--   No RStudio, criamos um *script* clicando em *Menu*, *File, New File, R Script*.
--   Para salvar: *File, Save*
--   Em geral os *scripts* possuem os seguintes elementos:
+[*Prática*]{.azul}
 
-------------------------------------------------------------------------
+::: {.callout style="border-left: 4px solid #198754; background-color: #e6f4ea;"}
+<br>
+
+Clique em: *Menu* > *File > New File > R Script*
+
+Escreva no seu R Script: 2+2
+
+Coloque o cursor do mouse na linha com o código e clique em 'Run'.
+
+Para salvar: *File > Save*  
+  
+<br>
+
+:::
+
+---
+
+Em geral os *scripts* possuem os seguintes elementos:
 
 | Termo | Sinônimos | Descrição |
 |------------------|----------------------|--------------------------------|
@@ -379,7 +395,7 @@ Coloque o cursor do mouse na linha com o código e clique em 'Run'.
 2+2
 
 # Cria o vetor x
-x <- c(1,1,2,3,5,8)
+x <- c(1,1,2,3,5,8) # define o objeto x
 
 mean(x) # Calcula a media de x
 
@@ -450,7 +466,16 @@ Vamos instalar e carregar os pacotes do *tidyverse*
 ``` r
 if(!require(tidyverse)) install.packages("tidyverse") 
 
-library(tidyverse)  
+library(tidyverse)
+
+# Agora podemos usar uma função 'tible' que faz parte do tidyverse
+
+y <- c(1,2,3,4,5,6)
+
+tibble(x,y) # retorna o objeto no console
+
+dados <- tibble(x,y)
+
 ```
 
 ------------------------------------------------------------------------
@@ -507,10 +532,11 @@ Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
 
 ------------------------------------------------------------------------
 
--   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
--   Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
--   Usa o formato `.Rmd`.
--   Para compilar, clique em `Knit`.
+- R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
+- É um documento dinâmico
+- Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
+- Usa o formato `.Rmd`.
+- Para compilar, clique em `Knit`.
 
 ------------------------------------------------------------------------
 
@@ -680,7 +706,11 @@ Crie um chunk de código, e no chatgpt, escreva:\
 
 ## Utilizando IA como assistente de pesquisa
 
+Dentre as formas de uso de IA dentro do RStudio, estão:
 
+1. Co-piloto (GitHub Copilot)  
+2. Como um chat-bot, dentro do RStudio (chattr)
+3. Chat-bot externo (Microssoft Co-pilot, Chatgpt...)
 
 ## Buscando ajuda (help!) {.smaller}
 
