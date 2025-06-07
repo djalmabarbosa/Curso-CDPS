@@ -65,13 +65,12 @@ Projeto de Extensão UFR Nº 696/2025
 <br>
 
 ::: {style="text-align: justify;"}
-<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de **dados ruidosos**, **estruturados** e **não estruturados**  (Dhar, 2013).</p>
+<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de **dados ruidosos**, **estruturados** e **não estruturados** (Dhar, 2013).</p>
 :::
 
----
+------------------------------------------------------------------------
 
 ::: panel-tabset
-
 #### 📉 Ruidosos
 
 ```{r}
@@ -89,16 +88,15 @@ knitr::include_graphics("dados_ficha_notificação.png")
 ```{r}
 knitr::include_graphics("dados_sinan.png")
 ```
-
 :::
 
----
+------------------------------------------------------------------------
 
 A ciência de dados está relacionada com 
-- **Big Data**
-- **Mineração de Dados (Data Mining)** 
-- **Aprendizagem de Máquina (Machine Learning)**.
 
+- **Big Data**   
+- **Mineração de Dados (*Data Mining*)**  
+- **Aprendizagem de Máquina (*Machine Learning*)**
 
 ## Mineração de Dados <br> (*Data Mining*)
 
@@ -107,21 +105,18 @@ A ciência de dados está relacionada com
 ::: {style="text-align: justify; font-style: italic; border-left: 4px solid #ccc; padding-left: 3em; margin-top: 1em;"}
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
 
-<br>  
+<br>
 
 É o processo de descobrir automaticamente informação útil em grandes repositórios de dados (Tan et al., 2005)
-
-
 :::
 
 ## Histórico do *Data Mining* {.smaller}
 
-- **Década de 1960-70**: Surgimento dos primeiros bancos de dados e linguagens de consulta (ex: SQL).
-- **Década de 1980**: Avanços em armazenamento e recuperação de dados; algoritmos de aprendizado simbólico.
-- **Década de 1990**: Popularização do termo *data mining*; surgimento de ferramentas comerciais (ex: IBM Intelligent Miner, SAS Enterprise Miner).
-- **2000s**: Integração com *big data*, algoritmos escaláveis, mineração de dados em tempo real.
-- **2010s em diante**: Consolidação como parte da ciência de dados; uso intensivo de aprendizado de máquina e redes neurais.
-
+-   **Década de 1960-70**: Surgimento dos primeiros bancos de dados e linguagens de consulta (ex: SQL).
+-   **Década de 1980**: Avanços em armazenamento e recuperação de dados; algoritmos de aprendizado simbólico.
+-   **Década de 1990**: Popularização do termo *data mining*; surgimento de ferramentas comerciais (ex: IBM Intelligent Miner, SAS Enterprise Miner).
+-   **2000s**: Integração com *big data*, algoritmos escaláveis, mineração de dados em tempo real.
+-   **2010s em diante**: Consolidação como parte da ciência de dados; uso intensivo de aprendizado de máquina e redes neurais.
 
 ## Aprendizagem de Máquina <br> (*Machine Learning*)
 
@@ -149,24 +144,30 @@ A ciência de dados está relacionada com
 
 ------------------------------------------------------------------------
 
+## O processo da Ciência de Dados é muito semelhante ao da pesquisa quantitativa
+
+---
+
 ::: {style="text-align: justify;"}
-As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
+  > As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
 :::
 
 ------------------------------------------------------------------------
 
 ![](artigos.png){fig-align="center"}
 
----
+------------------------------------------------------------------------
 
 ### Uso da ciência de dados na pesquisa em saúde
+
 <br><br>
 
-| Termos de busca (google scholar)                    | Resultados  |
-|-----------------------------------|-------------------------|
-| "machine learning" e "health"   | 4.800.000               |
-| "data mining" e "health"        | 5.440.000               |
-| "data science" e "health"       | 7.270.000               |
+| Termos de busca (google scholar) | Resultados |
+|----------------------------------|------------|
+| "machine learning" e "health"    | 4.800.000  |
+| "data mining" e "health"         | 5.440.000  |
+| "data science" e "health"        | 7.270.000  |
+
 ------------------------------------------------------------------------
 
 -   Em geral, o uso da ciência de dados na pesquisa:
@@ -176,7 +177,7 @@ As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram e
 
 ## Ciência de Dados na Pesquisa: repensar o fazer científico
 
----
+------------------------------------------------------------------------
 
 1.  Implicações da era do Big Data
 2.  Implicações dos desenvolvimentos em ML, DM e IA
@@ -218,14 +219,12 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 ### Uso de uma linguagem de programação {.smaller}
 
 -   Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
--   Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
--   Melhora o diálogo entre grupos de pesquisa (exemplo: aplicativo web)
+-   Melhora a **comunicação dos resultados** (exemplo: preliminar e desenho)
+-   Melhora o diálogo entre grupos de pesquisa (exemplo: [aplicativo web](https://djalmabarbosa.shinyapps.io/TematicoApp/))
 -   Melhora o fluxo de orientação/mentoria
 -   Fortalece a **ciência aberta** e a **confiança pública**
 -   Viabiliza formação interdisciplinar
 -   Permite interação mais natural com ferramentas de IA (exemplo: chatgpt)
-
-------------------------------------------------------------------------
 
 ## Uso da IA como assistente de pesquisa {.smaller}
 
@@ -271,8 +270,6 @@ Uso da IA como assistente de pesquisa
 Uso da IA como assistente de pesquisa
 :::
 
-------------------------------------------------------------------------
-
 ## Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 
 ------------------------------------------------------------------------
@@ -287,8 +284,6 @@ Uso da IA como assistente de pesquisa
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 :::
-
-------------------------------------------------------------------------
 
 ## Por que a linguagem/software R
 
@@ -317,9 +312,9 @@ Por que a linguagem/software R
 
 -   É a linguagem preferida dos estatísticos
 
--   É uma das linguagens de análise estatísticas mais utilizadas no mundo.
+-   É uma das linguagens de análise estatísticas mais utilizadas no mundo
 
--   Viabiliza o trabalho com co-piloto (IA)
+-   Viabiliza o trabalho IA integrada
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Por que a linguagem/software R
@@ -333,11 +328,19 @@ Por que a linguagem/software R
 
 <https://cran.r-project.org/bin/windows/base/>
 
-## ![](R_download.png)
+---
 
-## ![](R_mirror.png)
+![](R_download.png)
+
+---
+
+![](R_mirror.png)
+
+---
 
 ![](R_install.png)
+
+---
 
 ### Inserindo código diretamente no console do R
 
@@ -366,14 +369,14 @@ Por que a linguagem/software R
 
 ![Console do RStudio](RStudio_console.png)
 
-## Utilizando *R scripts* 
+## Utilizando *R scripts*
 
----
+------------------------------------------------------------------------
 
-- Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
-- É um roteiro de execução
-- Executa código sequencialmente
-- É o arquivo utilizado pelo R, quando não se usa o RStudio
+-   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
+-   É um roteiro de execução
+-   Executa código sequencialmente
+-   É o arquivo utilizado pelo R, quando não se usa o RStudio
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Escrevendo um *R script*
@@ -386,19 +389,18 @@ Escrevendo um *R script*
 ::: {.callout style="border-left: 4px solid #198754; background-color: #e6f4ea;"}
 <br>
 
-Clique em: *Menu* > *File > New File > R Script*
+Clique em: *Menu* \> *File \> New File \> R Script*
 
 Escreva no seu R Script: 2+2
 
 Coloque o cursor do mouse na linha com o código e clique em 'Run'.
 
-Para salvar: *File > Save*  
-  
-<br>
+Para salvar: *File \> Save*
 
+<br>
 :::
 
----
+------------------------------------------------------------------------
 
 Em geral os *scripts* possuem os seguintes elementos:
 
@@ -420,7 +422,9 @@ Em geral os *scripts* possuem os seguintes elementos:
 ::: {.callout-note style="background-color:#dceeff;"}
 -   O R é uma linguagem funcional
 -   Funções vêm associadas a parênteses `( )`, onde colocamos os *argumentos da função*.
--   Exemplos da matemática: $y = f(x)$, $z = f(x, y)$ ... [Latex]{.verde}
+-   Exemplos da matemática:  
+- $y = f(x)$
+- $z = f(x, y)$ ... [Latex]{.verde}
 -   A função mais simples no R é a criação de um conjunto de valores (*vetor*)
 :::
 
@@ -437,8 +441,6 @@ x <- c(1,1,2,3,5,8) # define o objeto x
 
 mean(x) # Calcula a media de x
 
-# Verificando o diretório de trabalho
-getwd()
 ```
 
 ------------------------------------------------------------------------
@@ -513,7 +515,6 @@ y <- c(1,2,3,4,5,6)
 tibble(x,y) # retorna o objeto no console
 
 dados <- tibble(x,y)
-
 ```
 
 ------------------------------------------------------------------------
@@ -556,7 +557,15 @@ media_idade <- mean(dados_filtrados$idade)
 print(dados_filtrados)
 ```
 
+--- 
 
+::: {.callout-tip style="background-color:#e6ffe6;"}
+``` r
+
+# Verificando o diretório de trabalho
+getwd()
+```
+:::
 
 ## Usando o R Markdown <br> [*Prática*]{.azul}
 
@@ -570,11 +579,11 @@ Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
 
 ------------------------------------------------------------------------
 
-- R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
-- É um documento dinâmico
-- Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
-- Usa o formato `.Rmd`.
-- Para compilar, clique em `Knit`.
+-   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
+-   É um documento dinâmico
+-   Ideal para **relatórios reprodutíveis**, **análises**, **artigos científicos** e **apresentações**.
+-   Usa o formato `.Rmd`.
+-   Para compilar, clique em `Knit`.
 
 ------------------------------------------------------------------------
 
@@ -591,11 +600,22 @@ output: html_document
 ## Introdução
 
 Texto explicativo aqui.
+
+Códigos nas chuncks
+{r chunk do r}
+
 ```
 
 ------------------------------------------------------------------------
 
-## Componentes principais
+::: {.callout-tip style="background-color:#e6ffe6;"}
+  
+Atalho para criar uma nova chunk: Ctrl + Alt + i
+
+:::
+
+
+### Principais componentes de um R Markdown {.smaller}
 
 | Elemento | Exemplo | Descrição |
 |-----------------------|-----------------------|---------------------------|
@@ -605,8 +625,6 @@ Texto explicativo aqui.
 | **YAML Header** | `--- ... ---` | Metadados sobre o documento |
 
 ------------------------------------------------------------------------
-
-## Dicas 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Use `echo = FALSE` para ocultar o código e mostrar apenas o resultado:
@@ -637,33 +655,32 @@ Use `message = FALSE, warning = FALSE` para esconder mensagens e avisos. <br><br
 
 Confira os 'Cheat Sheets' para ver o que é possível fazer!
 
-<https://posit.co/resources/cheatsheets/> (Diversos!)  
+<https://posit.co/resources/cheatsheets/> (Diversos!)
 
-  
 [📄 RMarkdown Cheatsheet (abrir PDF)](https://github.com/rstudio/cheatsheets/raw/main/rmarkdown.pdf){target="_blank"}
 :::
 
-------------------------------------------------------------------------
+## Usando o R Markdown <br> [*Prática*]{.azul}
 
 ## Quarto vs R Markdown
 
-| Característica               | R Markdown (.Rmd)                           | Quarto (.qmd)                                             |
-|------------------------------|---------------------------------------------|------------------------------------------------------------|
-| Engine                      | R (com suporte parcial a Python)            | R, Python, Julia e Observable integrados                   |
-| YAML                        | `output: html_document`                     | `format: html`                                            |
-| Execução de código          | Integrada via knitr                         | Integrada via Jupyter ou knitr                            |
-| Formatos de saída           | HTML, PDF, Word, slides                     | HTML, PDF, Word, Reveal.js, livros, sites                 |
-| Flexibilidade de linguagem  | Limitada                                    | Multilíngue e orientada a ciência de dados                |
-| Instalação necessária       | R + RStudio                                 | Pode usar com ou sem RStudio, CLI disponível              |
-| Renderização                | `Knit` botão no RStudio                     | `Render` botão ou terminal com `quarto render`            |
-| Templates                   | Limitados, muitos voltados ao R             | Amplo suporte a templates para blogs, sites, livros, etc. |
-| Suporte para apresentações  | Sim (com xaringan, ioslides, slidy, beamer) | Sim (nativamente com Reveal.js e Beamer)                 |
-| Controle de layout          | Limitado                                    | Avançado com markdown, divs e CSS                         |
-| Comunidade e futuro         | Estável, porém sem grandes atualizações     | Plataforma em crescimento e com maior integração          |
+---
 
+| Característica | R Markdown (.Rmd) | Quarto (.qmd) |
+|------------------|------------------------|------------------------------|
+| Engine | R (com suporte parcial a Python) | R, Python, Julia e Observable integrados |
+| YAML | `output: html_document` | `format: html` |
+| Execução de código | Integrada via knitr | Integrada via Jupyter ou knitr |
+| Formatos de saída | HTML, PDF, Word, slides | HTML, PDF, Word, Reveal.js, livros, sites |
+| Flexibilidade de linguagem | Limitada | Multilíngue e orientada a ciência de dados |
+| Instalação necessária | R + RStudio | Pode usar com ou sem RStudio, CLI disponível |
+| Renderização | `Knit` botão no RStudio | `Render` botão ou terminal com `quarto render` |
+| Templates | Limitados, muitos voltados ao R | Amplo suporte a templates para blogs, sites, livros, etc. |
+| Suporte para apresentações | Sim (com xaringan, ioslides, slidy, beamer) | Sim (nativamente com Reveal.js e Beamer) |
+| Controle de layout | Limitado | Avançado com markdown, divs e CSS |
+| Comunidade e futuro | Estável, porém sem grandes atualizações | Plataforma em crescimento e com maior integração |
 
 ------------------------------------------------------------------------
-
 
 ## Utilizando a ferramenta "Projetos"
 
@@ -702,7 +719,7 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 -   Plataforma de hospedagem de código e projetos que usam Git
 -   Não é exclusivo da linguagem R
 -   Facilita a **colaboração**, **rastreamento de mudanças** e **distribuição de projetos**
--   Permite maior **Transparência científica** e **reprodutibilidade**
+-   Permite maior **transparência científica** e **reprodutibilidade**
 -   Permite **publicação de repositórios**: sites, documentos e dashboards
 
 ### Fluxo básico de uso do GitHub 🚦
@@ -746,9 +763,9 @@ Crie um chunk de código, e no chatgpt, escreva:\
 
 Dentre as formas de uso de IA dentro do RStudio, estão:
 
-1. Co-piloto (GitHub Copilot)  
-2. Como um chat-bot, dentro do RStudio (chattr)
-3. Chat-bot externo (Microssoft Co-pilot, Chatgpt...)
+1.  Co-piloto (GitHub Co-pilot)\
+2.  Como um chat-bot, dentro do RStudio (chattr)
+3.  Chat-bot externo (Microssoft Co-pilot, Chatgpt...)
 
 ## Buscando ajuda (help!) {.smaller}
 
