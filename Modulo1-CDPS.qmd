@@ -22,7 +22,7 @@ editor: visual
 
 ## 🎯 Objetivo
 
-<br><br> Introduzir estudantes de iniciação científica, pós-graduação e pesquisadores ao uso da ciência de dados na pesquisa em saúde
+<br><br> Introduzir estudantes de iniciação científica, pós-graduação e pesquisadores ao uso da ciência de dados na pesquisa em saúde.
 
 ## Módulos
 
@@ -65,14 +65,40 @@ Projeto de Extensão UFR Nº 696/2025
 <br>
 
 ::: {style="text-align: justify;"}
-<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de dados ruidosos, estruturados e não estruturados (Dhar, 2013).</p>
+<p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de **dados ruidosos**, **estruturados** e **não estruturados**  (Dhar, 2013).</p>
 :::
 
-<!-- -->
+---
 
-<br>
+::: panel-tabset
 
-Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
+#### 📉 Ruidosos
+
+```{r}
+knitr::include_graphics("dados_ruidosos.png")
+```
+
+#### 🧾 Estruturados
+
+```{r}
+knitr::include_graphics("dados_ficha_notificação.png")
+```
+
+#### 📊 Estruturados
+
+```{r}
+knitr::include_graphics("dados_sinan.png")
+```
+
+:::
+
+---
+
+A ciência de dados está relacionada com 
+- **Big Data**
+- **Mineração de Dados (Data Mining)** 
+- **Aprendizagem de Máquina (Machine Learning)**.
+
 
 ## Mineração de Dados <br> (*Data Mining*)
 
@@ -80,9 +106,15 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 
 ::: {style="text-align: justify; font-style: italic; border-left: 4px solid #ccc; padding-left: 3em; margin-top: 1em;"}
 “É o processo de extrair e descobrir padrões em grandes bancos de dados envolvendo métodos relacionados à aprendizagem de máquina, estatística e sistemas de bancos de dados.” Wikipedia
+
+<br>  
+
+É o processo de descobrir automaticamente informação útil em grandes repositórios de dados (Tan et al., 2005)
+
+
 :::
 
-## Histórico do *Data Mining*
+## Histórico do *Data Mining* {.smaller}
 
 - **Década de 1960-70**: Surgimento dos primeiros bancos de dados e linguagens de consulta (ex: SQL).
 - **Década de 1980**: Avanços em armazenamento e recuperação de dados; algoritmos de aprendizado simbólico.
@@ -91,7 +123,7 @@ Conceitos relacionados: Big Data, Mineração de Dados e Machine Learning
 - **2010s em diante**: Consolidação como parte da ciência de dados; uso intensivo de aprendizado de máquina e redes neurais.
 
 
-## Aprendizagem de Máquina <br> (Machine Learning)
+## Aprendizagem de Máquina <br> (*Machine Learning*)
 
 -   Consiste em desenvolver algoritmos que permitem os computadores aprenderem dos dados e tomarem decisões baseadas em dados\
 
@@ -133,9 +165,8 @@ As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram e
 | Termos de busca (google scholar)                    | Resultados  |
 |-----------------------------------|-------------------------|
 | "machine learning" e "health"   | 4.800.000               |
-| "data science" e "health"       | 7.270.000               |
 | "data mining" e "health"        | 5.440.000               |
-
+| "data science" e "health"       | 7.270.000               |
 ------------------------------------------------------------------------
 
 -   Em geral, o uso da ciência de dados na pesquisa:
@@ -143,11 +174,9 @@ As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram e
     -   aumenta o rigor
     -   eleva o impacto real
 
-------------------------------------------------------------------------
-
 ## Ciência de Dados na Pesquisa: repensar o fazer científico
 
-------------------------------------------------------------------------
+---
 
 1.  Implicações da era do Big Data
 2.  Implicações dos desenvolvimentos em ML, DM e IA
@@ -160,33 +189,33 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 
 ------------------------------------------------------------------------
 
-### Big Data e a revolução dos dados
+### Big Data e a revolução dos dados {.smaller}
 
 -   Dados administrativos se tornaram dados secundários de pesquisa
     -   Ex: Registros eletrônicos do **e-SUS**, **SIH/SUS**, **SINAN** e **SIVEP**
 -   Dados não usuais tornaram-se mais acessíveis
     -   Ex: prescrições médicas, áudios de consultas, imagens de exames, etc.
--   Novas possibilidades de coleta de dados
+-   Dispositivos e sistemas passaram a gerar outros dados
     -   Ex: Dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
 
 ------------------------------------------------------------------------
 
-### Machine Learning, Data Mining e Inteligência Artificial
+### Machine Learning, Data Mining e Inteligência Artificial {.smaller}
 
 -   Novas e melhores ferramentas de análise
     -   Análise de dados não estruturados
         -   Ex: textos, imagens, vídeos
     -   Mineração
     -   Predição
-        -   Ex: predição mais correta de desfechos de saúde
+        -   Ex: Predição da mortalidade hospitalar
     -   Classificação
-        -   Ex:
+        -   Ex: Algoritmo de classificação baseado em deep learning para detectar retinopatia diabética
     -   Agrupamento
-        -   Ex:
+        -   Ex: Identificar subgrupos de pacientes com insuficiência cardíaca congestiva com base em características clínicas, visando apoiar tratamentos personalizados
 
 ------------------------------------------------------------------------
 
-### Uso de uma linguagem de programação
+### Uso de uma linguagem de programação {.smaller}
 
 -   Aumenta a **reprodutibilidade** e **transparência** (exemplo: github)
 -   Melhora a **comunicação dos resultados** (exemplo: relatório de pesquisa)
@@ -198,7 +227,7 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 
 ------------------------------------------------------------------------
 
-## Uso da IA como assistente de pesquisa
+## Uso da IA como assistente de pesquisa {.smaller}
 
 ------------------------------------------------------------------------
 
@@ -231,7 +260,7 @@ Uso da IA como assistente de pesquisa
 ------------------------------------------------------------------------
 
 -   Auxilia na divulgação dos resultados
-    -   Criação de templates para formatação de monografias, dissertações e teses
+    -   Templates para formatação de monografias, dissertações e teses
     -   Eloboração de produtos de dados
 -   Pode acelerar o aprendizado
     -   Explicações sob demanda de sintaxe e conceitos estatísticos
