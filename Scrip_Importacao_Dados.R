@@ -1,5 +1,3 @@
-# Esta primeira linha verifica se o pacote está instalado.
-# Caso não esteja, o código abaixo irá prosseguir com a instalação do pacote readr
 
 # Lendo os dados .csv
 if(!require(readr)) install.packages("readr")
@@ -23,8 +21,6 @@ dados_sivep <- read_excel("sivep_gripe.xlsx",
                           sheet = "SIVEPGRIPE",
                           skip = 0)
 
-# Visualizando as primeiras observações do banco de dados
-head(dados_sivep)
 
 
 
