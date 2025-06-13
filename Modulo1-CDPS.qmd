@@ -915,5 +915,38 @@ y <- c(TRUE, 2)   # numeric
 y <- c("a", TRUE) # character
 ```
 
+![Regra de conversão. Fonte: Hands-on Programming with R, Grolemund (2015)](coercao_regra.png)
 
-![Regra de coerção. Fonte: Hands-on Programming with R, Grolemund (2015)](coercao_regra.png)
+## Conversão explícita
+
+```r
+
+x <- 0:6
+class(x)
+[1] "integer"
+
+as.numeric(x)
+[1] 0 1 2 3 4 5 6
+
+as.logical(x)
+[1] FALSE TRUE TRUE TRUE TRUE TRUE TRUE
+
+> as.character(x)
+[1] "0" "1" "2" "3" "4" "5" "6"
+
+```
+
+## Matrizes
+
+Matrizes são vetores, com o atributo *dimensão*
+
+```{r}
+m <- matrix(nrow = 2, ncol = 3)
+m
+
+dim(m)
+
+attributes(m)
+```
+
+
