@@ -71,32 +71,33 @@ Projeto de Extensão UFR Nº 696/2025
 ------------------------------------------------------------------------
 
 ::: panel-tabset
-#### 📉 Ruidosos
-
-```{r}
-knitr::include_graphics("dados_ruidosos.png")
-```
-
-#### 🧾 Estruturados
-
-```{r}
-knitr::include_graphics("dados_ficha_notificação.png")
-```
 
 #### 📊 Estruturados
 
 ```{r}
 knitr::include_graphics("dados_sinan.png")
 ```
+
+#### 🧾 N. Estruturados
+
+```{r}
+knitr::include_graphics("dados_ficha_notificação.png")
+```
+
+#### 📉 Ruidosos
+
+```{r}
+knitr::include_graphics("dados_ruidosos.png")
+```
 :::
 
-------------------------------------------------------------------------
+---
 
-A ciência de dados está relacionada com 
+A ciência de dados está relacionada com
 
-- **Big Data**   
-- **Mineração de Dados (*Data Mining*)**  
-- **Aprendizagem de Máquina (*Machine Learning*)**
+-   **Big Data**\
+-   **Mineração de Dados (*Data Mining*)**\
+-   **Aprendizagem de Máquina (*Machine Learning*)**
 
 ## Mineração de Dados <br> (*Data Mining*)
 
@@ -146,10 +147,10 @@ A ciência de dados está relacionada com
 
 ## O processo da Ciência de Dados é muito semelhante ao da pesquisa quantitativa
 
----
+------------------------------------------------------------------------
 
 ::: {style="text-align: justify;"}
-  > As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
+> As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
 :::
 
 ------------------------------------------------------------------------
@@ -328,19 +329,19 @@ Por que a linguagem/software R
 
 <https://cran.r-project.org/bin/windows/base/>
 
----
+------------------------------------------------------------------------
 
 ![](R_download.png)
 
----
+------------------------------------------------------------------------
 
 ![](R_mirror.png)
 
----
+------------------------------------------------------------------------
 
 ![](R_install.png)
 
----
+------------------------------------------------------------------------
 
 ### Inserindo código diretamente no console do R
 
@@ -422,9 +423,9 @@ Em geral os *scripts* possuem os seguintes elementos:
 ::: {.callout-note style="background-color:#dceeff;"}
 -   O R é uma linguagem funcional
 -   Funções vêm associadas a parênteses `( )`, onde colocamos os *argumentos da função*.
--   Exemplos da matemática:  
-- $y = f(x)$
-- $z = f(x, y)$ ... [Latex]{.verde}
+-   Exemplos da matemática:\
+-   $y = f(x)$
+-   $z = f(x, y)$ ... [Latex]{.verde}
 -   A função mais simples no R é a criação de um conjunto de valores (*vetor*)
 :::
 
@@ -440,7 +441,6 @@ Em geral os *scripts* possuem os seguintes elementos:
 x <- c(1,1,2,3,5,8) # define o objeto x
 
 mean(x) # Calcula a media de x
-
 ```
 
 ------------------------------------------------------------------------
@@ -557,7 +557,7 @@ media_idade <- mean(dados_filtrados$idade)
 print(dados_filtrados)
 ```
 
---- 
+------------------------------------------------------------------------
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 ``` r
@@ -603,17 +603,13 @@ Texto explicativo aqui.
 
 Códigos nas chuncks
 {r chunk do r}
-
 ```
 
 ------------------------------------------------------------------------
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
-  
 Atalho para criar uma nova chunk: Ctrl + Alt + i
-
 :::
-
 
 ### Principais componentes de um R Markdown {.smaller}
 
@@ -664,7 +660,7 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 
 ## Quarto vs R Markdown
 
----
+------------------------------------------------------------------------
 
 | Característica | R Markdown (.Rmd) | Quarto (.qmd) |
 |------------------|------------------------|------------------------------|
