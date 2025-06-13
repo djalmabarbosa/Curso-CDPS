@@ -726,6 +726,11 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 4.  Trabalhar localmente: editar scripts, salvar, testar
 5.  Realizar *commit* e *push* das alterações
 
+::: {.callout-tip style="background-color:#e6ffe6;"}
+1.  Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
+2.  Fazer um 'fork' (permite sugerir mudanças)
+:::
+
 ------------------------------------------------------------------------
 
 ::: callout-tip
@@ -760,7 +765,7 @@ Crie um chunk de código, e no chatgpt, escreva:\
 Dentre as formas de uso de IA dentro do RStudio, estão:
 
 1.  Co-piloto (GitHub Co-pilot)\
-2.  Como um chat-bot, dentro do RStudio (chattr)
+2.  Como um chat-bot, dentro do RStudio (pacote *chattr*)
 3.  Chat-bot externo (Microssoft Co-pilot, Chatgpt...)
 
 ## Buscando ajuda (help!) {.smaller}
@@ -791,3 +796,124 @@ Algumas das principais formas de buscar ajuda são:
     2.  Chat GPT
 
     3.  Gemini
+
+# 4. Introdução à linguagem R
+
+## Objetos
+
+O R possui cinco classes básicas (atômicas) de objetos:
+
+1.  caracter
+2.  numérico (números reais)
+3.  inteiro
+4.  complexo
+5.  lógico (verdadeiro/falso
+
+[O objeto mais básico é um vetor.]{.fragment}
+
+-   Um vetor pode conter apenas objetos atômicos da mesma classe
+    -   Exceção: *lista*
+
+## Números
+
+-   No R, números são geralmente considerados como objetos numéricos (números reais com maior precisão '*double*')
+-   Se quisermos usar números inteiros, podemos utilizar o sufxo L
+-   Existe um número especial *Inf*, para representar o infinito.
+    -   P.e: 1/ Inf; 0
+-   *NaN* representa um valor indefinido ("*not a number*").
+    -   P.e: 0/0; NaN
+
+## Atributos
+
+Os objetos do R podem ter atributos
+
+-   *names*, *dimnames*
+-   *dimensions*, para matrizes ou arranjos
+-   *class*
+-   *length*
+-   Outras, definidas pelo usuário
+
+[Podemos acessar os atributos de um objeto com a função *attributes()*]{.fragment}
+
+## Entrando com os insumos
+
+> No prompt do R digitamos **expressões**.
+
+> O simbolo '\<-' é o **operador de atribuição**.
+
+``` r
+> x <- 1
+```
+
+<br>
+
+> A **gramática da linguagem** determina se uma expressão está ou não completa.
+
+``` r
+> x <-   ## expressão incompleta
+
+# indica comentário. Tudo depois dele é ignorado.
+```
+
+------------------------------------------------------------------------
+
+Quando uma expressão completa é colocada no **prompt** ela é avaliada, e o resultado da avaliação é retornado.
+
+``` r
+x # print automático
+print(x) # print explícito
+
+# [1] 5 indica que x é um vetor, e que 5 é o primeiro elemento.
+```
+
+<br>
+
+::: callout-tip
+Podemos utilizar o operador ':' para criar inteiros em sequência.
+
+```{r, echo=TRUE}
+x <- 1:22
+x
+```
+:::
+
+## Criando vetores
+
+A função *c()* pode ser utilizada para criar vetores de objetos:
+
+``` r
+
+x <- c(0.4, 0.9)       # numeric
+x <- c(TRUE, FALSE)    # logical
+x <- c(T, F)           # logical
+x <- c("a", "b", "c")  # character
+x <- 3:25              # integer
+x <- c(2+0i, 1+4i)     # complex
+```
+
+<br>
+
+::: callout-tip
+Utilize a função *class()* para varificar o tipo de objeto criado
+
+```{r, echo=TRUE}
+class(x)
+```
+
+Ou observe a classe no painel superior direito.
+
+:::
+------------------------------------------------------------------------
+
+### Misturando objetos
+
+O que acontece quando fazemos:
+
+``` r
+y <- c(1.7, "a")  # character
+y <- c(TRUE, 2)   # numeric
+y <- c("a", TRUE) # character
+```
+
+
+![Regra de coerção. Fonte: Hands-on Programming with R, Grolemund (2015)](coercao_regra.png)
