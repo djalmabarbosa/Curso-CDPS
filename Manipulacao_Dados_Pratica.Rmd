@@ -1,0 +1,318 @@
+---
+title: "Manipulação de Dados"
+output: html_document
+date: "2025-06-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 6. Manipulando dados
+
+
+```{r, echo=TRUE, eval=TRUE}
+
+if(!require(foreign)) install.packages("foreign");library(foreign) 
+if(!require(readxl)) install.packages("readxl");library(readxl)
+if(!require(readr)) install.packages("readr");library(readr)
+if(!require(janitor)) install.packages("janitor");library(janitor)
+if(!require(skimr)) install.packages("skimr");library(skimr)
+if(!require(stringr)) install.packages("stringr");library(stringr)
+if(!require(stringi)) install.packages("stringi");library(stringi)
+if(!require(lubridate)) install.packages("lubridate");library(lubridate)
+```
+
+
+```{r, echo = TRUE, eval = FALSE}
+# Importando o arquivo {`NINDINET.dbf`} no objeto {`base`}
+
+base <- read.dbf(file = 'Dados/NINDINET.dbf', as.is = TRUE)
+```
+
+
+## Visualização inicial dos dados
+
+```{r, echo=TRUE, eval=FALSE}
+
+head(base)
+
+library(tidyverse)
+glimpse(base)
+
+```
+
+## Selecionando variáveis (colunas)
+
+```{r, echo=TRUE, eval=FALSE}
+
+base_menor <- select(base, DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI,
+                     ID_AGRAVO)
+
+```
+
+## Piping
+
+```{r, echo=TRUE, eval=FALSE}
+
+base_menor <- base |>
+  select(DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI, ID_AGRAVO)
+
+```
+
+
+```{r, echo=TRUE, eval=FALSE}
+
+base |>
+  select(DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI, ID_AGRAVO) |>
+  head()
+
+```
+
+## Excluindo colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor |>
+  select(-DT_NASC) |> 
+  head()
+
+```
+
+## Criando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando uma nova variável, tempo de digitação:
+base_menor_2 <- base |>
+select(NU_NOTIFIC, ID_AGRAVO, DT_NOTIFIC, DT_DIGITA) |>
+  mutate(TEMPO_DIGITA = DT_DIGITA - DT_NOTIFIC)
+
+# Visualizando a var DT_DIGITA como numérica
+base_menor_2 |>
+  mutate(TEMPO_DIGITA = as.numeric(TEMPO_DIGITA)) |>
+  head()
+
+```
+
+## Limpando caracteres e padronizando as colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `CID-10-CATEGORIAS.CSV } para o `R`
+cid10_categorias <- read_csv2('Dados/CID-10-CATEGORIAS.CSV')
+
+# Utilizando a função `colnames()` para checar as variáveis 
+colnames(cid10_categorias)
+
+# Utilizando a função `clean_names()` (janitor) para editar o nome das variáveis
+cid10_categorias_nova <- clean_names(cid10_categorias)
+
+# Visualizando as variáveis após a transformação
+colnames(cid10_categorias_nova)
+
+```
+
+
+```{r, echo = TRUE, eval = FALSE}
+# Utilizando a função `clean_names()` (janitor) para editar o nome das variáveis
+cid10_categorias_nova <- janitor::clean_names(cid10_categorias)
+```
+
+## Filtrando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Filtrando os CIDs igual a B19, da coluna "ID_AGRAVO"
+# com tempo de digitação maior que sete dias
+base_menor_2 |>
+  filter(ID_AGRAVO == "B19", TEMPO_DIGITA > 7) |>
+  head()
+
+# Filtrando os registros iguais a B19 OU A279 OU B54 na coluna "ID_AGRAVO"
+base_menor_2 |>
+  filter(ID_AGRAVO == "B19" | ID_AGRAVO == "A279" | ID_AGRAVO == "B54") |>
+  head(20)
+
+# Fazendo o mesmo filtro utilizando o operador `%in%`
+base_menor_2 |>
+  filter(ID_AGRAVO %in% c("B19", "A279", "B54")) |>
+  head(20)
+
+```
+
+## Sumarizando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Agrupando as notificações pelos agravos e contando a frequência de notificações
+base_menor_2 |>
+  group_by(ID_AGRAVO) |>
+  count(ID_AGRAVO) |>
+  print(n = 20)
+
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor_2 |>
+  
+  # Agrupando as notificações pelos agravos
+  group_by(ID_AGRAVO) |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(
+    
+    # Criando uma coluna de total, utilizando a função `n()`
+    total_agravos = n(),
+    
+    # Criando uma coluna de média, utilizando a função `mean()`
+    media_digita = mean(TEMPO_DIGITA)
+  )
+
+```
+
+## Modificando a ordem das colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor_2 |>
+  
+  # Agrupando as notificações pelos agravos
+  group_by(ID_AGRAVO) |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(total_agravos = n(),
+            media_digita = mean(TEMPO_DIGITA)) |>
+  
+  # Ordenando a tabela pela ordem decrescente da média de tempo de digitação
+  arrange(desc(media_digita))
+
+```
+
+## Avaliando a completude dos dados
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(
+    
+    # Criando uma coluna com a soma de todos os registros da variável raça/cor devidamente preenchidos
+    total_completo = sum(!is.na(CS_RACA)),
+    
+    # Criando uma coluna com o total de registros na tabela
+    total_registros = n(),
+    
+    # Criando uma coluna com a soma de registros com a variável raça/cor em branco
+    total_missing_raca = sum(is.na(CS_RACA)),
+    
+    # Criando uma coluna de porcentagem de completude (preenchimento)
+    taxa_completude = (total_completo / total_registros) * 100
+  )
+
+```
+
+## Renomeando valores
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  
+  # Contabilizando o número de registros conforme as categorias de preenchimento
+  # da variável "CS_RACA"
+  count(CS_RACA)
+
+base |>
+  
+  # Transformando os valores em branco em 9 na coluna "CS_RACA"
+  mutate(CS_RACA = replace_na(CS_RACA, replace = 9)) |>
+  
+  # Contabilizando o número de registros conforme as categorias de preenchimento
+  # da variável "CS_RACA"
+  count(CS_RACA)
+
+```
+
+## Transformando os dados no formato largo em formato longo
+
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `cobertura_hepatiteb_rosas_2016_2020_A.csv } para o `R`
+dados <- read_csv(file = "Dados/cobertura_hepatiteb_rosas_2016_2020_A.csv")
+
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando o objeto {`dados_longos`}
+dados_longos <- dados |>
+  
+  # Utilizando a função `pivot_longer()` para transformação de colunas
+  pivot_longer(
+    
+    # Definindo as colunas que serão transformadas
+    cols = c("Ano 2016", "Ano 2017", "Ano 2018", "Ano 2019", "Ano 2020"),
+    
+    # Definindo o nome da variável nova que receberá os nomes acima
+    names_to = "Ano",
+    
+    # Definindo o nome da variável nova que receberá os valores da tabela
+    values_to = "Cobertura Vacinal contra Hepatite B",
+    
+    # Retirando a palavra "Ano " antes de cada valor da variável Ano
+    # Também estamos retirando o espaço depois da palavra "Ano"
+    names_prefix = "Ano "
+  )
+# Visualizando a tabela {`dados_longos`} no formato longo
+dados_longos
+
+```
+
+## Transformando os dados do formato longo em formato largo
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando o objeto {`dados_largos`}
+dados_largos <- dados_longos |>
+  
+  # Utilizando a função `pivot_wider()` para transformação de colunas
+  pivot_wider(
+    
+    # Definindo de qual variável estamos resgatando os nomes das colunas
+    names_from = "Ano",
+    
+    # Definindo de qual variável estamos resgatando os valores das colunas
+    values_from = "Cobertura Vacinal contra Hepatite B")
+
+# visualizando a tabela
+dados_largos
+
+```
+
+## Separarando o conteúdo de uma variável em várias colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `notificacao_eapv_2021m.xlsx` } para o `R`
+eapv_2021m <- read_xlsx('Dados/notificacao_eapv_2021m.xlsx')
+
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Visualizando a tabela {`eapv_2021m`} com a função `View()
+View(eapv_2021m)
+
+# Selecionando e visualizando variáveis específicas
+eapv_2021m |>
+  
+  # Selecionando três colunas do data.frame {`eapv_2021m`}
+  select(imunobiologico_vacina, dose, data_da_aplicacao) |>
+  
+  # Utilizando a função `head()` para visualizar as primeiras linhas da tabela
+  head()
+
+```

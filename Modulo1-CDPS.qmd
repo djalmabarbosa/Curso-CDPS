@@ -663,6 +663,14 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 
 ## Usando o R Markdown <br> [*Prática*]{.azul}
 
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Se o objetivo é 'costurar' (criar) um arquivo html:
+
+use 'espaço + espaço + 'enter'' ou <br> para quebrar linhas automaticamente
+
+Se o arquivo de saída for .pdf, use \newline
+:::
+
 ## Quarto vs R Markdown
 
 ------------------------------------------------------------------------
@@ -811,6 +819,7 @@ Algumas das principais formas de buscar ajuda são:
 -   O R é uma linguagem de programação funcional
 -   Não é uma linguagem orientada a objetos, mas permite integração
 -   No R, também cahmamos **objetos** as entidades que armazenam os dados
+-   O R é apenas uma linguagem. Quem faz os cálculos é o computador.
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Fundamentos da linguagem R
@@ -1013,6 +1022,8 @@ Os objetos do R também podem ter *nomes* como atributo
 -   Interessante para visualizações
 :::
 
+------------------------------------------------------------------------
+
 [*Prática*]{.azul}
 
 ``` r
@@ -1124,7 +1135,7 @@ Data Frames
 
 -   Existem formas diferentes, dependendo do tipo de objeto
 
---- 
+------------------------------------------------------------------------
 
 ### Vetores
 
@@ -1315,10 +1326,10 @@ Estruturas de controle
 
     ``` r
 
-    count <- 0
-     while(count < 10) {
-            print(count)
-            count <- count + 1
+    conte <- 0
+     while(conte < 10) {
+            print(conte)
+            conte <- conte + 1
      }
     ```
 
@@ -1330,7 +1341,7 @@ Estruturas de controle
 
 -   repeat: executa um *loop* infinito
 
--   break: para a execução de um *loop*
+-   break: termina a execução de um *loop*
 
     ``` r
      x0 <- 1
@@ -1344,6 +1355,19 @@ Estruturas de controle
             } 
     }
     ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-note style="background-color:#dceeff;"}
+1e-8 refere-se a *notação científica*\
+1e-8 = 1 x 10\^(-8) = 0,00000008
+
+abs( ) é a função que calcula o mótulo, ou valor absoluto
+:::
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Estruturas de controle
@@ -1368,12 +1392,715 @@ Estruturas de controle
 
 -   return: termina a execução de uma função
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
 ::: {.callout-tip style="background-color:#e6ffe6;"}
-
-Sempre que usar estruturas de controle, fique atento aos \{ \}, que iniciam e fecham seu conteúdo.
-
+Sempre que usar estruturas de controle, fique atento aos { }, que iniciam e fecham seu conteúdo.
 :::
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Estruturas de controle
 :::
+
+## Funções
+
+-   São mais um tipo de objeto
+
+    -   No lugar de valores, contém código
+
+    -   O código é armazenado em um formato que permite seu uso facilmente, em novas situações
+
+-   São construídas estabelecendo-se seus **argumentos**
+
+-   A função *arg( )* permite ver os argumentos de uma função [*Prática*]{.azul}
+
+    ```{r, echo = TRUE, eval = FALSE}
+    # Observando os argumentos de uma função
+
+    args(round)
+    ```
+
+------------------------------------------------------------------------
+
+-   Entramos com os argumentos de uma função na ordem em que foram criados
+
+-   Geralmente os dois primeiros argumentos de uma função são conhecidos, então podemos omiti-los
+
+    ```{r, echo=TRUE, eval=FALSE}
+
+    round(x = 1.141598, digits = 2) # argumentos explícitos
+
+    round(1.141598,2) # argumentos implícitos
+    ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Funções
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Boa prática: escrever os nomes dos argumentos a partir do 3º.
+:::
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Funções
+:::
+
+### Escrevendo suas próprias funções
+
+-   Passamos de 'morador' para 'arquiteto'
+-   Uma função tem três componentes básicos
+
+1)  nome
+2)  corpo de código
+3)  conjunto de argumentos
+
+------------------------------------------------------------------------
+
+Utilizamos a função *function( )*
+
+```{r, echo=TRUE, eval=TRUE}
+
+# Prática
+
+# Exemplo de função criada pelo usuário:
+
+joga_dados <- function() {
+  dado <- 1:6
+  dados <- sample(dado, size = 2, replace = TRUE)
+  sum(dados)
+}
+
+# Para chamarmos a função, utilizamos o nome atribuído a ela:
+
+joga_dados() 
+
+# Quando acionamos a função, o R executa o código e retorna o
+# resultado da última linha de código
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Escrevendo funções
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Com o cursos no console, utilize 'seta para cima', para buscar os comandos executados anteriormente.
+:::
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Escrevendo funções
+:::
+
+------------------------------------------------------------------------
+
+Podemos utilizar argumentos que ainda não tenham sido definidos.\
+Neste caso, eles precisam ter valores atribuídos quando chamamos a função.
+
+```{r, echo=TRUE}
+
+# Prática
+
+joga_dados <- function(dado) {
+  dados <- sample(dado, size = 2, replace = TRUE)
+  sum(dados)
+}
+
+joga_dados(dado = 1:4)
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Escrevendo funções
+:::
+
+------------------------------------------------------------------------
+
+Podemos atribuir valores iniciais ao argumento:
+
+```{r, echo=TRUE, eval=FALSE}
+
+# Prática
+
+joga_dados <- function(dado = 1:6) {
+  dados <- sample(dado, size = 2, replace = TRUE)
+  sum(dados)
+}
+
+joga_dados()
+
+joga_dados(dado = 1:12)
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Escrevendo funções
+:::
+
+# 5. Lendo os dados [*Prática*]{.azul}
+
+## Lendo os dados .csv
+
+```{r, echo=TRUE, eval=FALSE}
+
+if(!require(readr)) install.packages("readr")
+library(readr)
+
+dados <- read_csv2(file = "e_sus_notifica.csv")
+
+```
+
+## Lendo dados .dbf
+
+```{r, echo=TRUE, eval=FALSE}
+
+if(!require(foreign)) install.packages("foreign")
+library(foreign)
+
+dados_sinan <- read.dbf(file = 'NINDINET.dbf', as.is = TRUE)
+
+head(dados_sinan)
+
+```
+
+## Lendo dados .xlsx
+
+```{r, echo=TRUE, eval=FALSE}
+
+if(!require(readxl)) install.packages("readxl")
+library(readxl)
+
+dados_sivep <- read_excel("sivep_gripe.xlsx",
+                          sheet = "SIVEPGRIPE",
+                          skip = 0)
+
+```
+
+# 6. Manipulando dados
+
+------------------------------------------------------------------------
+
+-   É parte da pesquisa quantitativa que toma mais tempo
+-   Também é onde acontece a maior parte dos erros
+-   Quais os problemas de se fazer isso em planilhas eletrônicas? 🤔
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Boa prática: indicar todos os pacotes que serão utilizados no começo do script.
+:::
+
+```{r, echo=TRUE, eval=TRUE}
+
+if(!require(foreign)) install.packages("foreign");library(foreign) 
+if(!require(readxl)) install.packages("readxl");library(readxl)
+if(!require(readr)) install.packages("readr");library(readr)
+if(!require(janitor)) install.packages("janitor");library(janitor)
+if(!require(skimr)) install.packages("skimr");library(skimr)
+if(!require(stringr)) install.packages("stringr");library(stringr)
+if(!require(stringi)) install.packages("stringi");library(stringi)
+if(!require(lubridate)) install.packages("lubridate");library(lubridate)
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Manipulando dados
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+<br> Organize os dados do seu projeto dentro de uma pasta separada, p.e., "Dados"
+:::
+
+------------------------------------------------------------------------
+
+```{r, echo = TRUE, eval = FALSE}
+# Importando o arquivo {`NINDINET.dbf`} no objeto {`base`}
+
+base <- read.dbf(file = 'Dados/NINDINET.dbf', as.is = TRUE)
+```
+
+O argumento **as.is**:
+
+-   Evita que texto sejam transformadas em fatores de imediato
+
+-   Isso torna a manipulação mais flexível (ex.: limpeza de dados, padronização de strings, etc)
+
+-   Fotores consomem mais memória. Relevante em arquivos grandes
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Manipulando dados
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+<br> Use 'Ctrl' + F para buscar dentro do seu documento R.
+
+Use 'Replace' para substituir palavras.\
+Muito útil quando queremos alterar o comporamento de diversas chunks ao mesmo tempo.
+:::
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Manipulando dados
+:::
+
+## Visualização inicial dos dados
+
+```{r, echo=TRUE, eval=FALSE}
+
+head(base)
+
+library(tidyverse)
+glimpse(base)
+
+```
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+<br> Execute o código da chunk com o 'play', no canto superior direito.
+
+Se uma chunk de código possui diversas saídas (visualizações), clique nos quadros do rstudio abaixo da chunk para visualizar todas as saídas.
+:::
+
+## Selecionando variáveis (colunas)
+
+```{r, echo=TRUE, eval=FALSE}
+
+base_menor <- select(base, DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI,
+                     ID_AGRAVO)
+
+```
+
+## Piping
+
+O R nos permite utilizar *piping* (encadeamento) para ligar funções.
+
+```{r, echo=TRUE, eval=FALSE}
+
+base_menor <- base |>
+  select(DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI, ID_AGRAVO)
+
+```
+
+-   O primeiro argumento da função é passado de antemão
+-   Operador de 'pipe' antigo: %\>%
+-   Operador do tidyverse: \|\>
+
+------------------------------------------------------------------------
+
+Incluindo mais uma função no pipe
+
+```{r, echo=TRUE, eval=FALSE}
+
+base |>
+  select(DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI, ID_AGRAVO) |>
+  head()
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Piping
+:::
+
+## Excluindo colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor |>
+  select(-DT_NASC) |> 
+  head()
+
+```
+
+## Criando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando uma nova variável, tempo de digitação:
+base_menor_2 <- base |>
+select(NU_NOTIFIC, ID_AGRAVO, DT_NOTIFIC, DT_DIGITA) |>
+  mutate(TEMPO_DIGITA = DT_DIGITA - DT_NOTIFIC)
+
+# Visualizando a var DT_DIGITA como numérica
+base_menor_2 |>
+  mutate(TEMPO_DIGITA = as.numeric(TEMPO_DIGITA)) |>
+  head()
+
+```
+
+## Limpando caracteres e padronizando as colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `CID-10-CATEGORIAS.CSV } para o `R`
+cid10_categorias <- read_csv2('Dados/CID-10-CATEGORIAS.CSV')
+
+# Utilizando a função `colnames()` para checar as variáveis 
+colnames(cid10_categorias)
+
+# Utilizando a função `clean_names()` (janitor) para editar o nome das variáveis
+cid10_categorias_nova <- clean_names(cid10_categorias)
+
+# Visualizando as variáveis após a transformação
+colnames(cid10_categorias_nova)
+
+```
+
+------------------------------------------------------------------------
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Utilize *'pacote :: funçao'* para especificar de qual pacote vem a função.
+
+Muito útil quando uma função existe em pacotes diferentes.
+:::
+
+```{r, echo = TRUE, eval = FALSE}
+# Utilizando a função `clean_names()` (janitor) para editar o nome das variáveis
+cid10_categorias_nova <- janitor::clean_names(cid10_categorias)
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Limpando caracteres e padronizando as colunas
+:::
+
+## Filtrando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Filtrando os CIDs igual a B19, da coluna "ID_AGRAVO"
+# com tempo de digitação maior que sete dias
+base_menor_2 |>
+  filter(ID_AGRAVO == "B19", TEMPO_DIGITA > 7) |>
+  head()
+
+# Filtrando os registros iguais a B19 OU A279 OU B54 na coluna "ID_AGRAVO"
+base_menor_2 |>
+  filter(ID_AGRAVO == "B19" | ID_AGRAVO == "A279" | ID_AGRAVO == "B54") |>
+  head(20)
+
+# Fazendo o mesmo filtro utilizando o operador `%in%`
+base_menor_2 |>
+  filter(ID_AGRAVO %in% c("B19", "A279", "B54")) |>
+  head(20)
+
+```
+
+## Sumarizando colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Agrupando as notificações pelos agravos e contando a frequência de notificações
+base_menor_2 |>
+  group_by(ID_AGRAVO) |>
+  count(ID_AGRAVO) |>
+  print(n = 20)
+
+```
+
+------------------------------------------------------------------------
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor_2 |>
+  
+  # Agrupando as notificações pelos agravos
+  group_by(ID_AGRAVO) |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(
+    
+    # Criando uma coluna de total, utilizando a função `n()`
+    total_agravos = n(),
+    
+    # Criando uma coluna de média, utilizando a função `mean()`
+    media_digita = mean(TEMPO_DIGITA)
+  )
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Sumarizando colunas
+:::
+
+## Modificando a ordem das colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor_2 |>
+  
+  # Agrupando as notificações pelos agravos
+  group_by(ID_AGRAVO) |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(total_agravos = n(),
+            media_digita = mean(TEMPO_DIGITA)) |>
+  
+  # Ordenando a tabela pela ordem decrescente da média de tempo de digitação
+  arrange(desc(media_digita))
+
+```
+
+## Avaliando a completude dos dados
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  
+  # Utilizando a função `summarise()` para criar novas colunas de síntese
+  summarise(
+    
+    # Criando uma coluna com a soma de todos os registros da variável raça/cor devidamente preenchidos
+    total_completo = sum(!is.na(CS_RACA)),
+    
+    # Criando uma coluna com o total de registros na tabela
+    total_registros = n(),
+    
+    # Criando uma coluna com a soma de registros com a variável raça/cor em branco
+    total_missing_raca = sum(is.na(CS_RACA)),
+    
+    # Criando uma coluna de porcentagem de completude (preenchimento)
+    taxa_completude = (total_completo / total_registros) * 100
+  )
+
+```
+
+::: {.callout-note style="background-color:#dceeff;"}
+Em programação, "!" é utilizado para negar uma expressão lógica.
+:::
+
+## Renomeando valores
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  
+  # Contabilizando o número de registros conforme as categorias de preenchimento
+  # da variável "CS_RACA"
+  count(CS_RACA)
+
+base |>
+  
+  # Transformando os valores em branco em 9 na coluna "CS_RACA"
+  mutate(CS_RACA = replace_na(CS_RACA, replace = 9)) |>
+  
+  # Contabilizando o número de registros conforme as categorias de preenchimento
+  # da variável "CS_RACA"
+  count(CS_RACA)
+
+```
+
+## Transformando os dados no formato largo em formato longo
+
+---
+
+![Fonte: Análise de dados para vigilância em saúde (ABRASCO)](wide_long.png)
+
+---
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `cobertura_hepatiteb_rosas_2016_2020_A.csv } para o `R`
+dados <- read_csv(file = "Dados/cobertura_hepatiteb_rosas_2016_2020_A.csv")
+
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando o objeto {`dados_longos`}
+dados_longos <- dados |>
+  
+  # Utilizando a função `pivot_longer()` para transformação de colunas
+  pivot_longer(
+    
+    # Definindo as colunas que serão transformadas
+    cols = c("Ano 2016", "Ano 2017", "Ano 2018", "Ano 2019", "Ano 2020"),
+    
+    # Definindo o nome da variável nova que receberá os nomes acima
+    names_to = "Ano",
+    
+    # Definindo o nome da variável nova que receberá os valores da tabela
+    values_to = "Cobertura Vacinal contra Hepatite B",
+    
+    # Retirando a palavra "Ano " antes de cada valor da variável Ano
+    # Também estamos retirando o espaço depois da palavra "Ano"
+    names_prefix = "Ano "
+  )
+# Visualizando a tabela {`dados_longos`} no formato longo
+dados_longos
+
+```
+
+## Transformando os dados do formato longo em formato largo
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Criando o objeto {`dados_largos`}
+dados_largos <- dados_longos |>
+  
+  # Utilizando a função `pivot_wider()` para transformação de colunas
+  pivot_wider(
+    
+    # Definindo de qual variável estamos resgatando os nomes das colunas
+    names_from = "Ano",
+    
+    # Definindo de qual variável estamos resgatando os valores das colunas
+    values_from = "Cobertura Vacinal contra Hepatite B")
+
+# visualizando a tabela
+dados_largos
+
+```
+
+## Separarando o conteúdo de uma variável em várias colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Importando o banco de dados { `notificacao_eapv_2021m.xlsx` } para o `R`
+eapv_2021m <- read_xlsx('Dados/notificacao_eapv_2021m.xlsx')
+
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Visualizando a tabela {`eapv_2021m`} com a função `View()
+View(eapv_2021m)
+
+# Selecionando e visualizando variáveis específicas
+eapv_2021m |>
+  
+  # Selecionando três colunas do data.frame {`eapv_2021m`}
+  select(imunobiologico_vacina, dose, data_da_aplicacao) |>
+  
+  # Utilizando a função `head()` para visualizar as primeiras linhas da tabela
+  head()
+
+```
+
+------------------------------------------------------------------------
+
+```{r, echo = TRUE, eval = FALSE}
+
+eapv_2021m |>
+  # Dividindo a coluna `imunobiologico_vacina` em três novas colunas
+  separate(
+    # Definindo a coluna que será separada
+    col = imunobiologico_vacina,
+    # Definindo os nomes das novas colunas
+    into = c("vac_event_1", "vac_event_2", "vac_event_3"),
+    # Definindo qual o caractere que está sendo utilizado dentro das colunas
+    sep = "\\|"
+  ) |>
+  # Selecionando as novas colunas para visualização
+  select("vac_event_1", "vac_event_2", "vac_event_3")
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Separarando o conteúde uma variável em várias colunas
+:::
+
+## Recodificando linhas e colunas
+
+```{r, echo = TRUE, eval = FALSE}
+
+base_menor |>
+  # Renomeando os valores da variável CS_SEXO usando a função `mutate()` e `case_when()`
+  mutate(
+    sexo_cat = case_when(
+      CS_SEXO == "M" ~ "Masculino",
+      CS_SEXO == "F" ~ "Feminino",
+      CS_SEXO == "I" | is.na(CS_SEXO) ~ "Ignorado",
+      TRUE ~ NA_character_
+    )
+  ) |>
+  # Visualizando a tabela {`base_menor`} recodificada
+  head()
+
+```
+
+------------------------------------------------------------------------
+
+```{r, echo = TRUE, eval = FALSE}
+base_menor <- base_menor |>
+  mutate(
+    raca_cor_cat = case_when(
+      # Se o valor da coluna for igual a "1" transforme para "Branca"
+      CS_RACA == "1" ~ "Branca",
+      # Se o valor da coluna for igual a "2" transforme para "Preta"
+      CS_RACA == "2" ~ "Preta",
+      # Se o valor da coluna for igual a "3" transforme para "Amarela"
+      CS_RACA == "3" ~ "Amarela",
+      # Se o valor da coluna for igual a "4" transforme para "Parda"
+      CS_RACA == "4" ~ "Parda",
+      CS_RACA == "5" ~ "Indígena",
+      CS_RACA == "9" | is.na(CS_RACA) ~ "Ignorado",
+      TRUE ~ NA_character_
+    )
+  ) |>
+  head()
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Recodificando linhas e colunas
+:::
+
+------------------------------------------------------------------------
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  # Utilizando a função `mutate()` para criar colunas
+  mutate(
+    # Criando uma coluna de idade conforme a codificação da variável NU_IDADE_N
+    idade_anos = if_else(str_sub(NU_IDADE_N, 1, 1) == "4", 
+                         as.numeric(str_sub(NU_IDADE_N, 2, 4)), 0),
+    # Criando uma coluna de faixa etária a partir da variável idade dos casos notificados
+    # utilizando a função `cut()`
+    fx_etaria = cut(
+      # Definindo qual variável será classificada em faixas
+      x = idade_anos,
+      # Definindo os pontos de corte das classes
+      breaks = c(0, 10, 20, 60, Inf),
+      # Definindo os rótulos das classes
+      # Definindo o tipo do ponto de corte
+      right = FALSE
+    )
+  ) |>
+  select(NU_IDADE_N,idade_anos,fx_etaria,everything()) # Muda ordem de visualização
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Recodificando linhas e colunas
+:::
+
+---
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+<br>
+Comentários do meio da linha podem ser úteis, mas podem dificultar a visualização
+do código.
+:::
+
+```{r, echo = TRUE, eval = FALSE}
+
+base |>
+  mutate(
+    idade_anos = if_else(str_sub(NU_IDADE_N, 1, 1) == "4", 
+                         as.numeric(str_sub(NU_IDADE_N, 2, 4)), 0),
+    fx_etaria = cut(
+      x = idade_anos,
+      breaks = c(0, 10, 20, 60, Inf),
+      right = FALSE
+    )
+  ) |>
+  select(NU_IDADE_N,idade_anos,fx_etaria,everything())
+
+```
