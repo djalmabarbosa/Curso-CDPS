@@ -18,7 +18,9 @@ format:
 editor: visual
 ---
 
-# Sobre o Curso
+# 1. Sobre o Curso
+
+------------------------------------------------------------------------
 
 ## 🎯 Objetivo
 
@@ -59,6 +61,8 @@ Projeto de Extensão UFR Nº 696/2025
 <img src="EquipeSDS.png" alt="Equipe Saúde Data Science" class="img-centro"/>
 
 # 2. Introdução
+
+------------------------------------------------------------------------
 
 ## O que é ciência de dados (*Data Science*)
 
@@ -321,6 +325,8 @@ Por que a linguagem/software R
 :::
 
 # 3. Usando o R!
+
+------------------------------------------------------------------------
 
 ## Prática: Baixar e instalar o R
 
@@ -798,10 +804,16 @@ Algumas das principais formas de buscar ajuda são:
 
 # 4. Fundamentos da linguagem R
 
-- O R é uma linguagem de programação dinâmica
-- O R é uma linguagem de programação funcional
-- Não é uma linguagem orientada a objetos, mas permite integração
-- No R, os *Objetos* são entidades que armazenam dados
+------------------------------------------------------------------------
+
+-   O R é uma linguagem de programação dinâmica
+-   O R é uma linguagem de programação funcional
+-   Não é uma linguagem orientada a objetos, mas permite integração
+-   No R, **objetos** são entidades que armazenam dados
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Fundamentos da linguagem R
+:::
 
 ## Objetos
 
@@ -811,21 +823,30 @@ O R possui cinco classes básicas (atômicas) de objetos:
 2.  numérico (números reais)
 3.  inteiro
 4.  complexo
-5.  lógico (verdadeiro/falso
+5.  lógico (verdadeiro/falso)
 
-[O objeto mais básico é um vetor.]{.fragment}
+------------------------------------------------------------------------
 
--   Um vetor pode conter apenas objetos atômicos da mesma classe
-    -   Exceção: *lista*
+::: {.callout-note style="background-color:#dceeff;"}
+O objeto mais básico é o **vetor**
+
+-   Geralmente um vetor contém apenas objetos atômicos da mesma classe
+    - Exceção: *lista*: um tipo especial de vetor
+:::
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Objetos
+:::
 
 ## Números
 
 -   No R, números são geralmente considerados como objetos numéricos (números reais com maior precisão '*double*')
 -   Se quisermos usar números inteiros, podemos utilizar o sufxo L
+    -   P.e: *x \<- c(2L,4L)*
 -   Existe um número especial *Inf*, para representar o infinito.
-    -   P.e: 1/ Inf; 0
+    -   P.e: *1/ Inf*; 0
 -   *NaN* representa um valor indefinido ("*not a number*").
-    -   P.e: 0/0; NaN
+    -   P.e: *0/0*; NaN
 
 ## Atributos
 
@@ -841,7 +862,7 @@ Os objetos do R podem ter atributos
 
 ## Entrando com os insumos
 
-> No prompt do R digitamos **expressões**.
+> No *prompt* do R digitamos **expressões**.
 
 > O simbolo '\<-' é o **operador de atribuição**.
 
@@ -883,22 +904,22 @@ x
 
 ## Criando vetores
 
-A função *c()* pode ser utilizada para criar vetores de objetos:
+A função *c( )* pode ser utilizada para criar vetores de objetos:
 
 ``` r
 
-x <- c(0.4, 0.9)       # numeric
-x <- c(TRUE, FALSE)    # logical
-x <- c(T, F)           # logical
-x <- c("a", "b", "c")  # character
-x <- 3:25              # integer
-x <- c(2+0i, 1+4i)     # complex
+x <- c(0.4, 0.9)       # numérico
+x <- c(TRUE, FALSE)    # lógico
+x <- c(T, F)           # lógico
+x <- c("a", "b", "c")  # caractere
+x <- 3:25              # inteiro
+x <- c(2+0i, 1+4i)     # complexo
 ```
 
 <br>
 
 ::: callout-tip
-Utilize a função *class()* para varificar o tipo de objeto criado
+Utilize a função *class( )* para varificar o tipo de objeto criado
 
 ```{r, echo=TRUE}
 class(x)
@@ -914,9 +935,9 @@ Ou observe a classe no painel superior direito.
 O que acontece quando fazemos:
 
 ``` r
-y <- c(1.7, "a")  # character
-y <- c(TRUE, 2)   # numeric
-y <- c("a", TRUE) # character
+y <- c(1.7, "a")  # caractere
+y <- c(TRUE, 2)   # numérico
+y <- c("a", TRUE) # caractere
 ```
 
 ![Regra de conversão. Fonte: Hands-on Programming with R, Grolemund (2015)](coercao_regra.png)
@@ -942,18 +963,19 @@ as.logical(x)
 ## Matrizes
 
 -   Matrizes são vetores, com o atributo *dimensão*
+
     -   O próprio atributo *dimensão* é um vetor
+
 -   São construídas a partir da coluna (primeira à esquerda em diante)
 
-```{r, echo=TRUE}
+    ```{r, echo=TRUE}
+    m <- matrix(1:6, nrow = 2, ncol = 3) 
+    m
 
-m <- matrix(1:6, nrow = 2, ncol = 3) 
-m
+    dim(m)
 
-dim(m)
-
-attributes(m)
-```
+    attributes(m)
+    ```
 
 ------------------------------------------------------------------------
 
@@ -980,23 +1002,21 @@ rbind(x,y)
         x
         ```
 
----
+------------------------------------------------------------------------
 
 ::: {.callout-note style="background-color:#dceeff;"}
-
 Nomes
 
 Os objetos do R também podem ter *nomes* como atributo
 
-- Facilia a organização o código
+-   Facilia a organização o código
 
-- Interessane em visualizações
-
+-   Interessane em visualizações
 :::
 
 [*Prática*]{.azul}
 
-```r
+``` r
     x <- 1:3
 
     names(x)
@@ -1008,16 +1028,14 @@ Os objetos do R também podem ter *nomes* como atributo
     names(x)
 ```
 
-
-
----
+------------------------------------------------------------------------
 
 Podemos criar listas já com o atributo nome
 
-```{r}
+```{r, echo=TRUE}
 x <- list(Hosp = 1:4, UBS = 2, Espec = "Sim")
+x
 ```
-
 
 ## Fatores
 
@@ -1053,8 +1071,6 @@ Fatores
 ![Fonte: Análise de dados para a vigilância em saúde (ABRASCO)](tipos_variaveis.png)
 :::
 
-
-
 ## Valores ausentes (*missing values*)
 
 -   Valores ausentes são denotados por *NA* ou *NaN*
@@ -1075,7 +1091,7 @@ Fatores
     is.nan(x)
     ```
 
-## Quadro de dados (*data frames*){.smaller}
+## Quadro de dados (*data frames*) {.smaller}
 
 São utilizados para armazenar dados tabulares, tabelas
 
@@ -1102,4 +1118,235 @@ São utilizados para armazenar dados tabulares, tabelas
 
 Existem muitas operações que podem ser utilizadas para extrair subconjuntos dos objetos do R
 
-- \[  
+### Vetores
+
+-   Utilizamos \[ \]
+-   Retorna um subconjunto cujo elemento é da mesma classe do original
+-   Pode ser utilizado para selecionar mais de um elemento
+
+------------------------------------------------------------------------
+
+[*Prática*]{.azul}
+
+``` r
+ x <- c("a", "b", "c", "c", "d", "a")
+ x[1]
+ 
+ x[2]
+
+x[1:4]
+
+x[x > "a"]
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Vetores
+:::
+
+### Matrizes
+
+-   Utilizamos\[ \]
+
+-   Consideramos os índices *i* (linhas) e *j* (colunas): *(i,j)*
+
+    ```{r, echo = TRUE}
+    x <- matrix(1:6, 2, 3)
+    x[1,2]
+    x[2,1]
+    ```
+
+-   Podemos selecionar apenas linhas ou colunas
+
+    ```{r, echo=TRUE}
+    x[1,]
+    x[, 2]
+    ```
+
+### Listas
+
+Podemos utilizar \[ \], \[ \[ \] \] ou \$
+
+<br>
+
+```{r, echo = TRUE}
+
+x <- list(Hosp = 1:4, UBS = 2)
+
+x[1]
+
+x[[1]]
+
+x$UBS
+
+x[["UBS"]]
+
+
+
+```
+
+### Data frames
+
+``` r
+
+pacientes <- data.frame(
+  id = c(101, 102, 103, 104),
+  nome = c("Ana", "Carlos", "Beatriz", "Daniel"),
+  idade = c(35, 42, 29, 50),
+  hipertensao = c(TRUE, TRUE, FALSE, TRUE),
+  glicemia = c(92, 110, 85, 130)
+)
+
+# Selecionar a primeira linha, segunda coluna (nome do primeiro paciente)
+pacientes[1, 2]    # "Ana"
+
+# Selecionar as duas primeiras linhas, todas as colunas
+pacientes[1:2, ]
+
+# Selecionar todas as idades
+pacientes[, "idade"]
+
+# Selecionar pacientes com glicemia maior que 100 (potencial risco de diabetes)
+pacientes[pacientes$glicemia > 100, ]
+
+# Selecionar pacientes com hipertensão
+pacientes[pacientes$hipertensao == TRUE, ]
+```
+
+## Estruturas de controle
+
+------------------------------------------------------------------------
+
+-   Permitem controlarmos o fluxo de execução de um programa (script)
+
+-   São mais úteis para escrever programas (*scripts*)
+
+-   Na linha de comando, as funções *apply* são mais úteis
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+Estruturas de controle:
+
+-   if, else
+
+-   for
+
+-   while
+
+-   repeat
+
+-   break
+
+-   next
+
+-   return
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+-   If, else: testam um condição
+
+    ``` r
+     if(<condition>) {
+            ## do something
+     } else {
+            ## do something else
+     }
+    ```
+
+-   
+
+    ``` r
+    if(x > 3) {
+            y <- 10
+     } else {
+            y <- 0
+     }
+    ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+-   for: executa um *loop* uma quantidade fixa de vezes\
+    [*Prática*]{.azul}
+
+    ``` r
+    for(i in 1:10) {
+            print(i)
+     }
+    ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+-   while: executa um *loop* enquanto uma condição for verdade
+
+    ``` r
+
+    count <- 0
+     while(count < 10) {
+            print(count)
+            count <- count + 1
+     }
+    ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+-   repeat: executa um *loop* infinito
+
+-   break: para a execução de um *loop*
+
+    ``` r
+     x0 <- 1
+     tol <- 1e-8
+     repeat {
+            x1 <- computeEstimate()
+            if(abs(x1 - x0) < tol) {
+                    break
+            } else {
+                    x0 <- x1
+            } 
+    }
+    ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
+
+------------------------------------------------------------------------
+
+-   next: pula uma interação de um *loop*
+
+    ``` r
+
+     for(i in 1:100) {
+     if(i <= 20) {
+     ## Pula as primeiras 20 iterações
+     next 
+            }
+     ## Faz algo aqui...
+    ```
+
+<!-- -->
+
+-   return: termina a execução de uma função
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Estruturas de controle
+:::
