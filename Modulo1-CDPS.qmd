@@ -705,6 +705,12 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 3.  Clique em **Create Project** ✅
 :::
 
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Geralmente não compensa salvar o *workspace* quando fechamos o Rstudio.
+
+Para desabilitar essa opção, vá em *Tools* \> *Global Options* e desmarque *Sabe workspace to* RData\* on exit:\* Never.
+:::
+
 ## Utilizando o Git/GitHub
 
 ### Git
@@ -730,11 +736,6 @@ Confira os 'Cheat Sheets' para ver o que é possível fazer!
 3.  Fazer *clone* no RStudio ou usar GitHub Desktop
 4.  Trabalhar localmente: editar scripts, salvar, testar
 5.  Realizar *commit* e *push* das alterações
-
-::: {.callout-tip style="background-color:#e6ffe6;"}
-1.  Clonar resositórios de outras pessoas (melhor para explorar, aprender...)
-2.  Fazer um 'fork' (permite sugerir mudanças)
-:::
 
 ------------------------------------------------------------------------
 
@@ -809,7 +810,7 @@ Algumas das principais formas de buscar ajuda são:
 -   O R é uma linguagem de programação dinâmica
 -   O R é uma linguagem de programação funcional
 -   Não é uma linguagem orientada a objetos, mas permite integração
--   No R, **objetos** são entidades que armazenam dados
+-   No R, também cahmamos **objetos** as entidades que armazenam os dados
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Fundamentos da linguagem R
@@ -824,19 +825,6 @@ O R possui cinco classes básicas (atômicas) de objetos:
 3.  inteiro
 4.  complexo
 5.  lógico (verdadeiro/falso)
-
-------------------------------------------------------------------------
-
-::: {.callout-note style="background-color:#dceeff;"}
-O objeto mais básico é o **vetor**
-
--   Geralmente um vetor contém apenas objetos atômicos da mesma classe
-    - Exceção: *lista*: um tipo especial de vetor
-:::
-
-::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
-Objetos
-:::
 
 ## Números
 
@@ -902,19 +890,26 @@ x
 ```
 :::
 
-## Criando vetores
+## Vetores {.smaller}
 
-A função *c( )* pode ser utilizada para criar vetores de objetos:
+-   O objeto mais básico é o **vetor**
 
-``` r
+-   Os objetos mais elaborados são uma extensão de vetores
 
-x <- c(0.4, 0.9)       # numérico
-x <- c(TRUE, FALSE)    # lógico
-x <- c(T, F)           # lógico
-x <- c("a", "b", "c")  # caractere
-x <- 3:25              # inteiro
-x <- c(2+0i, 1+4i)     # complexo
-```
+-   Um vetor contém apenas objetos atômicos da mesma classe
+
+-   A função *c( )* pode ser utilizada para criar vetores de objetos
+
+    ``` r
+    x <- c(0.4, 0.9)                              # numérico
+    x <- c(TRUE, FALSE)                           # lógico
+    x <- c(T, F)                                  # lógico
+    x <- c("Vacinado", "Não Vacinado", "Dúvida")  # caractere
+    x <- 3:25                                     # inteiro
+    x <- c(2+0i, 1+4i)                            # complexo
+    ```
+
+------------------------------------------------------------------------
 
 <br>
 
@@ -926,6 +921,10 @@ class(x)
 ```
 
 Ou observe a classe no painel superior direito.
+:::
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Vetores
 :::
 
 ------------------------------------------------------------------------
@@ -1011,7 +1010,7 @@ Os objetos do R também podem ter *nomes* como atributo
 
 -   Facilia a organização o código
 
--   Interessane em visualizações
+-   Interessante para visualizações
 :::
 
 [*Prática*]{.azul}
@@ -1044,7 +1043,7 @@ x
 -   Podem ser vistos como vetores inteiros que possum um rótulo (*label*)
 -   São tratados de forma especial em modelagem
 -   A odem dos níveis pode ser estabelecida com o argumento *levels* da função *factor()*.
-    -   Tb relevante para modelagem, pois o primeiro nível é utilizado como *baseline*
+    -   Relevante para modelagem, pois o primeiro nível é utilizado como *baseline*
 
 ------------------------------------------------------------------------
 
@@ -1063,9 +1062,7 @@ x <- factor(c("sim", "sim", "não", "sim", "não"),
 Fatores
 :::
 
-------------------------------------------------------------------------
-
-### Tipos de Variáveis
+## Tipos de Variáveis
 
 ::: {.callout-note style="background-color:#f7fbf7;"}
 ![Fonte: Análise de dados para a vigilância em saúde (ABRASCO)](tipos_variaveis.png)
@@ -1079,9 +1076,9 @@ Fatores
 
     -   um *NaN* é também um *NA*, mas o inverso não é verdadeiro
 
--   Podemos usar *is.na()* para testar se um objeto é *NA*
+-   Podemos usar *is.na( )* para testar se um objeto é *NA*
 
--   Podemos usar *is.nan()* para testar se um objeto é *NaN*
+-   Podemos usar *is.nan( )* para testar se um objeto é *NaN*
 
     ```{r, echo=TRUE}
     x <- c(1, 2, NA, 10, 3)
@@ -1103,26 +1100,41 @@ São utilizados para armazenar dados tabulares, tabelas
 
 -   Geralmente são criados chamando *read.table()* ou *read.csv()*
 
-    ```{r,echo=TRUE}
+------------------------------------------------------------------------
 
-    x <- data.frame(paciente = 1:4, retorno = c(T, T, F, F)) 
+Também podemos criá-los com a função *data.frame( )*:
 
-    x
+```{r, echo=TRUE}
+x <- data.frame(paciente = 1:4, retorno = c(T, T, F, F)) 
 
-    nrow(x)
+x
 
-    ncol(x)
-    ```
+nrow(x)
+
+ncol(x)
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Data Frames
+:::
 
 ## *Subsetting*
 
-Existem muitas operações que podem ser utilizadas para extrair subconjuntos dos objetos do R
+-   Refere-se à operação de extrair subconjuntos dos objetos do R
+
+-   Existem formas diferentes, dependendo do tipo de objeto
+
+--- 
 
 ### Vetores
 
 -   Utilizamos \[ \]
 -   Retorna um subconjunto cujo elemento é da mesma classe do original
 -   Pode ser utilizado para selecionar mais de um elemento
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Subsetting
+:::
 
 ------------------------------------------------------------------------
 
@@ -1162,6 +1174,10 @@ Vetores
     x[, 2]
     ```
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Subsetting
+:::
+
 ### Listas
 
 Podemos utilizar \[ \], \[ \[ \] \] ou \$
@@ -1180,9 +1196,11 @@ x$UBS
 
 x[["UBS"]]
 
-
-
 ```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Subsetting
+:::
 
 ### Data frames
 
@@ -1212,13 +1230,15 @@ pacientes[pacientes$glicemia > 100, ]
 pacientes[pacientes$hipertensao == TRUE, ]
 ```
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Subsetting
+:::
+
 ## Estruturas de controle
 
-------------------------------------------------------------------------
+-   São mais úteis para escrever **programas** (*scripts*)
 
--   Permitem controlarmos o fluxo de execução de um programa (script)
-
--   São mais úteis para escrever programas (*scripts*)
+-   Permitem controlar o fluxo de execução do *script*
 
 -   Na linha de comando, as funções *apply* são mais úteis
 
@@ -1253,10 +1273,10 @@ Estruturas de controle
 -   If, else: testam um condição
 
     ``` r
-     if(<condition>) {
-            ## do something
+     if(<condição>) {
+            ## faz algo
      } else {
-            ## do something else
+            ## faz outra coisa
      }
     ```
 
@@ -1331,7 +1351,7 @@ Estruturas de controle
 
 ------------------------------------------------------------------------
 
--   next: pula uma interação de um *loop*
+-   next: pula interações de um *loop*
 
     ``` r
 
@@ -1341,11 +1361,18 @@ Estruturas de controle
      next 
             }
      ## Faz algo aqui...
+     }
     ```
 
 <!-- -->
 
 -   return: termina a execução de uma função
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+
+Sempre que usar estruturas de controle, fique atento aos \{ \}, que iniciam e fecham seu conteúdo.
+
+:::
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Estruturas de controle
