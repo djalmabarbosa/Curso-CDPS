@@ -2104,3 +2104,416 @@ base |>
   select(NU_IDADE_N,idade_anos,fx_etaria,everything())
 
 ```
+
+## Unindo tabelas (bases de dados)
+
+```{r}
+
+tabela_municipios <- read_excel("Dados/tabela_municipios.xlsx",
+                                sheet = 1,
+                                skip = 0)
+
+```
+
+
+## Verificando o tipo de variável na coluna `ID_MN_RESI` do NINDINET
+
+```{r}
+
+class(base_menor$ID_MN_RESI)
+
+```
+
+## Verificando o tipo de variável na coluna `ID_MUNICIPIO` da tabela de municípios do IBGE
+
+```{r}
+
+class(tabela_municipios$ID_MUNICIPIO)
+
+```
+
+## Transformando apenas a variável `ID_MUNICIPIO` do data.frame {`tabela_municipios`}
+## em 'integer'
+
+```{r}
+
+tabela_municipios$ID_MUNICIPIO <- as.integer(tabela_municipios$ID_MUNICIPIO)
+
+left_join(
+  # Unindo a tabela {`base_menor`}
+  x = base_menor,
+  # com a tabela {`tabela_municipios`}
+  y = tabela_municipios,
+  # Selecionando as colunas `ID_MN_RESI` e `ID_MUNICIPIO` para unir os bancos de dados
+  by = c("ID_MN_RESI" = "ID_MUNICIPIO")) |>
+  # Visualizando a união realizada
+head()
+
+```
+
+
+# 7. Lidando com textos
+
+## Contando caracterres e extraindo textos
+
+```{r}
+
+CID10 <- read_csv2("Dados/CID-10-CATEGORIAS.CSV",
+                   locale = locale(encoding = "latin1"))
+
+```
+
+
+
+```{r}
+
+# Criando um novo objeto com as seleções feitas
+
+nomes_cid <- CID10 |>
+  # Selecionar apenas as linhas de interesse (linhas 1 a 15)
+  slice(1:15) |> 
+  # Selecionando apenas a variável "DESCRICAO" e transformando em `character` simples
+  pull(DESCRICAO)
+
+nomes_cid
+
+# Contando quantos caracteres existem em cada linha
+str_length(nomes_cid)
+
+# Extraindo caracteres entre a 1ª e a 11ª posição da linha
+str_sub(nomes_cid, start = 1, end = 11)
+
+# Indicando a posição final da primeira palavra de cada texto
+str_sub(nomes_cid, 
+        start = 1, 
+        end = c(6,6,6,10,6,6,8,6,9,8,11,11,11,11,11))
+
+# Extraindo a primeira palavra
+word(nomes_cid, 1, sep = " ")
+
+```
+
+## Alterando a ordem e reordenando texto
+
+```{r}
+
+# Ordenando o objeto {`nomes_cid`} para o formato ascendente (A-Z)
+str_sort(nomes_cid)
+
+# Ordenando o objeto {`nomes_cid`} para o formato decrescente (Z-A)
+str_sort(nomes_cid, decreasing = TRUE)
+
+```
+
+## Unindo strings
+
+```{r}
+
+# Unindo *strings* para a formação da palavra "Tuberculose"
+str_c("Tuber","culo","se")
+
+# Unindo *strings* incluindo espaço entre elas
+# adicionaremos o argumento `sep = " "`
+str_c("Tuberculose","respiratória,","com","confirmação",
+      "bacteriológica","e histológica", sep = " ")
+
+# Salvando as modificações no objeto {`agravo`}
+agravo <- c("Tuberculose","respiratória,","com","confirmação",
+            "bacteriológica","e histológica")
+
+# Unindo *strings* armazenadas no objeto {`agravo`}
+# em um único *string* de texto
+str_c(agravo, collapse = " ")
+
+```
+
+## Transformando strings
+
+```{r}
+
+# Transformando todos as letras em maiúsculas
+str_to_upper(nomes_cid)
+
+# Transformando todos as letras em minúsculas
+str_to_lower(nomes_cid)
+
+# Transformando apenas a primeira maiúscula e restante das palavras em minúsculas
+str_to_sentence(nomes_cid)
+
+# Padronizando a escrita (pacote stringi)
+
+# Vetor com diferentes grafias
+
+nomes <- c("infecções", "infeccões", "infecçoes", "infeccoes")
+
+# Transformação das letras especiais ou com acentuação
+stri_trans_general(nomes, id = "Latin-ASCII")
+
+```
+
+
+## Identificando padrões em strings
+
+```{r}
+
+# Extraindo linhas onde a palavra "Tuberculose" aparece
+str_subset(nomes_cid, pattern = "Tuberculose")
+
+# Extraindo linhas onde a palavra "tuberculose" aparece, independente se
+# maiúscula ou minúscula
+str_subset(nomes_cid, pattern = fixed("tuberculose", ignore_case = TRUE))
+
+```
+
+---
+
+```{r}
+
+# Encontrando padrões no início do texto
+
+CID10 |> 
+  filter(
+    str_starts(
+      # Utilizando a função `filter()` com a função `str_stars()`
+      # Selecionando a variável usada para encontrar palavras no início da frase
+      string = DESCRICAO,
+      # Definindo a palavra a ser pesquisada e ignorando se maiúscula ou minúscula
+      pattern = fixed("outras", ignore_case = TRUE)
+    )
+  ) |> 
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(CAT, DESCRICAO)
+
+```
+
+---
+
+```{r}
+
+# Encontrando padrões no final do texto
+
+CID10 |> 
+  # Utilizando a função `filter()` com a função `str_ends()`
+  filter(
+    str_ends(
+      # Definindo a variável usada para encontrar palavras no final da frase
+      string = DESCRICAO,
+      # Definindo a palavra a ser pesquisada e ignorando se maiúscula ou minúscula
+      pattern = fixed("bacterianas", ignore_case = 
+                        TRUE)
+    )
+  ) |> 
+  # Selecionando as variáveis que queremos utilizar com a função `select()
+  select(CAT, DESCRICAO)
+
+```
+
+## Substituindo valores de texto
+
+```{r}
+
+# Criando um vetor de texto
+agravo <- "Tuberculose respiratória, com confirmação bacteriológica e 
+histológica"
+# Substituindo palavras
+str_replace(agravo, pattern = "com", replacement = "sem")
+
+# Criando um vetor de texto
+agravo <- "Tuberculose respiratória, com confirmação bacteriológica e 
+histológica"
+
+# Substituindo palavras
+str_replace_all(agravo, pattern = "ó", replacement = "o")
+
+```
+
+# 9. Organizando os eventos no tempo
+
+# 9.1 Transformando datas
+
+# Transformando uma string em data
+data_1 <- as_date("2022-05-19")
+# Visualizando a string transformada em data
+data_1
+
+# Verificando a classe do objeto `data_1`
+class(data_1)
+
+# Transformando uma string em data sem definir o formato
+as_date("19/05/2022")
+
+# Transformando uma string em data definindo o formato
+as_date("19/05/2022", format = "%d/%m/%Y")
+
+# Transformando uma string do tipo das datas do SIM definindo o formato
+as_date("01031998", format = "%d%m%Y")
+
+# Cálculo com datas
+
+# Importando o banco de dados { `NINDINET.dbf` } para o `R`
+dt_notific <- read.dbf(file = 'Módulo_3/Dados/NINDINET.dbf') |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC, DT_SIN_PRI, DT_NASC) |>
+  # Selecionar apenas as linhas de interesse (linhas 1 a 10)
+  slice(1:10)
+
+# Somando 60 dias às datas de notificação de casos da tabela {`dt_notific`}
+dt_notific$DT_NOTIFIC + 60
+
+# Subtraindo 60 dias as datas de notificação 
+#de casos à tabela {`dt_notific`}
+dt_notific$DT_NOTIFIC - 60
+
+# Criando a tabela {`dt_notific_2`}
+dt_notific_2 <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC) |>
+  # Utilizando a função `mutate()` para criar a nova coluna "prazo_encerramento"
+  mutate(prazo_encerramento = DT_NOTIFIC + 60)
+# Visualizando a tabela {`dt_notific_2`} criada
+
+dt_notific_2
+
+# Criando a tabela {`dif_tempo`}
+dif_tempo <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC, DT_SIN_PRI) |>
+  # Utilizando a função `mutate()` para criar a nova coluna "DIFERENCA"
+  mutate(DIFERENCA = DT_NOTIFIC - DT_SIN_PRI)
+# Visualizando a tabela {`dif_tempo`} criada
+dif_tempo
+
+# Obterndo o resultado como inteiro
+# Criando a tabela {`dif_tempo_2`}
+dif_tempo_2 <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC, DT_SIN_PRI) |>
+  # Utilizando a função `mutate()` para criar a nova coluna "Diferenca"
+  mutate(Diferenca = as.integer(DT_NOTIFIC - DT_SIN_PRI))
+# Visualizando a tabela {`dif_tempo_2`} criada
+dif_tempo_2
+
+# calcularemos a diferença em dias entre a data de nascimento e a data de 
+# primeiros sintomas para saber a idade (dias) que nossos pacientes tinham 
+# quando estavam doentes
+
+# Criando a tabela {`idade`}
+idade <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NASC, DT_SIN_PRI) |>
+  # Utilizando a função `mutate()` para criar a nova coluna "IDADE_DIAS"
+  mutate(IDADE_DIAS = as.integer(DT_SIN_PRI - DT_NASC))
+# Visualizando a tabela {`idade`} criada
+idade
+
+# Encontrando a idade em anos, com arredondamento
+# Alterando a tabela {`idade`}
+idade <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NASC, DT_SIN_PRI) |>
+  # Utilizando a função `mutate()` para criar as novas colunas de idade
+  mutate(
+    IDADE_DIAS = as.integer(DT_SIN_PRI - DT_NASC),
+    IDADE_ANOS = floor(IDADE_DIAS / 365.25)
+  )
+
+# 9.3 Extração de dia, mês, ano e dia da semana
+
+# Extrai o ano (lubridate)
+year(dt_notific$DT_NOTIFIC)
+
+# Extrai o mês
+month(dt_notific$DT_NOTIFIC)
+
+# Extrai o dia
+day(dt_notific$DT_NOTIFIC)
+
+# Extrai o dia da semana
+wday(dt_notific$DT_NOTIFIC)
+
+# Com o dia da semana abriado
+wday(dt_notific$DT_NOTIFIC, label = TRUE)
+
+# Nome do dia da semana, sem abreviação
+wday(dt_notific$DT_NOTIFIC, label = TRUE, abbr = FALSE)
+
+# 9.4 Identificando a semana epidemiológica nas datas
+
+# Transformando todas as datas da variável `DT_NOTIFIC`
+# da tabela {`dt_notific`} em semana epidemiológica 
+# com a função `epiweek()`
+epiweek(dt_notific$DT_NOTIFIC)
+
+# Alterando a tabela {`dt_notific_2`}
+dt_notific_2 <- dt_notific |>
+  # Utilizando a função `mutate()` para criar novas colunas
+  mutate(
+    # Criando variável ano a partir da data de notificação
+    # utilizando a função `year()`
+    ano = year(DT_NOTIFIC),  
+    # Criando variável mes a partir da data de notificação
+    # utilizando a função `month()`
+    mes = month(DT_NOTIFIC), 
+    # Criando variável dia a partir da data de notificação
+    # utilizando a função `day()`
+    dia = day(DT_NOTIFIC),
+    # Criando variável semana_num a partir da data de notificação
+    # utilizando a função `wday()`
+    semana_num = wday(DT_NOTIFIC), 
+    # Criando variável semana_nome a partir da data de notificação
+    # utilizando a função `wday()`
+    semana_nome = wday(DT_NOTIFIC, label = TRUE),
+    # Criando variável semana_nome_completo a partir da data de notificação
+    # utilizando a função `wday()`
+    semana_nome_completo = wday(DT_NOTIFIC, label = TRUE, abbr = FALSE),
+    # Criando variável semana_epidemiológica a partir da data de notificação
+    # utilizando a função `epiweek()`
+    semana_epidemiologica = epiweek(DT_NOTIFIC)
+  )
+
+#  Agregando e indicando a data de final da semana epidemiológica
+
+# Criando a tabela {`dt_notific_5`}
+dt_notific_5 <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC) |>
+  # Utilizando a função `mutate()` para criar as novas variáveis
+  mutate(
+    dia_semana = wday(DT_NOTIFIC),
+    dif_dia_semana = 7 - dia_semana,
+    DT_semana_epi = DT_NOTIFIC + dif_dia_semana
+  )
+# Visualizando a tabela {`dt_notific_5`} criada
+dt_notific_5
+
+# Outra forma
+
+# Criando a tabela {`dt_notific_6`}
+dt_notific_6 <- dt_notific |>
+  # Selecionando as variáveis que queremos utilizar com a função `select()`
+  select(DT_NOTIFIC) |>
+  # Utilizando a função `mutate()` para criar a nova coluna
+  mutate(DT_semana_epi = DT_NOTIFIC + 7 - wday(DT_NOTIFIC))
+# Visualizando o objeto criado
+dt_notific_6
+
+# 9.5 Sequência de datas
+
+# Criando uma sequência de datas, criando dias de uma semana
+as.Date("2022-01-01") + 0:7
+
+# Criando uma sequência de datas
+seq.Date(from = as.Date("2022-01-01"), to = as.Date("2022-02-01"), by = "day")
+
+# 10. Exportação dos dados
+
+# Salvando a tabela {base_menor} em seu computador na pasta "Meus documentos"
+write_csv(x = base_menor,
+          file = "C:/Users/UFR/Documents/Curso_Vigilancia_Saude/Módulo_3/Dados/base_menor_curso.csv")
+
+install.packages("writexl");library(writexl)
+# Salvando a tabela {base_menor} em seu computador na pasta "Meus documentos"
+write_xlsx(x = base_menor,
+           path = "C:/Users/UFR/Documents/Curso_Vigilancia_Saude/Módulo_3/Dados/base_menor_curso.xlsx")
+
+
