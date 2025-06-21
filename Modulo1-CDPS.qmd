@@ -2329,7 +2329,9 @@ str_replace_all(agravo, pattern = "ó", replacement = "o")
 
 # 9. Organizando os eventos no tempo
 
-# 9.1 Transformando datas
+## Transformando datas
+
+```{r}
 
 # Transformando uma string em data
 data_1 <- as_date("2022-05-19")
@@ -2348,14 +2350,24 @@ as_date("19/05/2022", format = "%d/%m/%Y")
 # Transformando uma string do tipo das datas do SIM definindo o formato
 as_date("01031998", format = "%d%m%Y")
 
-# Cálculo com datas
 
-# Importando o banco de dados { `NINDINET.dbf` } para o `R`
+```
+
+## Cálculo com datas
+
+```{r}
+
 dt_notific <- read.dbf(file = 'Módulo_3/Dados/NINDINET.dbf') |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NOTIFIC, DT_SIN_PRI, DT_NASC) |>
   # Selecionar apenas as linhas de interesse (linhas 1 a 10)
   slice(1:10)
+
+```
+
+---
+
+```{r}
 
 # Somando 60 dias às datas de notificação de casos da tabela {`dt_notific`}
 dt_notific$DT_NOTIFIC + 60
@@ -2370,41 +2382,35 @@ dt_notific_2 <- dt_notific |>
   select(DT_NOTIFIC) |>
   # Utilizando a função `mutate()` para criar a nova coluna "prazo_encerramento"
   mutate(prazo_encerramento = DT_NOTIFIC + 60)
-# Visualizando a tabela {`dt_notific_2`} criada
 
-dt_notific_2
+```
 
-# Criando a tabela {`dif_tempo`}
+
+```{r}
+
+```
+
+
+# Criando a tabela com a diferença entre 'DT_NOTIFIC' e 'DT_SIN_PRI'
+
+```{r}
+
 dif_tempo <- dt_notific |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NOTIFIC, DT_SIN_PRI) |>
   # Utilizando a função `mutate()` para criar a nova coluna "DIFERENCA"
   mutate(DIFERENCA = DT_NOTIFIC - DT_SIN_PRI)
-# Visualizando a tabela {`dif_tempo`} criada
-dif_tempo
 
-# Obterndo o resultado como inteiro
-# Criando a tabela {`dif_tempo_2`}
+# Obtendo o resultado como inteiro
 dif_tempo_2 <- dt_notific |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NOTIFIC, DT_SIN_PRI) |>
   # Utilizando a função `mutate()` para criar a nova coluna "Diferenca"
   mutate(Diferenca = as.integer(DT_NOTIFIC - DT_SIN_PRI))
-# Visualizando a tabela {`dif_tempo_2`} criada
-dif_tempo_2
 
-# calcularemos a diferença em dias entre a data de nascimento e a data de 
-# primeiros sintomas para saber a idade (dias) que nossos pacientes tinham 
-# quando estavam doentes
+```
 
-# Criando a tabela {`idade`}
-idade <- dt_notific |>
-  # Selecionando as variáveis que queremos utilizar com a função `select()`
-  select(DT_NASC, DT_SIN_PRI) |>
-  # Utilizando a função `mutate()` para criar a nova coluna "IDADE_DIAS"
-  mutate(IDADE_DIAS = as.integer(DT_SIN_PRI - DT_NASC))
-# Visualizando a tabela {`idade`} criada
-idade
+
 
 # Encontrando a idade em anos, com arredondamento
 # Alterando a tabela {`idade`}
