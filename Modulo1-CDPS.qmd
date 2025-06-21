@@ -1599,6 +1599,7 @@ Boa prática: indicar todos os pacotes que serão utilizados no começo do scrip
 
 ```{r, echo=TRUE, eval=TRUE}
 
+if(!require(tidyverse)) install.packages("tidyverse");library(tidyverse) 
 if(!require(foreign)) install.packages("foreign");library(foreign) 
 if(!require(readxl)) install.packages("readxl");library(readxl)
 if(!require(readr)) install.packages("readr");library(readr)
@@ -1621,11 +1622,36 @@ Manipulando dados
 
 ------------------------------------------------------------------------
 
-```{r, echo = TRUE, eval = FALSE}
-# Importando o arquivo {`NINDINET.dbf`} no objeto {`base`}
+## Lendo os arquivos necessários
+
+```{r, echo = TRUE, eval = TRUE}
 
 base <- read.dbf(file = 'Dados/NINDINET.dbf', as.is = TRUE)
+
+CID10 <- read_csv2("Dados/CID-10-CATEGORIAS.CSV",
+                   locale = locale(encoding = "latin1"))
+
+dados <- read_csv(file = "Dados/cobertura_hepatiteb_rosas_2016_2020_A.csv")
+
+eapv_2021m <- read_xlsx('Dados/notificacao_eapv_2021m.xlsx')
+
+tabela_municipios <- read_excel("Dados/tabela_municipios.xlsx",
+                                sheet = 1,
+                                skip = 0)
+
 ```
+
+---
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Para visualizar os tópicos de um arquivo Rmarkdown/Quarto, use 'Alt' + 'o'.
+:::
+
+::: {.callout-tip style="background-color:#e6ffe6;"}
+Para examinar o código de uma *chunk*, digite 'Alt' + 'e'.
+:::
+
+---
 
 O argumento **as.is**:
 
@@ -1640,6 +1666,8 @@ Manipulando dados
 :::
 
 ------------------------------------------------------------------------
+
+
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 <br> Use 'Ctrl' + F para buscar dentro do seu documento R.
@@ -1682,7 +1710,7 @@ base_menor <- select(base, DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI,
 
 O R nos permite utilizar *piping* (encadeamento) para ligar funções.
 
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 
 base_menor <- base |>
   select(DT_NOTIFIC, DT_NASC, CS_SEXO, CS_RACA, ID_MN_RESI, ID_AGRAVO)
@@ -1739,8 +1767,7 @@ base_menor_2 |>
 
 ```{r, echo = TRUE, eval = FALSE}
 
-# Importando o banco de dados { `CID-10-CATEGORIAS.CSV } para o `R`
-cid10_categorias <- read_csv2('Dados/CID-10-CATEGORIAS.CSV')
+# Trabalhando com o banco de dados { `CID-10-CATEGORIAS.CSV } 
 
 # Utilizando a função `colnames()` para checar as variáveis 
 colnames(cid10_categorias)
@@ -1764,6 +1791,8 @@ Muito útil quando uma função existe em pacotes diferentes.
 ```{r, echo = TRUE, eval = FALSE}
 # Utilizando a função `clean_names()` (janitor) para editar o nome das variáveis
 cid10_categorias_nova <- janitor::clean_names(cid10_categorias)
+
+names(cid10_categorias_nova) # A função 'names( )' é mais geral que a 'colnames( )'.
 ```
 
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
@@ -1906,12 +1935,7 @@ base |>
 
 ```{r, echo = TRUE, eval = FALSE}
 
-# Importando o banco de dados { `cobertura_hepatiteb_rosas_2016_2020_A.csv } para o `R`
-dados <- read_csv(file = "Dados/cobertura_hepatiteb_rosas_2016_2020_A.csv")
-
-```
-
-```{r, echo = TRUE, eval = FALSE}
+# Trabalhando com o banco de dados `cobertura_hepatiteb_rosas_2016_2020_A.csv 
 
 # Criando o objeto {`dados_longos`}
 dados_longos <- dados |>
@@ -1962,12 +1986,7 @@ dados_largos
 
 ```{r, echo = TRUE, eval = FALSE}
 
-# Importando o banco de dados { `notificacao_eapv_2021m.xlsx` } para o `R`
-eapv_2021m <- read_xlsx('Dados/notificacao_eapv_2021m.xlsx')
-
-```
-
-```{r, echo = TRUE, eval = FALSE}
+# Trabalhando com o banco de dados `notificacao_eapv_2021m.xlsx`
 
 # Visualizando a tabela {`eapv_2021m`} com a função `View()
 View(eapv_2021m)
@@ -2059,8 +2078,8 @@ base |>
   # Utilizando a função `mutate()` para criar colunas
   mutate(
     # Criando uma coluna de idade conforme a codificação da variável NU_IDADE_N
-    idade_anos = if_else(str_sub(NU_IDADE_N, 1, 1) == "4", 
-                         as.numeric(str_sub(NU_IDADE_N, 2, 4)), 0),
+    idade_anos = if_else(str_sub(NU_IDADE_N, start = 1, end =  1) == "4", 
+                         as.numeric(str_sub(NU_IDADE_N, start = 2, end =  4)), 0),
     # Criando uma coluna de faixa etária a partir da variável idade dos casos notificados
     # utilizando a função `cut()`
     fx_etaria = cut(
@@ -2091,6 +2110,8 @@ do código.
 
 ```{r, echo = TRUE, eval = FALSE}
 
+# Observe o mesmo código, sem comentários.
+
 base |>
   mutate(
     idade_anos = if_else(str_sub(NU_IDADE_N, 1, 1) == "4", 
@@ -2107,35 +2128,27 @@ base |>
 
 ## Unindo tabelas (bases de dados)
 
-```{r}
+| Função         | Descrição |
+|----------------|------------------------------------------------------|
+| `inner_join()` | Retorna apenas as observações que têm correspondência nas duas tabelas.                   |
+| `left_join()`  | Retorna **todas** as observações da tabela da **esquerda**, com correspondências da direita (se houver). |
+| `right_join()` | Retorna **todas** as observações da tabela da **direita**, com correspondências da esquerda. |
+| `full_join()`  | Retorna **todas** as observações de ambas as tabelas (união completa).                    |
 
-tabela_municipios <- read_excel("Dados/tabela_municipios.xlsx",
-                                sheet = 1,
-                                skip = 0)
+---
 
-```
-
+```{r, echo = TRUE, eval = FALSE}
 
 ## Verificando o tipo de variável na coluna `ID_MN_RESI` do NINDINET
 
-```{r}
-
 class(base_menor$ID_MN_RESI)
 
-```
-
-## Verificando o tipo de variável na coluna `ID_MUNICIPIO` da tabela de municípios do IBGE
-
-```{r}
+# Vamos utilizar o banco 'tabela_municípios.xlsx'.
 
 class(tabela_municipios$ID_MUNICIPIO)
 
-```
-
 ## Transformando apenas a variável `ID_MUNICIPIO` do data.frame {`tabela_municipios`}
 ## em 'integer'
-
-```{r}
 
 tabela_municipios$ID_MUNICIPIO <- as.integer(tabela_municipios$ID_MUNICIPIO)
 
@@ -2151,23 +2164,17 @@ head()
 
 ```
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Unindo tabelas
+:::
 
 # 7. Lidando com textos
 
 ## Contando caracterres e extraindo textos
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
-CID10 <- read_csv2("Dados/CID-10-CATEGORIAS.CSV",
-                   locale = locale(encoding = "latin1"))
-
-```
-
-
-
-```{r}
-
-# Criando um novo objeto com as seleções feitas
+# Criando um novo objeto com as seleções feitas (dados CID-10-CATEGORIAS.CSV)
 
 nomes_cid <- CID10 |>
   # Selecionar apenas as linhas de interesse (linhas 1 a 15)
@@ -2195,7 +2202,7 @@ word(nomes_cid, 1, sep = " ")
 
 ## Alterando a ordem e reordenando texto
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Ordenando o objeto {`nomes_cid`} para o formato ascendente (A-Z)
 str_sort(nomes_cid)
@@ -2205,14 +2212,14 @@ str_sort(nomes_cid, decreasing = TRUE)
 
 ```
 
-## Unindo strings
+## Unindo *strings*
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
-# Unindo *strings* para a formação da palavra "Tuberculose"
+# Unindo **strings** para a formação da palavra "Tuberculose"
 str_c("Tuber","culo","se")
 
-# Unindo *strings* incluindo espaço entre elas
+# Unindo **strings** incluindo espaço entre elas
 # adicionaremos o argumento `sep = " "`
 str_c("Tuberculose","respiratória,","com","confirmação",
       "bacteriológica","e histológica", sep = " ")
@@ -2221,15 +2228,15 @@ str_c("Tuberculose","respiratória,","com","confirmação",
 agravo <- c("Tuberculose","respiratória,","com","confirmação",
             "bacteriológica","e histológica")
 
-# Unindo *strings* armazenadas no objeto {`agravo`}
+# Unindo **strings** armazenadas no objeto {`agravo`}
 # em um único *string* de texto
 str_c(agravo, collapse = " ")
 
 ```
 
-## Transformando strings
+## Transformando *strings*
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Transformando todos as letras em maiúsculas
 str_to_upper(nomes_cid)
@@ -2252,9 +2259,9 @@ stri_trans_general(nomes, id = "Latin-ASCII")
 ```
 
 
-## Identificando padrões em strings
+## Identificando padrões em *strings*
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Extraindo linhas onde a palavra "Tuberculose" aparece
 str_subset(nomes_cid, pattern = "Tuberculose")
@@ -2267,7 +2274,7 @@ str_subset(nomes_cid, pattern = fixed("tuberculose", ignore_case = TRUE))
 
 ---
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Encontrando padrões no início do texto
 
@@ -2288,7 +2295,7 @@ CID10 |>
 
 ---
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Encontrando padrões no final do texto
 
@@ -2310,17 +2317,16 @@ CID10 |>
 
 ## Substituindo valores de texto
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Criando um vetor de texto
-agravo <- "Tuberculose respiratória, com confirmação bacteriológica e 
-histológica"
+agravo <- "Tuberculose respiratória, com confirmação bacteriológica e histológica"
+
 # Substituindo palavras
 str_replace(agravo, pattern = "com", replacement = "sem")
 
 # Criando um vetor de texto
-agravo <- "Tuberculose respiratória, com confirmação bacteriológica e 
-histológica"
+agravo <- "Tuberculose respiratória, com confirmação bacteriológica e histológica"
 
 # Substituindo palavras
 str_replace_all(agravo, pattern = "ó", replacement = "o")
@@ -2331,7 +2337,7 @@ str_replace_all(agravo, pattern = "ó", replacement = "o")
 
 ## Transformando datas
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Transformando uma string em data
 data_1 <- as_date("2022-05-19")
@@ -2355,19 +2361,21 @@ as_date("01031998", format = "%d%m%Y")
 
 ## Cálculo com datas
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
-dt_notific <- read.dbf(file = 'Módulo_3/Dados/NINDINET.dbf') |>
+dt_notific <- read.dbf(file = 'Dados/NINDINET.dbf') |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NOTIFIC, DT_SIN_PRI, DT_NASC) |>
   # Selecionar apenas as linhas de interesse (linhas 1 a 10)
   slice(1:10)
 
+dt_notific
+
 ```
 
 ---
 
-```{r}
+```{r, echo = TRUE, eval = FALSE}
 
 # Somando 60 dias às datas de notificação de casos da tabela {`dt_notific`}
 dt_notific$DT_NOTIFIC + 60
@@ -2381,19 +2389,21 @@ dt_notific_2 <- dt_notific |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NOTIFIC) |>
   # Utilizando a função `mutate()` para criar a nova coluna "prazo_encerramento"
-  mutate(prazo_encerramento = DT_NOTIFIC + 60)
+  mutate(prazo_encerramento = DT_NOTIFIC + 60) 
+
+dt_notific_2
 
 ```
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Cálculo com datas
+:::
 
-```{r}
+---
 
-```
-
+```{r, echo = TRUE, eval = FALSE}
 
 # Criando a tabela com a diferença entre 'DT_NOTIFIC' e 'DT_SIN_PRI'
-
-```{r}
 
 dif_tempo <- dt_notific |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
@@ -2408,12 +2418,20 @@ dif_tempo_2 <- dt_notific |>
   # Utilizando a função `mutate()` para criar a nova coluna "Diferenca"
   mutate(Diferenca = as.integer(DT_NOTIFIC - DT_SIN_PRI))
 
+dif_tempo_2
+
 ```
 
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Cálculo com datas
+:::
 
+---
+
+```{r, echo = TRUE, eval = FALSE}
 
 # Encontrando a idade em anos, com arredondamento
-# Alterando a tabela {`idade`}
+
 idade <- dt_notific |>
   # Selecionando as variáveis que queremos utilizar com a função `select()`
   select(DT_NASC, DT_SIN_PRI) |>
@@ -2423,7 +2441,15 @@ idade <- dt_notific |>
     IDADE_ANOS = floor(IDADE_DIAS / 365.25)
   )
 
-# 9.3 Extração de dia, mês, ano e dia da semana
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Cálculo com datas
+:::
+
+## Extrações de elementos de data
+
+```{r, echo = TRUE, eval = FALSE}
 
 # Extrai o ano (lubridate)
 year(dt_notific$DT_NOTIFIC)
@@ -2443,7 +2469,13 @@ wday(dt_notific$DT_NOTIFIC, label = TRUE)
 # Nome do dia da semana, sem abreviação
 wday(dt_notific$DT_NOTIFIC, label = TRUE, abbr = FALSE)
 
-# 9.4 Identificando a semana epidemiológica nas datas
+```
+
+---
+
+```{r, echo = TRUE, eval = FALSE}
+
+# Identificando a semana epidemiológica nas datas
 
 # Transformando todas as datas da variável `DT_NOTIFIC`
 # da tabela {`dt_notific`} em semana epidemiológica 
@@ -2477,6 +2509,18 @@ dt_notific_2 <- dt_notific |>
     semana_epidemiologica = epiweek(DT_NOTIFIC)
   )
 
+dt_notific_2
+
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Cálculo com datas
+:::
+
+---
+
+```{r, echo = TRUE, eval = FALSE}
+
 #  Agregando e indicando a data de final da semana epidemiológica
 
 # Criando a tabela {`dt_notific_5`}
@@ -2489,7 +2533,7 @@ dt_notific_5 <- dt_notific |>
     dif_dia_semana = 7 - dia_semana,
     DT_semana_epi = DT_NOTIFIC + dif_dia_semana
   )
-# Visualizando a tabela {`dt_notific_5`} criada
+
 dt_notific_5
 
 # Outra forma
@@ -2500,10 +2544,18 @@ dt_notific_6 <- dt_notific |>
   select(DT_NOTIFIC) |>
   # Utilizando a função `mutate()` para criar a nova coluna
   mutate(DT_semana_epi = DT_NOTIFIC + 7 - wday(DT_NOTIFIC))
-# Visualizando o objeto criado
+
 dt_notific_6
 
-# 9.5 Sequência de datas
+```
+
+::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
+Cálculo com datas
+:::
+
+## Sequência de datas
+
+```{r, echo = TRUE, eval = FALSE}
 
 # Criando uma sequência de datas, criando dias de uma semana
 as.Date("2022-01-01") + 0:7
@@ -2511,15 +2563,76 @@ as.Date("2022-01-01") + 0:7
 # Criando uma sequência de datas
 seq.Date(from = as.Date("2022-01-01"), to = as.Date("2022-02-01"), by = "day")
 
+```
+
+
 # 10. Exportação dos dados
+
+```{r, echo = TRUE, eval = FALSE}
 
 # Salvando a tabela {base_menor} em seu computador na pasta "Meus documentos"
 write_csv(x = base_menor,
-          file = "C:/Users/UFR/Documents/Curso_Vigilancia_Saude/Módulo_3/Dados/base_menor_curso.csv")
+          file = "C:/Users/UFR/Documents/Curso_CDPS/Dados/base_menor_curso.csv")
 
 install.packages("writexl");library(writexl)
 # Salvando a tabela {base_menor} em seu computador na pasta "Meus documentos"
 write_xlsx(x = base_menor,
-           path = "C:/Users/UFR/Documents/Curso_Vigilancia_Saude/Módulo_3/Dados/base_menor_curso.xlsx")
+           path = "C:/Users/UFR/Documents/Curso_CDPS/Dados/base_menor_curso/Dados/base_menor_curso.xlsx")
+
+```
+
+# 11. Referências
+
+## Referências Principais {.smaller}
+
+ABRASCO, **Analise de dado para Vigilância em Saúde - Curso Básico**, 2022.  
+Módulos 1 a 3.
+
+Wickham, H.; Cetinkaya-Rundel, M.; Grolemund, G. **R for data science**, 2023.  
+<https://r4ds.hadley.nz/>
+
+Grolemund, G. **Hands-on programming with R**, 2014.  
+<https://rstudio-education.github.io/hopr/>
+
+Peng, R. D. **R Programming for Data Science**, 2015.
+
+## Outras Referências {.smaller}
+
+*Análises Ecológicas no R*  
+<https://analises-ecologicas.netlify.app/index.html>
+
+*Ciência de Dados em R*  
+<https://livro.curso-r.com/index.html>
+
+*Ciência de Dados em R*  
+<https://livro.curso-r.com/index.html>
+
+*Zen do R*  
+<https://curso-r.github.io/zen-do-r/>
+
+*Introdução à Linguagem R: seus fundamentos e sua prática*  
+<https://pedropark99.github.io/Introducao_R>
+
+*Ciência de Dados em R*  
+<https://livro.curso-r.com/index.html>
+
+*Análises Ecológicas no R*  
+<https://analises-ecologicas.netlify.app>
+
+*Introdução à Linguagem R: seus fundamentos e sua prática*  
+<https://pedropark99.github.io/Introducao_R>
+
+*Fundamentos de Estatística para Ciência de Dados*  
+<http://filipezabala.com/fdepcdd/>
+
+*Introdução à Ciência de Dados*  
+<https://rafalab.github.io/dslivro/>
+
+*Happy Git and GitHub for the useR*  
+<https://happygitwithr.com/>
+
+*R Cookbook*  
+<https://rc2e.com/>
+
 
 
