@@ -2613,6 +2613,8 @@ Peng, R. D. **R Programming for Data Science**, 2015.
 *Introdução à Linguagem R: seus fundamentos e sua prática*  
 <https://pedropark99.github.io/Introducao_R>
 
+## Outras Referências {.smaller}
+
 *Ciência de Dados em R*  
 <https://livro.curso-r.com/index.html>
 
