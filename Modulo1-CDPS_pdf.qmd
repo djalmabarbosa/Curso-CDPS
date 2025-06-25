@@ -1,27 +1,15 @@
 ---
 title: "Ciência de Dados para Pesquisadores da Saúde"
 subtitle: |
-  Módulo 1: Ferramentas, linguagens e possibilidades<br><br><br>  
+  Módulo 1: Ferramentas, linguagens e possibilidades  
   *Projeto Saúde Data Science*
-format: 
-    revealjs:
-      slide-number: true
-      slide-level: 3
-      logo: logoUFR.png
-      incremental: true
-      scrollable: true
-      theme: simple
-      code-fold: false
-      self-contained: true
-      number-sections: false
-      css: estilo_modulo1_slides.css
-      pagedjs: true
-editor: visual
+format: pdf
+mainfont: "Times New Roman"
+fontsize: 11pt
+geometry: margin=0.3in
 ---
 
 # 1. Sobre o Curso
-
-------------------------------------------------------------------------
 
 ## 🎯 Objetivo
 
@@ -54,16 +42,18 @@ editor: visual
 
 Criar oportunidades de interação dialógica com a sociedade por meio da elaboração de produtos de dados associados à ciência de dados.
 
-------------------------------------------------------------------------
+ 
 
 Equipe do Projeto *Saúde Data Science*\
 Projeto de Extensão UFR Nº 696/2025
 
-<img src="EquipeSDS.png" alt="Equipe Saúde Data Science" class="img-centro"/>
+ ![](EquipeSDS.png){fig-align="center"}
+
+\newpage
 
 # 2. Introdução
 
-------------------------------------------------------------------------
+ 
 
 ## O que é ciência de dados (*Data Science*)
 
@@ -73,7 +63,7 @@ Projeto de Extensão UFR Nº 696/2025
 <p>Campo acadêmico interdisciplinar que utiliza estatística, computação científica, métodos científicos, processos, algoritmos e sistemas para extrair ou extrapolar conhecimento e <em>insights</em> de **dados ruidosos**, **estruturados** e **não estruturados** (Dhar, 2013).</p>
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: panel-tabset
 #### 📊 Estruturados
@@ -95,7 +85,7 @@ knitr::include_graphics("dados_ruidosos.png")
 ```
 :::
 
-------------------------------------------------------------------------
+ 
 
 A ciência de dados está relacionada com
 
@@ -134,7 +124,7 @@ A ciência de dados está relacionada com
     > **Arthur Samuel (1959)** definiu *machine learning* como:\
     > "o campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados."
 
-------------------------------------------------------------------------
+ 
 
 | Aspecto | Mineração de Dados | Aprendizagem de Máquina |
 |------------------|---------------------------|---------------------------|
@@ -147,21 +137,21 @@ A ciência de dados está relacionada com
 
 ## Por que Ciência de Dados na Pesquisa em Saúde?
 
-------------------------------------------------------------------------
+ 
 
 ## O processo da Ciência de Dados é muito semelhante ao da pesquisa quantitativa
 
-------------------------------------------------------------------------
+ 
 
 ::: {style="text-align: justify;"}
 > As mudanças tecnológicas que iniciaram na década de 50, e se intensificaram em 1990 e em 2020, mudaram o material empírico e o fazer científico.
 :::
 
-------------------------------------------------------------------------
+ 
 
 ![](artigos.png){fig-align="center"}
 
-------------------------------------------------------------------------
+ 
 
 ### Uso da ciência de dados na pesquisa em saúde
 
@@ -173,7 +163,7 @@ A ciência de dados está relacionada com
 | "data mining" e "health"         | 5.440.000  |
 | "data science" e "health"        | 7.270.000  |
 
-------------------------------------------------------------------------
+ 
 
 -   Em geral, o uso da ciência de dados na pesquisa:
     -   amplia o alcance
@@ -182,7 +172,7 @@ A ciência de dados está relacionada com
 
 ## Ciência de Dados na Pesquisa: repensar o fazer científico
 
-------------------------------------------------------------------------
+ 
 
 1.  Implicações da era do Big Data
 2.  Implicações dos desenvolvimentos em ML, DM e IA
@@ -193,7 +183,7 @@ A ciência de dados está relacionada com
 Ciência de Dados na Pesquisa: repensar o fazer científico
 :::
 
-------------------------------------------------------------------------
+ 
 
 ### Big Data e a revolução dos dados {.smaller}
 
@@ -204,7 +194,7 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 -   Dispositivos e sistemas passaram a gerar outros dados
     -   Ex: Dados oriundos de dispositivos vestíveis (wearables) e apps de saúde
 
-------------------------------------------------------------------------
+ 
 
 ### Machine Learning, Data Mining e Inteligência Artificial {.smaller}
 
@@ -219,7 +209,7 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
     -   Agrupamento
         -   Ex: Identificar subgrupos de pacientes com insuficiência cardíaca congestiva com base em características clínicas, visando apoiar tratamentos personalizados
 
-------------------------------------------------------------------------
+ 
 
 ### Uso de uma linguagem de programação {.smaller}
 
@@ -233,7 +223,7 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 
 ## Uso da IA como assistente de pesquisa {.smaller}
 
-------------------------------------------------------------------------
+ 
 
 -   Aceleração da codificação
     -   Geração rápida de funções e scripts com base em linguagem natural
@@ -246,7 +236,7 @@ Ciência de Dados na Pesquisa: repensar o fazer científico
 Uso da IA como assistente de pesquisa
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   Auxilia na documentação e reprodutibilidade
     -   Comentários automáticos e claros no código
@@ -261,7 +251,7 @@ Uso da IA como assistente de pesquisa
 Uso da IA como assistente de pesquisa
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   Auxilia na divulgação dos resultados
     -   Templates para formatação de monografias, dissertações e teses
@@ -277,7 +267,7 @@ Uso da IA como assistente de pesquisa
 
 ## Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 
-------------------------------------------------------------------------
+ 
 
 -   Novas possibilidade de pesquisas com aplicações práticas
 -   Análise de dados em tempo real
@@ -292,7 +282,7 @@ Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 
 ## Por que a linguagem/software R
 
-------------------------------------------------------------------------
+ 
 
 -   O R é uma linguagem de programação *funcional*
 
@@ -309,7 +299,7 @@ Fortalecimento da relação entre Pesquisa, Extensão e Inovação
 Por que a linguagem/software R
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   Possui uma comunidade de colaboração ativa
 
@@ -325,33 +315,35 @@ Por que a linguagem/software R
 Por que a linguagem/software R
 :::
 
+\newpage
+
 # 3. Usando o R!
 
-------------------------------------------------------------------------
+ 
 
 ## Prática: Baixar e instalar o R
 
-------------------------------------------------------------------------
+ 
 
 <https://cran.r-project.org/bin/windows/base/>
 
-------------------------------------------------------------------------
+ 
 
 ![](R_download.png)
 
-------------------------------------------------------------------------
+ 
 
 ![](R_mirror.png)
 
-------------------------------------------------------------------------
+ 
 
 ![](R_install.png)
 
-------------------------------------------------------------------------
+ 
 
 ### Inserindo código diretamente no console do R
 
-------------------------------------------------------------------------
+ 
 
 ![Console do R](R_console.png)
 
@@ -372,13 +364,13 @@ Por que a linguagem/software R
 
 ## Escrevendo no painel *console* do RStudio
 
-------------------------------------------------------------------------
+ 
 
 ![Console do RStudio](RStudio_console.png)
 
 ## Utilizando *R scripts*
 
-------------------------------------------------------------------------
+ 
 
 -   Um *script* é um texto em forma de comandos (códigos), que o R interpreta como uma ação a ser executada.
 -   É um roteiro de execução
@@ -389,7 +381,7 @@ Por que a linguagem/software R
 Escrevendo um *R script*
 :::
 
-------------------------------------------------------------------------
+ 
 
 [*Prática*]{.azul}
 
@@ -407,7 +399,7 @@ Para salvar: *File \> Save*
 <br>
 :::
 
-------------------------------------------------------------------------
+ 
 
 Em geral os *scripts* possuem os seguintes elementos:
 
@@ -420,11 +412,11 @@ Em geral os *scripts* possuem os seguintes elementos:
 | Argumento | Parâmetro | Define opções dentro de uma função |
 | Output | Resultado | Retorno gerado pelo código |
 
-------------------------------------------------------------------------
+ 
 
 ### Funções
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-note style="background-color:#dceeff;"}
 -   O R é uma linguagem funcional
@@ -435,7 +427,7 @@ Em geral os *scripts* possuem os seguintes elementos:
 -   A função mais simples no R é a criação de um conjunto de valores (*vetor*)
 :::
 
-------------------------------------------------------------------------
+ 
 
 ### [*Prática*]{.azul}
 
@@ -449,11 +441,11 @@ x <- c(1,1,2,3,5,8) # define o objeto x
 mean(x) # Calcula a media de x
 ```
 
-------------------------------------------------------------------------
+ 
 
 ### Utilizando pacotes (*packages*) <br> [*Prática*]{.azul}
 
-------------------------------------------------------------------------
+ 
 
 -   Instalando com 'click' *Tools, Install Packages*.
 
@@ -479,11 +471,11 @@ mean(x) # Calcula a media de x
 
 -   Atualizando pacotes
 
-------------------------------------------------------------------------
+ 
 
 #### Tidyverse
 
-------------------------------------------------------------------------
+ 
 
 ::: panel-tabset
 #### Filosofia
@@ -499,11 +491,11 @@ knitr::include_graphics("pacotes_tidyverse.png")
 ```
 :::
 
-------------------------------------------------------------------------
+ 
 
 O *tidyverse* é um metapacote que segue uma filosofia de design, gramática e estruturas de dados em comum para que diversos pacotes úteis para a ciência de dados possam ser utilizados em cojunto
 
-------------------------------------------------------------------------
+ 
 
 #### [*Prática*]{.azul}
 
@@ -523,11 +515,11 @@ tibble(x,y) # retorna o objeto no console
 dados <- tibble(x,y)
 ```
 
-------------------------------------------------------------------------
+ 
 
 ### Dicas de organização do *script*
 
-------------------------------------------------------------------------
+ 
 
 ### ❌ Bagunçado
 
@@ -563,7 +555,7 @@ media_idade <- mean(dados_filtrados$idade)
 print(dados_filtrados)
 ```
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 ``` r
@@ -575,7 +567,7 @@ getwd()
 
 ## Usando o R Markdown <br> [*Prática*]{.azul}
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-note style="background-color:#dceeff;"}
 Crie um novo arquivo clicando em: **File \> New File \> R Markdown...**
@@ -583,7 +575,7 @@ Crie um novo arquivo clicando em: **File \> New File \> R Markdown...**
 Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   R Markdown é uma ferramenta que permite combinar **texto formatado** com **código executável**.
 -   É um documento dinâmico
@@ -591,7 +583,7 @@ Escolha um título, autor e selecione o formato desejado (HTML, PDF, Word).
 -   Usa o formato `.Rmd`.
 -   Para compilar, clique em `Knit`.
 
-------------------------------------------------------------------------
+ 
 
 ## Estrutura básica de um arquivo R Markdown
 
@@ -611,7 +603,7 @@ Códigos nas chuncks
 {r chunk do r}
 ```
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Atalho para criar uma nova chunk: Ctrl + Alt + i
@@ -626,7 +618,7 @@ Atalho para criar uma nova chunk: Ctrl + Alt + i
 | **Chunks** | `{r nome}` | Blocos de código identificáveis |
 | **YAML Header** | `--- ... ---` | Metadados sobre o documento |
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Use `echo = FALSE` para ocultar o código e mostrar apenas o resultado:
@@ -650,7 +642,7 @@ Ou pode colocar códigos de análise, que você não quer usar no momento...
 \`\`\`
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Use `message = FALSE, warning = FALSE` para esconder mensagens e avisos. <br><br>
@@ -674,7 +666,7 @@ Se o arquivo de saída for .pdf, use \newline
 
 ## Quarto vs R Markdown
 
-------------------------------------------------------------------------
+ 
 
 | Característica | R Markdown (.Rmd) | Quarto (.qmd) |
 |------------------|------------------------|------------------------------|
@@ -690,7 +682,7 @@ Se o arquivo de saída for .pdf, use \newline
 | Controle de layout | Limitado | Avançado com markdown, divs e CSS |
 | Comunidade e futuro | Estável, porém sem grandes atualizações | Plataforma em crescimento e com maior integração |
 
-------------------------------------------------------------------------
+ 
 
 ## Utilizando a ferramenta "Projetos"
 
@@ -746,7 +738,7 @@ Para desabilitar essa opção, vá em *Tools* \> *Global Options* e desmarque *S
 4.  Trabalhar localmente: editar scripts, salvar, testar
 5.  Realizar *commit* e *push* das alterações
 
-------------------------------------------------------------------------
+ 
 
 ::: callout-tip
 Você também pode:
@@ -812,9 +804,9 @@ Algumas das principais formas de buscar ajuda são:
 
     3.  Gemini
 
-# 4. Fundamentos da linguagem R
+\newpage
 
-------------------------------------------------------------------------
+# 4. Fundamentos da linguagem R
 
 -   O R é uma linguagem de programação dinâmica
 -   O R é uma linguagem de programação funcional
@@ -878,7 +870,7 @@ Os objetos do R podem ter atributos
 # indica comentário. Tudo depois dele é ignorado.
 ```
 
-------------------------------------------------------------------------
+ 
 
 Quando uma expressão completa é colocada no **prompt** ela é avaliada, e o resultado da avaliação é retornado.
 
@@ -919,7 +911,7 @@ x
     x <- c(2+0i, 1+4i)                            # complexo
     ```
 
-------------------------------------------------------------------------
+ 
 
 <br>
 
@@ -937,7 +929,7 @@ Ou observe a classe no painel superior direito.
 Vetores
 :::
 
-------------------------------------------------------------------------
+ 
 
 ### Misturando objetos
 
@@ -986,7 +978,7 @@ as.logical(x)
     attributes(m)
     ```
 
-------------------------------------------------------------------------
+ 
 
 ::: callout-tip
 As funções *cbind()* e *rbind()* são muito comuns e podem ser utilizadas para criar matrizes:
@@ -1011,7 +1003,7 @@ rbind(x,y)
         x
         ```
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-note style="background-color:#dceeff;"}
 Nomes
@@ -1023,7 +1015,7 @@ Os objetos do R também podem ter *nomes* como atributo
 -   Interessante para visualizações
 :::
 
-------------------------------------------------------------------------
+ 
 
 [*Prática*]{.azul}
 
@@ -1039,7 +1031,7 @@ Os objetos do R também podem ter *nomes* como atributo
     names(x)
 ```
 
-------------------------------------------------------------------------
+ 
 
 Podemos criar listas já com o atributo nome
 
@@ -1057,7 +1049,7 @@ x
 -   A odem dos níveis pode ser estabelecida com o argumento *levels* da função *factor()*.
     -   Relevante para modelagem, pois o primeiro nível é utilizado como *baseline*
 
-------------------------------------------------------------------------
+ 
 
 ```{r, echo=TRUE}
 
@@ -1112,7 +1104,7 @@ São utilizados para armazenar dados tabulares, tabelas
 
 -   Geralmente são criados chamando *read.table()* ou *read.csv()*
 
-------------------------------------------------------------------------
+ 
 
 Também podemos criá-los com a função *data.frame( )*:
 
@@ -1136,7 +1128,7 @@ Data Frames
 
 -   Existem formas diferentes, dependendo do tipo de objeto
 
-------------------------------------------------------------------------
+ 
 
 ### Vetores
 
@@ -1148,7 +1140,7 @@ Data Frames
 Subsetting
 :::
 
-------------------------------------------------------------------------
+ 
 
 [*Prática*]{.azul}
 
@@ -1258,7 +1250,7 @@ Subsetting
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 Estruturas de controle:
 
@@ -1280,7 +1272,7 @@ Estruturas de controle:
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   If, else: testam um condição
 
@@ -1306,7 +1298,7 @@ Estruturas de controle
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   for: executa um *loop* uma quantidade fixa de vezes\
     [*Prática*]{.azul}
@@ -1321,7 +1313,7 @@ Estruturas de controle
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   while: executa um *loop* enquanto uma condição for verdade
 
@@ -1338,7 +1330,7 @@ Estruturas de controle
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   repeat: executa um *loop* infinito
 
@@ -1361,7 +1353,7 @@ Estruturas de controle
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-note style="background-color:#dceeff;"}
 1e-8 refere-se a *notação científica*\
@@ -1374,7 +1366,7 @@ abs( ) é a função que calcula o mótulo, ou valor absoluto
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 -   next: pula interações de um *loop*
 
@@ -1397,7 +1389,7 @@ Estruturas de controle
 Estruturas de controle
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Sempre que usar estruturas de controle, fique atento aos { }, que iniciam e fecham seu conteúdo.
@@ -1425,7 +1417,7 @@ Estruturas de controle
     args(round)
     ```
 
-------------------------------------------------------------------------
+ 
 
 -   Entramos com os argumentos de uma função na ordem em que foram criados
 
@@ -1442,7 +1434,7 @@ Estruturas de controle
 Funções
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Boa prática: escrever os nomes dos argumentos a partir do 3º.
@@ -1461,7 +1453,7 @@ Funções
 2)  corpo de código
 3)  conjunto de argumentos
 
-------------------------------------------------------------------------
+ 
 
 Utilizamos a função *function( )*
 
@@ -1490,7 +1482,7 @@ joga_dados()
 Escrevendo funções
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Com o cursos no console, utilize 'seta para cima', para buscar os comandos executados anteriormente.
@@ -1500,7 +1492,7 @@ Com o cursos no console, utilize 'seta para cima', para buscar os comandos execu
 Escrevendo funções
 :::
 
-------------------------------------------------------------------------
+ 
 
 Podemos utilizar argumentos que ainda não tenham sido definidos.\
 Neste caso, eles precisam ter valores atribuídos quando chamamos a função.
@@ -1522,7 +1514,7 @@ joga_dados(dado = 1:4)
 Escrevendo funções
 :::
 
-------------------------------------------------------------------------
+ 
 
 Podemos atribuir valores iniciais ao argumento:
 
@@ -1544,6 +1536,8 @@ joga_dados(dado = 1:12)
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Escrevendo funções
 :::
+
+\newpage
 
 # 5. Lendo os dados [*Prática*]{.azul}
 
@@ -1584,15 +1578,17 @@ dados_sivep <- read_excel("sivep_gripe.xlsx",
 
 ```
 
+\newpage
+
 # 6. Manipulando dados
 
-------------------------------------------------------------------------
+ 
 
 -   É parte da pesquisa quantitativa que toma mais tempo
 -   Também é onde acontece a maior parte dos erros
 -   Quais os problemas de se fazer isso em planilhas eletrônicas? 🤔
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Boa prática: indicar todos os pacotes que serão utilizados no começo do script.
@@ -1615,13 +1611,13 @@ if(!require(lubridate)) install.packages("lubridate");library(lubridate)
 Manipulando dados
 :::
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 <br> Organize os dados do seu projeto dentro de uma pasta separada, p.e., "Dados"
 :::
 
-------------------------------------------------------------------------
+ 
 
 ## Lendo os arquivos necessários
 
@@ -1642,7 +1638,7 @@ tabela_municipios <- read_excel("Dados/tabela_municipios.xlsx",
 
 ```
 
-------------------------------------------------------------------------
+---
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Para visualizar os tópicos de um arquivo Rmarkdown/Quarto, use 'Alt' + 'o'.
@@ -1652,7 +1648,7 @@ Para visualizar os tópicos de um arquivo Rmarkdown/Quarto, use 'Alt' + 'o'.
 Para examinar o código de uma *chunk*, digite 'Alt' + 'e'.
 :::
 
-------------------------------------------------------------------------
+---
 
 O argumento **as.is**:
 
@@ -1666,7 +1662,9 @@ O argumento **as.is**:
 Manipulando dados
 :::
 
-------------------------------------------------------------------------
+ 
+
+
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 <br> Use 'Ctrl' + F para buscar dentro do seu documento R.
@@ -1720,7 +1718,7 @@ base_menor <- base |>
 -   Operador de 'pipe' antigo: %\>%
 -   Operador do tidyverse: \|\>
 
-------------------------------------------------------------------------
+ 
 
 Incluindo mais uma função no pipe
 
@@ -1779,7 +1777,7 @@ colnames(cid10_categorias_nova)
 
 ```
 
-------------------------------------------------------------------------
+ 
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
 Utilize *'pacote :: funçao'* para especificar de qual pacote vem a função.
@@ -1832,7 +1830,7 @@ base_menor_2 |>
 
 ```
 
-------------------------------------------------------------------------
+ 
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -1926,11 +1924,11 @@ base |>
 
 ## Transformando os dados no formato largo em formato longo
 
-------------------------------------------------------------------------
+---
 
 ![Fonte: Análise de dados para vigilância em saúde (ABRASCO)](wide_long.png)
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -1985,6 +1983,8 @@ dados_largos
 
 ```{r, echo = TRUE, eval = FALSE}
 
+# Trabalhando com o banco de dados `notificacao_eapv_2021m.xlsx`
+
 # Visualizando a tabela {`eapv_2021m`} com a função `View()
 View(eapv_2021m)
 
@@ -1999,7 +1999,7 @@ eapv_2021m |>
 
 ```
 
-------------------------------------------------------------------------
+ 
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2041,7 +2041,7 @@ base_menor |>
 
 ```
 
-------------------------------------------------------------------------
+ 
 
 ```{r, echo = TRUE, eval = FALSE}
 base_menor <- base_menor |>
@@ -2067,7 +2067,7 @@ base_menor <- base_menor |>
 Recodificando linhas e colunas
 :::
 
-------------------------------------------------------------------------
+ 
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2097,10 +2097,12 @@ base |>
 Recodificando linhas e colunas
 :::
 
-------------------------------------------------------------------------
+---
 
 ::: {.callout-tip style="background-color:#e6ffe6;"}
-<br> Comentários do meio da linha podem ser úteis, mas podem dificultar a visualização do código.
+<br>
+Comentários do meio da linha podem ser úteis, mas podem dificultar a visualização
+do código.
 :::
 
 ```{r, echo = TRUE, eval = FALSE}
@@ -2123,14 +2125,14 @@ base |>
 
 ## Unindo tabelas (bases de dados)
 
-| Função | Descrição |
-|------------------|------------------------------------------------------|
-| `inner_join()` | Retorna apenas as observações que têm correspondência nas duas tabelas. |
-| `left_join()` | Retorna **todas** as observações da tabela da **esquerda**, com correspondências da direita (se houver). |
+| Função         | Descrição |
+|----------------|------------------------------------------------------|
+| `inner_join()` | Retorna apenas as observações que têm correspondência nas duas tabelas.                   |
+| `left_join()`  | Retorna **todas** as observações da tabela da **esquerda**, com correspondências da direita (se houver). |
 | `right_join()` | Retorna **todas** as observações da tabela da **direita**, com correspondências da esquerda. |
-| `full_join()` | Retorna **todas** as observações de ambas as tabelas (união completa). |
+| `full_join()`  | Retorna **todas** as observações de ambas as tabelas (união completa).                    |
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2162,6 +2164,8 @@ head()
 ::: {style="position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; opacity: 0.3; font-size: 1.2em;"}
 Unindo tabelas
 :::
+
+\newpage
 
 # 7. Lidando com textos
 
@@ -2253,6 +2257,7 @@ stri_trans_general(nomes, id = "Latin-ASCII")
 
 ```
 
+
 ## Identificando padrões em *strings*
 
 ```{r, echo = TRUE, eval = FALSE}
@@ -2266,7 +2271,7 @@ str_subset(nomes_cid, pattern = fixed("tuberculose", ignore_case = TRUE))
 
 ```
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2287,7 +2292,7 @@ CID10 |>
 
 ```
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2327,7 +2332,9 @@ str_replace_all(agravo, pattern = "ó", replacement = "o")
 
 ```
 
-# 9. Organizando os eventos no tempo
+\newpage
+
+# 8. Organizando os eventos no tempo
 
 ## Transformando datas
 
@@ -2367,7 +2374,7 @@ dt_notific
 
 ```
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2393,7 +2400,7 @@ dt_notific_2
 Cálculo com datas
 :::
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2420,7 +2427,7 @@ dif_tempo_2
 Cálculo com datas
 :::
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2465,7 +2472,7 @@ wday(dt_notific$DT_NOTIFIC, label = TRUE, abbr = FALSE)
 
 ```
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2511,7 +2518,7 @@ dt_notific_2
 Cálculo com datas
 :::
 
-------------------------------------------------------------------------
+---
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2559,7 +2566,9 @@ seq.Date(from = as.Date("2022-01-01"), to = as.Date("2022-02-01"), by = "day")
 
 ```
 
-# 10. Exportação dos dados
+\newpage
+
+# 9. Exportação dos dados
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -2574,55 +2583,60 @@ write_xlsx(x = base_menor,
 
 ```
 
-# 11. Referências
+\newpage
+
+# 10. Referências
 
 ## Referências Principais {.smaller}
 
-ABRASCO, **Analise de dado para Vigilância em Saúde - Curso Básico**, 2022.\
+ABRASCO, **Analise de dado para Vigilância em Saúde - Curso Básico**, 2022.  
 Módulos 1 a 3.
 
-Wickham, H.; Cetinkaya-Rundel, M.; Grolemund, G. **R for data science**, 2023.\
+Wickham, H.; Cetinkaya-Rundel, M.; Grolemund, G. **R for data science**, 2023.  
 <https://r4ds.hadley.nz/>
 
-Grolemund, G. **Hands-on programming with R**, 2014.\
+Grolemund, G. **Hands-on programming with R**, 2014.  
 <https://rstudio-education.github.io/hopr/>
 
 Peng, R. D. **R Programming for Data Science**, 2015.
 
 ## Outras Referências {.smaller}
 
-*Análises Ecológicas no R*\
+*Análises Ecológicas no R*  
 <https://analises-ecologicas.netlify.app/index.html>
 
-*Ciência de Dados em R*\
+*Ciência de Dados em R*  
 <https://livro.curso-r.com/index.html>
 
-*Ciência de Dados em R*\
+*Ciência de Dados em R*  
 <https://livro.curso-r.com/index.html>
 
-*Zen do R*\
+*Zen do R*  
 <https://curso-r.github.io/zen-do-r/>
 
-*Introdução à Linguagem R: seus fundamentos e sua prática*\
+*Introdução à Linguagem R: seus fundamentos e sua prática*  
 <https://pedropark99.github.io/Introducao_R>
 
-*Ciência de Dados em R*\
+*Ciência de Dados em R*  
 <https://livro.curso-r.com/index.html>
 
-*Análises Ecológicas no R*\
+*Análises Ecológicas no R*  
 <https://analises-ecologicas.netlify.app>
 
-*Introdução à Linguagem R: seus fundamentos e sua prática*\
+*Introdução à Linguagem R: seus fundamentos e sua prática*  
 <https://pedropark99.github.io/Introducao_R>
 
-*Fundamentos de Estatística para Ciência de Dados*\
+*Fundamentos de Estatística para Ciência de Dados*  
 <http://filipezabala.com/fdepcdd/>
 
-*Introdução à Ciência de Dados*\
+*Introdução à Ciência de Dados*  
 <https://rafalab.github.io/dslivro/>
 
-*Happy Git and GitHub for the useR*\
+*Happy Git and GitHub for the useR*  
 <https://happygitwithr.com/>
 
-*R Cookbook*\
+*R Cookbook*  
 <https://rc2e.com/>
+
+
+

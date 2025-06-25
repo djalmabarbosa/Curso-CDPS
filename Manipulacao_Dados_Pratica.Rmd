@@ -107,9 +107,6 @@ base_menor_2 |>
 
 ```{r, echo = TRUE, eval = FALSE}
 
-# Importando o banco de dados { `CID-10-CATEGORIAS.CSV } para o `R`
-cid10_categorias <- read_csv2('Dados/CID-10-CATEGORIAS.CSV')
-
 # Utilizando a função `colnames()` para checar as variáveis 
 colnames(cid10_categorias)
 
@@ -245,14 +242,6 @@ base |>
 
 ## Transformando os dados no formato largo em formato longo
 
-
-```{r, echo = TRUE, eval = FALSE}
-
-# Importando o banco de dados { `cobertura_hepatiteb_rosas_2016_2020_A.csv } para o `R`
-dados <- read_csv(file = "Dados/cobertura_hepatiteb_rosas_2016_2020_A.csv")
-
-```
-
 ```{r, echo = TRUE, eval = FALSE}
 
 # Criando o objeto {`dados_longos`}
@@ -304,13 +293,6 @@ dados_largos
 
 ```{r, echo = TRUE, eval = FALSE}
 
-# Importando o banco de dados { `notificacao_eapv_2021m.xlsx` } para o `R`
-eapv_2021m <- read_xlsx('Dados/notificacao_eapv_2021m.xlsx')
-
-```
-
-```{r, echo = TRUE, eval = FALSE}
-
 # Visualizando a tabela {`eapv_2021m`} com a função `View()
 View(eapv_2021m)
 
@@ -323,6 +305,22 @@ eapv_2021m |>
   # Utilizando a função `head()` para visualizar as primeiras linhas da tabela
   head()
 
+```
+
+```{r, echo = TRUE, eval = FALSE}
+
+eapv_2021m |>
+  # Dividindo a coluna `imunobiologico_vacina` em três novas colunas
+  separate(
+    # Definindo a coluna que será separada
+    col = imunobiologico_vacina,
+    # Definindo os nomes das novas colunas
+    into = c("vac_event_1", "vac_event_2", "vac_event_3"),
+    # Definindo qual o caractere que está sendo utilizado dentro das colunas
+    sep = "\\|"
+  ) |>
+  # Selecionando as novas colunas para visualização
+  select("vac_event_1", "vac_event_2", "vac_event_3")
 ```
 
 ## Recodificando linhas e colunas
