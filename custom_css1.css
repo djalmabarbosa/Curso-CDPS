@@ -1,0 +1,569 @@
+/* ========================================
+   ESTILOS CUSTOMIZADOS PARA REVEAL.JS
+   Tema Moderno e Divertido para Bioestatística
+   ======================================== */
+
+/* ===== VARIÁVEIS DE COR ===== */
+:root {
+  --primary-color: #3498db;      /* Azul vibrante */
+  --secondary-color: #e74c3c;    /* Vermelho coral */
+  --accent-color: #2ecc71;       /* Verde esmeralda */
+  --warning-color: #f39c12;      /* Laranja dourado */
+  --dark-bg: #2c3e50;            /* Azul escuro */
+  --light-bg: #ecf0f1;           /* Cinza claro */
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CONFIGURAÇÕES GLOBAIS ===== */
+.reveal {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--text-dark);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ===== TÍTULOS ===== */
+.reveal h1 {
+  font-size: 2.5em;
+  color: var(--text-light);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5em;
+  animation: slideInDown 0.8s ease-out;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.3em;
+  display: inline-block;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+  color: var(--secondary-color);
+  margin-bottom: 0.6em;
+}
+
+/* ===== SLIDES COM BACKGROUND COLORIDO ===== */
+.reveal section[data-background-color="#2C3E50"] h1,
+.reveal section[data-background-color="#2C3E50"] h2,
+.reveal section[data-background-color="#2C3E50"] h3 {
+  color: var(--text-light);
+  border-bottom-color: var(--accent-color);
+}
+
+/* ===== PARÁGRAFOS E TEXTO ===== */
+.reveal p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.reveal strong {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.reveal em {
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+/* ===== LISTAS ===== */
+.reveal ul, .reveal ol {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+}
+
+.reveal ul li, .reveal ol li {
+  margin: 0.5em 0;
+  line-height: 1.5;
+}
+
+.reveal ul li::marker {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Listas incrementais com animação */
+.reveal .incremental li {
+  opacity: 0.3;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.reveal .incremental li.current-fragment {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* ===== BLOCOS DE CÓDIGO ===== */
+.reveal pre {
+  width: 100%;
+  margin: 1em auto;
+  box-shadow: var(--shadow-medium);
+  border-radius: 12px;
+  background: #E1F0EC;
+  border-left: 5px solid var(--primary-color);
+}
+
+.reveal code {
+  font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 4px;
+  color: var(--primary-color);
+}
+
+.reveal pre code {
+  max-height: 500px;
+  padding: 1.2em;
+  background: #282c34;
+  color: #abb2bf;
+  border-radius: 12px;
+  line-height: 1.5;
+}
+
+/* ===== TABELAS ===== */
+.reveal table {
+  margin: 1em auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: var(--shadow-medium);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reveal table thead {
+  background: var(--gradient-1);
+  color: var(--text-light);
+}
+
+.reveal table th {
+  padding: 0.8em 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+}
+
+.reveal table td {
+  padding: 0.7em 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.reveal table tbody tr:hover {
+  background: rgba(52, 152, 219, 0.15);
+  transition: background 0.3s ease;
+}
+
+/* ===== COLUNAS ===== */
+.reveal .columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.reveal .column {
+  flex: 1;
+}
+
+/* ===== CALLOUTS / CAIXAS DE DESTAQUE ===== */
+.reveal .callout-note,
+.reveal .callout-tip,
+.reveal .callout-warning,
+.reveal .callout-important {
+  padding: 1.2em;
+  margin: 1em 0;
+  border-radius: 10px;
+  border-left: 5px solid;
+  box-shadow: var(--shadow-soft);
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.reveal .callout-note {
+  background: rgba(52, 152, 219, 0.1);
+  border-left-color: var(--primary-color);
+}
+
+.reveal .callout-tip {
+  background: rgba(46, 204, 113, 0.1);
+  border-left-color: var(--accent-color);
+}
+
+.reveal .callout-warning {
+  background: rgba(243, 156, 18, 0.1);
+  border-left-color: var(--warning-color);
+}
+
+.reveal .callout-important {
+  background: rgba(231, 76, 60, 0.1);
+  border-left-color: var(--secondary-color);
+}
+
+/* ===== LINKS ===== */
+.reveal a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.reveal a:hover {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+/* ===== IMAGENS ===== */
+.reveal img {
+  border-radius: 10px;
+  box-shadow: var(--shadow-medium);
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== GRÁFICOS E PLOTS ===== */
+.reveal figure {
+  margin: 1.5em 0;
+}
+
+.reveal figcaption {
+  font-size: 0.7em;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-top: 0.5em;
+}
+
+/* ===== SLIDE DE TÍTULO ===== */
+.reveal .title-slide h1 {
+  font-size: 3em;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* ===== SLIDES DE SEÇÃO ===== */
+.reveal section[data-background-color] {
+  text-align: center;
+}
+
+.reveal section[data-background-color] h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== NÚMERO DO SLIDE ===== */
+.reveal .slide-number {
+  background: var(--gradient-1);
+  color: var(--text-light);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===== FOOTER ===== */
+.reveal .footer {
+  font-size: 0.6em;
+  color: #95a5a6;
+  padding: 10px;
+}
+
+/* ===== BOTÕES E CONTROLES ===== */
+.reveal .controls {
+  color: var(--primary-color);
+}
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.1);
+  height: 4px;
+}
+
+.reveal .progress span {
+  background: var(--gradient-1);
+  transition: width 0.3s ease;
+}
+
+/* ===== BLOCKQUOTE ===== */
+.reveal blockquote {
+  width: 90%;
+  margin: 1em auto;
+  padding: 1.5em 2em;
+  background: var(--light-bg);
+  border-left: 5px solid var(--primary-color);
+  border-radius: 0 10px 10px 0;
+  box-shadow: var(--shadow-soft);
+  font-style: italic;
+  position: relative;
+}
+
+.reveal blockquote::before {
+  content: '"';
+  font-size: 4em;
+  color: var(--primary-color);
+  opacity: 0.3;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ===== BADGES/TAGS ===== */
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 20px;
+  margin: 0 0.3em;
+  color: white;
+}
+
+.badge-primary {
+  background: var(--primary-color);
+}
+
+.badge-success {
+  background: var(--accent-color);
+}
+
+.badge-warning {
+  background: var(--warning-color);
+}
+
+.badge-danger {
+  background: var(--secondary-color);
+}
+
+/* ===== ÍCONES ESPECIAIS ===== */
+.icon-large {
+  font-size: 2em;
+  color: var(--primary-color);
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+
+/* ===== OVERLAY DE FOCO ===== */
+.reveal .slide-background {
+  transition: all 0.3s ease;
+}
+
+/* ===== GRID LAYOUT ===== */
+.reveal .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.reveal .grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.card-header {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+/* ===== DESTAQUE DE CÓDIGO ===== */
+.reveal .hljs-keyword {
+  color: #c678de;
+}
+
+.reveal .hljs-string {
+  color: #98c379;
+}
+
+.reveal .hljs-number {
+  color: #d19a66;
+}
+
+.reveal .hljs-comment {
+  color: #5c6370;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .reveal {
+    font-size: 24px;
+  }
+  
+  .reveal .columns {
+    flex-direction: column;
+  }
+  
+  .reveal .grid-2,
+  .reveal .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TRANSIÇÕES SUAVES ===== */
+.reveal section {
+  transition: all 0.5s ease;
+}
+
+/* ===== BACKGROUND PATTERNS (opcional) ===== */
+.reveal section[data-background-pattern="dots"] {
+  background-image: radial-gradient(circle, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ===== ESTILO PARA MATEMÁTICA ===== */
+.reveal .MathJax {
+  color: var(--primary-color);
+}
+
+/* ===== HIGHLIGHT BOXES ===== */
+.highlight-box {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+  border-radius: 15px;
+  padding: 1.5em;
+  margin: 1em 0;
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ===== ESTATÍSTICAS EM DESTAQUE ===== */
+.stat-box {
+  text-align: center;
+  padding: 1.5em;
+  background: var(--gradient-1);
+  color: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow-medium);
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+/* ===== SETA DE NAVEGAÇÃO ===== */
+.reveal .navigate-right,
+.reveal .navigate-left,
+.reveal .navigate-up,
+.reveal .navigate-down {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.reveal .navigate-right:hover,
+.reveal .navigate-left:hover,
+.reveal .navigate-up:hover,
+.reveal .navigate-down:hover {
+  opacity: 1;
+}
+
+/* ===== EXTRAS DIVERTIDOS ===== */
+.emoji {
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+

@@ -1,0 +1,441 @@
+/*-- scss:defaults --*/
+
+// Cores principais
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$accent-color: #2ecc71;
+$warning-color: #f39c12;
+$dark-bg: #2c3e50;
+$light-text: #ffffff;
+
+// Fontes
+$font-family-sans-serif: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-monospace: 'Fira Code', 'Monaco', 'Courier New', monospace !default;
+
+// Tamanhos
+$presentation-font-size-root: 32px !default;
+$presentation-heading-font: $font-family-sans-serif !default;
+$presentation-heading-color: $primary-color !default;
+$presentation-heading-font-weight: 600 !default;
+
+// Background
+$body-bg: #ffffff !default;
+$body-color: $dark-bg !default;
+
+// Links
+$link-color: $primary-color !default;
+$link-color-hover: $secondary-color !default;
+
+// Código
+$code-block-bg: #282c34 !default;
+$code-color: $primary-color !default;
+
+/*-- scss:rules --*/
+
+// Importar Google Fonts (opcional, mas recomendado)
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+// Estilos globais para o reveal
+.reveal {
+  
+  // Ajustes de espaçamento
+  .slides section {
+    padding: 20px;
+  }
+  
+  // Títulos com gradiente
+  h1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  h2 {
+    color: $primary-color;
+    font-size: 1.8em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    border-bottom: 3px solid $primary-color;
+    padding-bottom: 0.3em;
+    display: inline-block;
+  }
+  
+  h3 {
+    color: $secondary-color;
+    font-size: 1.4em;
+    margin-top: 0.8em;
+    margin-bottom: 0.6em;
+  }
+  
+  // Listas estilizadas
+  ul, ol {
+    line-height: 1.6;
+    
+    li {
+      margin: 0.5em 0;
+      
+      &::marker {
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  // Código inline
+  code {
+    background: rgba($primary-color, 0.1);
+    color: $primary-color;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: $font-family-monospace;
+  }
+  
+  // Blocos de código
+  pre {
+    background: $code-block-bg;
+    border-radius: 12px;
+    border-left: 5px solid $primary-color;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    margin: 1em 0;
+    
+    code {
+      background: transparent;
+      color: #abb2bf;
+      padding: 1.2em;
+      max-height: 500px;
+      font-size: 0.7em;
+      line-height: 1.5;
+    }
+  }
+  
+  // Tabelas modernas
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    
+    thead {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      
+      th {
+        color: $light-text;
+        padding: 0.8em 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        letter-spacing: 0.05em;
+      }
+    }
+    
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background: rgba($primary-color, 0.05);
+        }
+        
+        &:hover {
+          background: rgba($primary-color, 0.15);
+          transition: background 0.3s ease;
+        }
+        
+        td {
+          padding: 0.7em 1em;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  }
+  
+  // Blockquotes
+  blockquote {
+    width: 90%;
+    padding: 1.5em 2em;
+    background: #ecf0f1;
+    border-left: 5px solid $primary-color;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    position: relative;
+    
+    &::before {
+      content: '"';
+      font-size: 4em;
+      color: $primary-color;
+      opacity: 0.3;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+    }
+  }
+  
+  // Links
+  a {
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $link-color-hover;
+      border-bottom-color: $link-color-hover;
+    }
+  }
+  
+  // Imagens
+  img {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // Callouts personalizados
+  .callout {
+    padding: 1.2em;
+    margin: 1em 0;
+    border-radius: 10px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    &-note {
+      background: rgba($primary-color, 0.1);
+      border-left-color: $primary-color;
+    }
+    
+    &-tip {
+      background: rgba($accent-color, 0.1);
+      border-left-color: $accent-color;
+    }
+    
+    &-warning {
+      background: rgba($warning-color, 0.1);
+      border-left-color: $warning-color;
+    }
+    
+    &-important {
+      background: rgba($secondary-color, 0.1);
+      border-left-color: $secondary-color;
+    }
+  }
+  
+  // Colunas
+  .columns {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+    
+    .column {
+      flex: 1;
+    }
+  }
+  
+  // Slides de seção com background escuro
+  section[data-background-color="#{$dark-bg}"] {
+    h1, h2, h3, p, li {
+      color: $light-text !important;
+    }
+    
+    h2 {
+      border-bottom-color: $accent-color;
+    }
+  }
+  
+  // Controles de navegação
+  .controls {
+    color: $primary-color;
+  }
+  
+  // Barra de progresso
+  .progress {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    
+    span {
+      background: linear-gradient(90deg, $primary-color, $accent-color);
+    }
+  }
+  
+  // Número do slide
+  .slide-number {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: $light-text;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Classes utilitárias
+
+// Cards
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  &-header {
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+  }
+}
+
+// Grid layouts
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+}
+
+// Badges
+.badge {
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 20px;
+  margin: 0 0.3em;
+  color: white;
+  
+  &-primary {
+    background: $primary-color;
+  }
+  
+  &-success {
+    background: $accent-color;
+  }
+  
+  &-warning {
+    background: $warning-color;
+  }
+  
+  &-danger {
+    background: $secondary-color;
+  }
+}
+
+// Box de estatísticas
+.stat-box {
+  text-align: center;
+  padding: 1.5em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.2em;
+  }
+  
+  .stat-label {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+  }
+}
+
+// Box de destaque
+.highlight-box {
+  background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
+  border-radius: 15px;
+  padding: 1.5em;
+  margin: 1em 0;
+  border: 2px solid $primary-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+// Animações
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .reveal {
+    font-size: 24px;
+    
+    .columns {
+      flex-direction: column;
+    }
+    
+    .grid-2,
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .reveal {
+    .slide-number,
+    .controls,
+    .progress {
+      display: none;
+    }
+  }
+}
