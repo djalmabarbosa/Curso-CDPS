@@ -1,0 +1,46 @@
+
+---
+title: "Introdução à Bioestatística com o R e IA"
+format: 
+  html:
+    theme: cosmo  
+    toc: false
+    css: estilo_banner.css 
+---
+
+### 🎯 Objetivo do curso
+
+Neste curso você aprenderá a transformar dados de saúde em conhecimento usando a linguagem R e ferramentas de inteligência artificial.
+
+
+- **Local:** Universidade Federal de Rondonópolis: Laboratório 2E - Bloco E\
+
+- **Horários:** Nos sábados, dias 15, 22  e 29 de novembro, às 14h.
+
+- **Investimento:** Gratuito (Ação do Projeto de Extensão Saúde Data Science - Nº 696/2025)\
+
+- **Público-alvo:** Estudantes de graduação, pós-graduação, servidores, profissionais e pesquisadores da área da saúde.
+
+- **Vagas:** Público Interno (15); Público Externo (5) (por ordem de inscrição)
+
+- A conclusão dará direito a um **certificado** (12h).\
+
+### 💻 Conteúdo Programático
+
+- **Encontro 1**: Fundamentos da Linguagem R; Fundamentos de Engenharia de Promp e Estatística Descritiva (3h)   
+- **Encontro 2**: Probabilidade e Testes de Hipótese (3h)  
+- **Encontro 3**: Modelagem e Regressão (3h)\
+- **Trabalho aplicado** (3h)\
+
+
+### 📥 **Inscrições pelo link**: https://forms.gle/fdGArfdFfZaAtzmp6
+
+### 📧 **Mais informações:**  *djalma.barbosa@ufr.edu.br*
+
+### **Facilitador**: Prof. Djalma Barbosa (UFR)
+
+::: {.fig-row}
+![](qrcode_2_encontro.png){.fig-item}
+![](logoUFR.png){.fig-item}
+:::
+
