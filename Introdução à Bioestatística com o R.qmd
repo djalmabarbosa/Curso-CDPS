@@ -1,0 +1,562 @@
+---
+title: "Introdução à Bioestatística com R"
+subtitle: "Módulo 2 do Curso *Ciência de Dados para Pesquisadores da Saúde*"
+author: "Prof. Djalma Barbosa"
+institute: "Universidade Federal de Rondonópolis"
+date: today
+format:
+  revealjs:
+    theme: [default, custom_scss1.scss]    # Adicione custom.scss aqui
+    css: custom_css1.css                   # Adicione styles.css aqui
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    logo: logoUFR.png                    # Opcional
+    footer: "Introdução à Bioestatística com R"
+    incremental: false
+    code-line-numbers: false
+    highlight-style: github
+    transition: slide
+    background-transition: fade
+---
+
+# Apresentação do Curso {background-color="#2C3E50"}
+
+## Objetivos do Curso
+
+::: incremental
+-   Compreender conceitos fundamentais de bioestatística
+-   Utilizar o R/RStudio para análises estatísticas
+-   Aplicar métodos descritivos e inferenciais
+-   Realizar testes de hipótese
+-   Construir modelos de regressão
+:::
+
+## Estrutura do Curso
+
+:::::: columns
+::: {.column width="33%"}
+**Encontro 1**
+
+-   Probabilidade
+-   Distribuições
+-   Estatística Descritiva
+:::
+
+::: {.column width="33%"}
+**Encontro 2**
+
+-   Testes de Hipótese
+-   Testes paramétricos
+-   Testes não-paramétricos
+:::
+
+::: {.column width="33%"}
+**Encontro 3**
+
+-   Regressão Linear
+-   Regressão Logística
+-   Interpretação
+:::
+::::::
+
+# Introdução ao R e RStudio {background-color="#2C3E50"}
+
+## Por que R?
+
+::: incremental
+-   Software livre e gratuito
+-   Linguagem específica para estatística
+-   Grande comunidade científica
+-   Pacotes especializados (Tidyverse)
+-   Reprodutibilidade das análises
+:::
+
+## Configurando o Ambiente
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Instalar pacotes se necessário
+if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(ggplot2)) install.packages("ggplot2")
+
+
+# Carrega pacotes
+library(ggplot2)
+library(tidyverse)
+```
+
+## Estrutura Básica do R
+
+```{r}
+#| echo: true
+# Operações básicas
+2 + 2
+10 / 5
+sqrt(16)
+
+# Criar objetos
+idade <- 25
+nome <- "João"
+
+# Vetores
+idades <- c(23, 45, 67, 32, 29)
+mean(idades)
+```
+
+# Probabilidade {background-color="#2C3E50"}
+
+## Conceitos Fundamentais
+
+**Probabilidade**: medida de incerteza de um evento
+
+$$P(A) = \frac{\text{casos favoráveis}}{\text{casos possíveis}}$$
+
+::: incremental
+-   $0 \leq P(A) \leq 1$
+-   $P(\Omega) = 1$ (evento certo)
+-   $P(\emptyset) = 0$ (evento impossível)
+:::
+
+## Exemplo: Estudo Epidemiológico
+
+```{r}
+#| echo: true
+# Probabilidade de doença em uma população
+total_pacientes <- 1000
+pacientes_doentes <- 150
+
+prob_doenca <- pacientes_doentes / total_pacientes
+print(paste("P(Doença) =", prob_doenca))
+```
+
+## Regras de Probabilidade
+
+::::: columns
+::: {.column width="50%"}
+**Regra da Adição**
+
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+Para eventos mutuamente exclusivos: $$P(A \cup B) = P(A) + P(B)$$
+:::
+
+::: {.column width="50%"}
+**Regra da Multiplicação**
+
+$$P(A \cap B) = P(A) \times P(B|A)$$
+
+Para eventos independentes: $$P(A \cap B) = P(A) \times P(B)$$
+:::
+:::::
+
+## Probabilidade Condicional
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+
+**Exemplo clínico**: Probabilidade de ter doença dado teste positivo
+
+# Distribuições de Probabilidade {background-color="#2C3E50"}
+
+## Tipos de Distribuições
+
+::::: columns
+::: {.column width="50%"}
+**Discretas**
+
+-   Binomial
+-   Poisson
+-   Hipergeométrica
+:::
+
+::: {.column width="50%"}
+**Contínuas**
+
+-   Normal
+-   t de Student
+-   Chi-quadrado
+-   F
+:::
+:::::
+
+## Distribuição Normal
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
+
+::: incremental
+-   Simétrica em torno da média ($\mu$)
+-   Desvio padrão ($\sigma$) controla dispersão
+-   68% dos dados entre $\mu \pm \sigma$
+-   95% dos dados entre $\mu \pm 1.96\sigma$
+:::
+
+## Visualizando a Normal
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 4
+
+library(ggplot2)
+
+x <- seq(-4, 4, length.out = 1000)
+y <- dnorm(x, mean = 0, sd = 1)
+
+ggplot(data.frame(x, y), aes(x, y)) +
+  geom_line(color = "#3498db", size = 1.5) +
+  geom_area(fill = "#3498db", alpha = 0.3) +
+  labs(title = "Distribuição Normal Padrão",
+       x = "Valores", y = "Densidade") +
+  theme_minimal()
+```
+
+## Simulando Dados Normais
+
+```{r}
+#| echo: true
+set.seed(123)
+
+# Simular altura de pacientes (cm)
+alturas <- rnorm(n = 100, mean = 170, sd = 10)
+
+# Estatísticas
+mean(alturas)
+sd(alturas)
+summary(alturas)
+```
+
+## Distribuição Binomial
+
+Útil para eventos com dois resultados (sucesso/fracasso)
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+**Exemplo**: número de pacientes que respondem a tratamento
+
+```{r}
+#| echo: true
+# 10 pacientes, probabilidade de cura = 0.7
+dbinom(x = 7, size = 10, prob = 0.7)
+```
+
+# Estatística Descritiva {background-color="#2C3E50"}
+
+## O que é Estatística Descritiva?
+
+Conjunto de técnicas para **organizar**, **resumir** e **apresentar** dados
+
+::: incremental
+-   Medidas de tendência central
+-   Medidas de dispersão
+-   Medidas de posição
+-   Visualizações gráficas
+:::
+
+## Criando Dataset Simulado
+
+```{r}
+#| echo: true
+set.seed(2024)
+
+# Dataset epidemiológico simulado
+n <- 200
+
+dados <- tibble(
+  id = 1:n,
+  idade = rnorm(n, mean = 45, sd = 15),
+  sexo = sample(c("M", "F"), n, replace = TRUE),
+  pressao_sistolica = rnorm(n, mean = 130, sd = 20),
+  pressao_diastolica = rnorm(n, mean = 85, sd = 12),
+  colesterol = rnorm(n, mean = 200, sd = 40),
+  imc = rnorm(n, mean = 26, sd = 4),
+  doenca = sample(c("Sim", "Não"), n, replace = TRUE, prob = c(0.3, 0.7))
+)
+```
+
+## Visualizando os Dados
+
+```{r}
+#| echo: true
+head(dados, 10)
+glimpse(dados)
+```
+
+## Medidas de Tendência Central
+
+:::::: columns
+::: {.column width="33%"}
+**Média**
+
+$$\bar{x} = \frac{\sum x_i}{n}$$
+
+Sensível a outliers
+:::
+
+::: {.column width="33%"}
+**Mediana**
+
+Valor central ordenado
+
+Robusta a outliers
+:::
+
+::: {.column width="33%"}
+**Moda**
+
+Valor mais frequente
+
+Para dados categóricos
+:::
+::::::
+
+## Calculando Medidas Centrais
+
+```{r}
+#| echo: true
+# Média
+mean(dados$idade)
+mean(dados$colesterol)
+
+# Mediana
+median(dados$idade)
+median(dados$colesterol)
+
+# Resumo completo
+summary(dados$idade)
+```
+
+## Medidas de Dispersão
+
+::::: columns
+::: {.column width="50%"}
+**Variância**
+
+$$s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}$$
+
+**Desvio Padrão**
+
+$$s = \sqrt{s^2}$$
+:::
+
+::: {.column width="50%"}
+**Coeficiente de Variação**
+
+$$CV = \frac{s}{\bar{x}} \times 100\%$$
+
+**Amplitude**
+
+$$A = \max(x) - \min(x)$$
+:::
+:::::
+
+## Calculando Dispersão
+
+```{r}
+#| echo: true
+# Desvio padrão
+sd(dados$idade)
+sd(dados$colesterol)
+
+# Variância
+var(dados$idade)
+
+# Amplitude
+range(dados$idade)
+max(dados$idade) - min(dados$idade)
+```
+
+## Medidas de Posição - Quartis
+
+```{r}
+#| echo: true
+# Quartis da idade
+quantile(dados$idade, probs = c(0.25, 0.5, 0.75))
+
+# Percentis
+quantile(dados$colesterol, probs = seq(0, 1, 0.1))
+
+# Amplitude interquartil (IQR)
+IQR(dados$idade)
+```
+
+## Estatísticas por Grupo
+
+```{r}
+#| echo: true
+# Usando dplyr para agrupar
+dados %>%
+  group_by(sexo) %>%
+  summarise(
+    n = n(),
+    media_idade = mean(idade),
+    dp_idade = sd(idade),
+    media_colesterol = mean(colesterol),
+    dp_colesterol = sd(colesterol)
+  )
+```
+
+## Tabelas de Frequência
+
+```{r}
+#| echo: true
+# Frequência simples
+table(dados$sexo)
+table(dados$doenca)
+
+# Frequência relativa
+prop.table(table(dados$doenca))
+
+# Tabela cruzada
+table(dados$sexo, dados$doenca)
+```
+
+# Visualização de Dados {background-color="#2C3E50"}
+
+## Gráfico de Barras
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 5
+
+ggplot(dados, aes(x = doenca, fill = doenca)) +
+  geom_bar() +
+  labs(title = "Distribuição de Pacientes com Doença",
+       x = "Status da Doença", y = "Frequência") +
+  theme_minimal() +
+  scale_fill_manual(values = c("#e74c3c", "#2ecc71"))
+```
+
+## Histograma
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 5
+
+ggplot(dados, aes(x = idade)) +
+  geom_histogram(bins = 20, fill = "#3498db", color = "white") +
+  labs(title = "Distribuição de Idade dos Pacientes",
+       x = "Idade (anos)", y = "Frequência") +
+  theme_minimal()
+```
+
+## Boxplot
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 5
+
+ggplot(dados, aes(x = sexo, y = colesterol, fill = sexo)) +
+  geom_boxplot() +
+  labs(title = "Colesterol por Sexo",
+       x = "Sexo", y = "Colesterol (mg/dL)") +
+  theme_minimal() +
+  scale_fill_manual(values = c("#e74c3c", "#3498db"))
+```
+
+## Gráfico de Dispersão
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 5
+
+ggplot(dados, aes(x = idade, y = pressao_sistolica, color = sexo)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Relação entre Idade e Pressão Sistólica",
+       x = "Idade (anos)", y = "Pressão Sistólica (mmHg)") +
+  theme_minimal()
+```
+
+## Múltiplos Gráficos
+
+```{r}
+#| echo: true
+#| fig-align: center
+#| fig-width: 10
+#| fig-height: 6
+
+library(patchwork)
+
+p1 <- ggplot(dados, aes(x = idade)) +
+  geom_histogram(fill = "#3498db", bins = 20) +
+  theme_minimal()
+
+p2 <- ggplot(dados, aes(x = sexo, y = idade, fill = sexo)) +
+  geom_boxplot() +
+  theme_minimal()
+
+p3 <- ggplot(dados, aes(x = imc, y = colesterol)) +
+  geom_point(color = "#e74c3c") +
+  theme_minimal()
+
+(p1 | p2) / p3
+```
+
+# Prática Guiada {background-color="#2C3E50"}
+
+## Exercício 1: Exploração de Dados
+
+1.  Crie um novo dataset com 150 pacientes
+2.  Inclua variáveis: idade, peso, altura, glicemia
+3.  Calcule estatísticas descritivas
+4.  Crie visualizações apropriadas
+
+## Exercício 2: Análise por Grupos
+
+1.  Adicione uma variável categórica "diabetes" (Sim/Não)
+2.  Compare as médias de glicemia entre grupos
+3.  Crie boxplots comparativos
+4.  Calcule proporções
+
+## Exercício 3: Correlação
+
+1.  Calcule IMC a partir de peso e altura
+2.  Investigue relação entre IMC e glicemia
+3.  Crie um gráfico de dispersão
+4.  Calcule o coeficiente de correlação
+
+# Resumo do Encontro 1 {background-color="#2C3E50"}
+
+## O que aprendemos
+
+::: incremental
+-   Fundamentos de probabilidade
+-   Principais distribuições de probabilidade
+-   Medidas de tendência central e dispersão
+-   Criação e manipulação de dados no R
+-   Visualização de dados com ggplot2
+-   Uso do Tidyverse para análise descritiva
+:::
+
+## Próximo Encontro
+
+**Testes de Hipótese**
+
+-   Conceitos de inferência estatística
+-   Teste t
+-   Teste qui-quadrado
+-   ANOVA
+-   Testes não-paramétricos
+
+## Recursos Adicionais
+
+::: nonincremental
+-   **R for Data Science**: <https://r4ds.had.co.nz/>
+-   **ggplot2 documentation**: <https://ggplot2.tidyverse.org/>
+-   **Posit Cheatsheets**: <https://posit.co/resources/cheatsheets/>
+:::
+
+# Perguntas? {background-color="#2C3E50"}
+
+**Contato**: [djalma.barbosa@ufr.edu.br](mailto:djalma.barbosa@ufr.edu.br)
